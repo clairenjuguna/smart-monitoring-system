@@ -38,6 +38,15 @@ describe('zigbee2mqtt isEnabled', () => {
     expect(result).to.equal(false);
   });
 
+  it('should return false on usb not configured', () => {
+    zigbee2MqttService.mqttRunning = true;
+    zigbee2MqttService.zigbee2mqttRunning = true;
+    zigbee2MqttService.usbConfigured = false;
+
+    const result = zigbee2MqttService.isEnabled();
+    expect(result).to.equal(false);
+  });
+
   it('should return true', () => {
     zigbee2MqttService.mqttRunning = true;
     zigbee2MqttService.zigbee2mqttRunning = true;

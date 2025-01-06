@@ -41,7 +41,10 @@ async function saveState(deviceFeature, newValue) {
   );
   // if the deviceFeature should keep history, we save a new deviceFeatureState
   if (deviceFeature.keep_history) {
-    await db.duckDbInsertState(deviceFeature.id, newValue, now);
+    await db.DeviceFeatureState.create({
+      device_feature_id: deviceFeature.id,
+      value: newValue,
+    });
   }
 
   // send websocket event

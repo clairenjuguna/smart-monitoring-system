@@ -38,7 +38,6 @@ const PhilipsHuePage = ({ children, user }) => (
 
                   <DeviceConfigurationLink
                     user={user}
-                    configurationKey="integrations"
                     documentKey="philips-hue"
                     linkClass="list-group-item list-group-item-action d-flex align-items-center"
                   >

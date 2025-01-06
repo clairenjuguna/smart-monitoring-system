@@ -19,7 +19,7 @@ class BluetoothSetupPage extends Component {
 
   render(props, {}) {
     return (
-      <BluetoothPage user={props.user}>
+      <BluetoothPage>
         <BluetoothPeripheralTab {...props} />
       </BluetoothPage>
     );

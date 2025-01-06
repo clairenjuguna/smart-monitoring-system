@@ -33,15 +33,7 @@ async function scan() {
       let deviceChanged = false;
       if (nbDevices > 0) {
         deviceChanged = this.discoveredDevices.length !== nbDevices;
-        // Filter unique MAC
-        const filteredDevices = {};
-        discoveredDevices.forEach((device) => {
-          const { mac } = device;
-          if (mac && mac.length > 0) {
-            filteredDevices[mac] = device;
-          }
-        });
-        this.discoveredDevices = Object.values(filteredDevices);
+        this.discoveredDevices = discoveredDevices;
       }
 
       this.scanning = false;
@@ -53,11 +45,10 @@ async function scan() {
 
     const result = await new Promise((resolve) => {
       const onError = (err) => {
-        const cancelled = err === 'Scan cancelled';
-        if (!cancelled) {
+        if (err !== 'Scan cancelled') {
           logger.error('LANManager fails to discover devices over network -', err);
         }
-        scanDone([], cancelled);
+        scanDone([], false);
         return resolve([]);
       };
 

@@ -6,7 +6,8 @@ const RtspCameraHandler = require('./lib');
 const RtspCameraController = require('./api/rtspCamera.controller');
 
 module.exports = function RtspCameraService(gladys, serviceId) {
-  const device = new RtspCameraHandler(gladys, childProcess, serviceId);
+  const ffmpeg = require('fluent-ffmpeg');
+  const device = new RtspCameraHandler(gladys, ffmpeg, childProcess, serviceId);
   /**
    * @public
    * @description This function starts service.

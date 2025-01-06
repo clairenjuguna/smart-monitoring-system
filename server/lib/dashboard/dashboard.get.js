@@ -1,4 +1,3 @@
-const { Op } = require('sequelize');
 const db = require('../../models');
 
 const DEFAULT_FIELDS = ['id', 'name', 'selector', 'type', 'updated_at'];
@@ -14,15 +13,7 @@ async function get(userId) {
   const dashboards = await db.Dashboard.findAll({
     attributes: DEFAULT_FIELDS,
     where: {
-      // I can see dashboard I created or public dashboard
-      [Op.or]: [
-        {
-          user_id: userId,
-        },
-        {
-          visibility: 'public',
-        },
-      ],
+      user_id: userId,
     },
     order: [['position', 'ASC']],
     raw: true,

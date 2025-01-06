@@ -1,5 +1,3 @@
-const { Op } = require('sequelize');
-
 const Promise = require('bluebird');
 const db = require('../../models');
 
@@ -17,15 +15,7 @@ async function updateOrder(userId, dashboards) {
       { position: index },
       {
         where: {
-          // I can edit dashboard I created or public dashboard
-          [Op.or]: [
-            {
-              user_id: userId,
-            },
-            {
-              visibility: 'public',
-            },
-          ],
+          user_id: userId,
           selector: dashboard,
         },
       },

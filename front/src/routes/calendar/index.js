@@ -14,14 +14,21 @@ const localizer = dayjsLocalizer(dayjs);
 class Map extends Component {
   onRangeChange = range => {
     let from, to;
+
     if (Array.isArray(range)) {
-      from = dayjs(range[0]).toDate();
+      from = dayjs(range[0])
+        .subtract(7, 'day')
+        .toDate();
       to = dayjs(range[range.length - 1])
-        .add(1, 'day')
+        .add(7, 'day')
         .toDate();
     } else {
-      from = dayjs(range.start).toDate();
-      to = dayjs(range.end).toDate();
+      from = dayjs(range.start)
+        .subtract(7, 'day')
+        .toDate();
+      to = dayjs(range.end)
+        .add(7, 'day')
+        .toDate();
     }
     this.props.getEventsInRange(from, to);
   };
@@ -34,48 +41,17 @@ class Map extends Component {
       }
     };
 
-  onViewChange = newView => {
-    localStorage.setItem('calendar_last_view', newView);
-  };
-
   componentWillMount() {
     dayjs.locale(this.props.user.language);
 
-    let from = dayjs()
+    const from = dayjs()
       .startOf('week')
-      .subtract(1, 'day')
+      .subtract(7, 'day')
       .toDate();
-    let to = dayjs()
+    const to = dayjs()
       .endOf('week')
-      .add(1, 'day')
+      .add(7, 'day')
       .toDate();
-
-    switch (localStorage.getItem('calendar_last_view')) {
-      case 'month':
-        from = dayjs()
-          .startOf('month')
-          .subtract(7, 'day')
-          .toDate();
-        to = dayjs()
-          .endOf('month')
-          .add(7, 'day')
-          .toDate();
-        break;
-      case 'day':
-        from = dayjs()
-          .subtract(1, 'day')
-          .toDate();
-        to = dayjs()
-          .add(1, 'day')
-          .toDate();
-        break;
-      case 'agenda':
-        from = dayjs().toDate();
-        to = dayjs()
-          .add(1, 'month')
-          .toDate();
-        break;
-    }
     this.props.getEventsInRange(from, to);
   }
 
@@ -103,8 +79,7 @@ class Map extends Component {
                         }}
                         popup
                         onRangeChange={this.onRangeChange}
-                        defaultView={localStorage.getItem('calendar_last_view') || 'week'}
-                        onView={this.onViewChange}
+                        defaultView="week"
                         culture={props.user.language}
                         messages={this.props.intl.dictionary.calendar}
                         scrollToTime={dayjs()

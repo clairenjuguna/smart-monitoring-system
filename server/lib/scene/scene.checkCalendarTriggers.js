@@ -4,7 +4,6 @@ const dayjs = require('dayjs');
 
 require('dayjs/locale/en');
 require('dayjs/locale/fr');
-require('dayjs/locale/de');
 
 const LocalizedFormat = require('dayjs/plugin/localizedFormat');
 const db = require('../../models');
@@ -22,7 +21,7 @@ dayjs.extend(LocalizedFormat);
 async function checkCalendarTriggers() {
   // getting a fixed value for now, as soon as possible in the function
   const now = dayjs.tz(dayjs(), this.timezone);
-  logger.debug(`Checking calendar triggers at ${now}`);
+  logger.info(`Checking calendar triggers at ${now}`);
   // First, we try to constitute a list of triggers
   // related to calendars events
   const calendarEventTriggers = [];

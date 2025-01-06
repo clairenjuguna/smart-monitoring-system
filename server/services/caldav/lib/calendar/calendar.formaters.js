@@ -167,15 +167,14 @@ function formatEvents(caldavEvents, gladysCalendar) {
       } else if (caldavEvent.start && caldavEvent.duration) {
         newEvent.end = this.dayjs
           .tz(this.dayjs(caldavEvent.start).format('YYYY-MM-DDTHH:mm:ss'), caldavEvent.start.tz)
-          .add(this.dayjs.duration(caldavEvent.duration))
-          .format();
+          .add(this.dayjs.duration(caldavEvent.duration));
       }
 
       if (
         caldavEvent.start &&
         caldavEvent.start.tz === undefined &&
         (Number.isInteger(this.dayjs(caldavEvent.end).diff(this.dayjs(caldavEvent.start), 'days', true)) ||
-          (!caldavEvent.end && !caldavEvent.duration))
+          !caldavEvent.end)
       ) {
         newEvent.full_day = true;
       }

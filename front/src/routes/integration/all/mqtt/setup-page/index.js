@@ -45,8 +45,7 @@ class MqttNodePage extends Component {
     this.setState(config);
   };
 
-  saveConfiguration = async e => {
-    e.preventDefault();
+  saveConfiguration = async () => {
     this.setState({
       connectMqttStatus: RequestStatus.Getting,
       mqttConnected: false,
@@ -105,7 +104,7 @@ class MqttNodePage extends Component {
 
   render(props, state) {
     return (
-      <MqttPage user={props.user}>
+      <MqttPage>
         <SetupTab
           {...props}
           {...state}

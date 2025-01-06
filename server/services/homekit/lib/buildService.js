@@ -18,21 +18,19 @@ const sleep = promisify(setTimeout);
  * @param {object} device - Gladys device to format as HomeKit accessory.
  * @param {object} features - Device features to associate to service.
  * @param {object} categoryMapping - Homekit mapping for the current device category.
- * @param {string} subtype - Optional subtype if multiple same service.
  * @returns {object} HomeKit service to expose.
  * @example
  * buildService(device, features, categoryMapping)
  */
-function buildService(device, features, categoryMapping, subtype) {
+function buildService(device, features, categoryMapping) {
   const { Characteristic, CharacteristicEventTypes, Perms, Service } = this.hap;
 
-  const service = new Service[categoryMapping.service](subtype ? features[0].name : device.name, subtype);
+  const service = new Service[categoryMapping.service](device.name);
 
   features.forEach((feature) => {
     switch (`${feature.category}:${feature.type}`) {
       case `${DEVICE_FEATURE_CATEGORIES.LIGHT}:${DEVICE_FEATURE_TYPES.LIGHT.BINARY}`:
       case `${DEVICE_FEATURE_CATEGORIES.SWITCH}:${DEVICE_FEATURE_TYPES.SWITCH.BINARY}`:
-      case `${DEVICE_FEATURE_CATEGORIES.MOTION_SENSOR}:${DEVICE_FEATURE_TYPES.SENSOR.BINARY}`:
       case `${DEVICE_FEATURE_CATEGORIES.LEAK_SENSOR}:${DEVICE_FEATURE_TYPES.SENSOR.BINARY}`: {
         const characteristic = service.getCharacteristic(
           Characteristic[categoryMapping.capabilities[feature.type].characteristics[0]],
@@ -52,7 +50,8 @@ function buildService(device, features, categoryMapping, subtype) {
               status: ACTIONS_STATUS.PENDING,
               value: value ? 1 : 0,
               device: device.selector,
-              device_feature: feature.selector,
+              feature_category: feature.category,
+              feature_type: feature.type,
             };
             this.gladys.event.emit(EVENTS.ACTION.TRIGGERED, action);
             callback();
@@ -107,7 +106,8 @@ function buildService(device, features, categoryMapping, subtype) {
                 ),
               ),
               device: device.selector,
-              device_feature: feature.selector,
+              feature_category: feature.category,
+              feature_type: feature.type,
             };
             this.gladys.event.emit(EVENTS.ACTION.TRIGGERED, action);
             callback();
@@ -135,7 +135,8 @@ function buildService(device, features, categoryMapping, subtype) {
             status: ACTIONS_STATUS.PENDING,
             value: rgbToInt(rgb),
             device: device.selector,
-            device_feature: feature.selector,
+            feature_category: feature.category,
+            feature_type: feature.type,
           };
           this.gladys.event.emit(EVENTS.ACTION.TRIGGERED, action);
           callback();
@@ -159,7 +160,8 @@ function buildService(device, features, categoryMapping, subtype) {
             status: ACTIONS_STATUS.PENDING,
             value: rgbToInt(rgb),
             device: device.selector,
-            device_feature: feature.selector,
+            feature_category: feature.category,
+            feature_type: feature.type,
           };
           this.gladys.event.emit(EVENTS.ACTION.TRIGGERED, action);
           callback();

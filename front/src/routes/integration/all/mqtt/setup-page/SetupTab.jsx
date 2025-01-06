@@ -68,9 +68,9 @@ class SetupTab extends Component {
     return (
       <div class="card">
         <div class="card-header">
-          <h1 class="card-title">
+          <h3 class="card-title">
             <Text id="integration.mqtt.setup.title" />
-          </h1>
+          </h3>
         </div>
         <div class="card-body">
           <div

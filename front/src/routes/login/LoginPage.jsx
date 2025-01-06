@@ -82,9 +82,9 @@ const LoginPage = connect(
             </a>
           </div>
         </form>
-        <div class="text-center text-muted">
+        {/* <div class="text-center text-muted">
           <MarkupText id="login.needHelpText" />
-        </div>
+        </div> */}
       </div>
     </div>
   </div>

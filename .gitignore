@@ -1,16 +1,14 @@
 node_modules
-*.db
-*.duckdb
-*.duckdb.wal
-*.db-shm
-*.db-wal
-*.dbfile-shm
-*.dbfile-wal
-apidoc
-jsdoc
-*.lcov
-.nyc_output
-.env
+# *.db
+# *.db-shm
+# *.db-wal
+# *.dbfile-shm
+# *.dbfile-wal
+# apidoc
+# jsdoc
+# *.lcov
+# .nyc_output
+# .env
 build
 static
 gladys-backups

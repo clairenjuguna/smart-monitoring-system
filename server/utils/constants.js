@@ -42,31 +42,12 @@ const BUTTON_STATUS = {
   DISARM: 36,
   ARM_DAY_ZONES: 37,
   ARM_ALL_ZONES: 38,
-  ON_PRESS: 39,
-  ON_HOLD: 40,
-  UP_PRESS: 41,
-  UP_HOLD: 42,
-  DOWN_PRESS: 43,
-  DOWN_HOLD: 44,
-  OFF_PRESS: 45,
-  OFF_HOLD: 46,
-  INITIAL_PRESS: 47,
-  LONG_PRESS: 48,
-  SHORT_RELEASE: 49,
-  LONG_RELEASE: 50,
-  DOUBLE_PRESS: 51,
 };
 
 const COVER_STATE = {
   STOP: 0,
   OPEN: 1,
   CLOSE: -1,
-};
-
-const SIREN_LMH_VOLUME = {
-  LOW: 0,
-  MEDIUM: 1,
-  HIGH: 2,
 };
 
 const AC_MODE = {
@@ -77,23 +58,9 @@ const AC_MODE = {
   FAN: 4,
 };
 
-const PILOT_WIRE_MODE = {
-  OFF: 0,
-  FROST_PROTECTION: 1,
-  ECO: 2,
-  COMFORT_1: 3,
-  COMFORT_2: 4,
-  COMFORT: 5,
-};
-
 const MUSIC_PLAYBACK_STATE = {
   PLAYING: 1,
   PAUSED: 0,
-};
-
-const OPENING_SENSOR_STATE = {
-  OPEN: 0,
-  CLOSE: 1,
 };
 
 const USER_ROLE = {
@@ -105,7 +72,6 @@ const USER_ROLE = {
 const AVAILABLE_LANGUAGES = {
   EN: 'en',
   FR: 'fr',
-  DE: 'de',
 };
 
 const SESSION_TOKEN_TYPES = {
@@ -140,7 +106,6 @@ const SYSTEM_VARIABLE_NAMES = {
   TIMEZONE: 'TIMEZONE',
   DEVICE_BATTERY_LEVEL_WARNING_THRESHOLD: 'DEVICE_BATTERY_LEVEL_WARNING_THRESHOLD',
   DEVICE_BATTERY_LEVEL_WARNING_ENABLED: 'DEVICE_BATTERY_LEVEL_WARNING_ENABLED',
-  DUCKDB_MIGRATED: 'DUCKDB_MIGRATED',
 };
 
 const EVENTS = {
@@ -168,8 +133,6 @@ const EVENTS = {
     CALCULATE_HOURLY_AGGREGATE: 'device.calculate-hourly-aggregate',
     PURGE_STATES_SINGLE_FEATURE: 'device.purge-states-single-feature',
     CHECK_BATTERIES: 'device.check-batteries',
-    MIGRATE_FROM_SQLITE_TO_DUCKDB: 'device.migrate-from-sqlite-to-duckdb',
-    PURGE_ALL_SQLITE_STATES: 'device.purge-all-sqlite-states',
   },
   GATEWAY: {
     CREATE_BACKUP: 'gateway.create-backup',
@@ -250,7 +213,6 @@ const EVENTS = {
   MESSAGE: {
     NEW: 'message.new',
     NEW_FOR_OPEN_AI: 'message.new-for-open-ai',
-    PURGE_OLD_MESSAGES: 'message.purge-old-messages',
   },
   SYSTEM: {
     DOWNLOAD_UPGRADE: 'system.download-upgrade',
@@ -344,9 +306,6 @@ const CONDITIONS = {
 };
 
 const ACTIONS = {
-  AI: {
-    ASK: 'ai.ask',
-  },
   ALARM: {
     CHECK_ALARM_MODE: 'alarm.check-alarm-mode',
     SET_ALARM_MODE: 'alarm.set-alarm-mode',
@@ -362,7 +321,6 @@ const ACTIONS = {
     TURN_ON: 'light.turn-on',
     TURN_OFF: 'light.turn-off',
     TOGGLE: 'light.toggle',
-    BLINK: 'light.blink',
   },
   SWITCH: {
     TURN_ON: 'switch.turn-on',
@@ -398,14 +356,8 @@ const ACTIONS = {
   ECOWATT: {
     CONDITION: 'ecowatt.condition',
   },
-  EDF_TEMPO: {
-    CONDITION: 'edf-tempo.condition',
-  },
   MQTT: {
     SEND: 'mqtt.send',
-  },
-  MUSIC: {
-    PLAY_NOTIFICATION: 'music.play-notification',
   },
 };
 
@@ -435,12 +387,10 @@ const INTENTS = {
 };
 
 const DEVICE_FEATURE_CATEGORIES = {
-  CHILD_LOCK: 'child-lock',
+  ACCESS_CONTROL: 'access-control',
   AIRQUALITY_SENSOR: 'airquality-sensor',
   AIR_CONDITIONING: 'air-conditioning',
-  ANGLE_SENSOR: 'angle-sensor',
   BATTERY: 'battery',
-  BATTERY_LOW: 'battery-low',
   BUTTON: 'button',
   CAMERA: 'camera',
   CUBE: 'cube',
@@ -455,21 +405,18 @@ const DEVICE_FEATURE_CATEGORIES = {
   DISTANCE_SENSOR: 'distance-sensor',
   DURATION: 'duration',
   ENERGY_SENSOR: 'energy-sensor',
-  HEATER: 'heater',
   HUMIDITY_SENSOR: 'humidity-sensor',
   LEAK_SENSOR: 'leak-sensor',
   LIGHT: 'light',
   LIGHT_SENSOR: 'light-sensor',
   MOTION_SENSOR: 'motion-sensor',
   MUSIC: 'music',
-  NOISE_SENSOR: 'noise-sensor',
   OPENING_SENSOR: 'opening-sensor',
   PM25_SENSOR: 'pm25-sensor',
   FORMALDEHYD_SENSOR: 'formaldehyd-sensor',
   PRECIPITATION_SENSOR: 'precipitation-sensor',
   PRESENCE_SENSOR: 'presence-sensor',
   PRESSURE_SENSOR: 'pressure-sensor',
-  RISK: 'risk',
   SHUTTER: 'shutter',
   SIGNAL: 'signal',
   SIREN: 'siren',
@@ -479,7 +426,6 @@ const DEVICE_FEATURE_CATEGORIES = {
   SURFACE: 'surface',
   SWITCH: 'switch',
   SPEED_SENSOR: 'speed-sensor',
-  TAMPER: 'tamper',
   TELEVISION: 'television',
   TEMPERATURE_SENSOR: 'temperature-sensor',
   THERMOSTAT: 'thermostat',
@@ -487,7 +433,6 @@ const DEVICE_FEATURE_CATEGORIES = {
   UV_SENSOR: 'uv-sensor',
   VIBRATION_SENSOR: 'vibration-sensor',
   VOC_SENSOR: 'voc-sensor',
-  VOC_INDEX_SENSOR: 'voc-index-sensor',
   VOLUME_SENSOR: 'volume-sensor',
   TEXT: 'text',
 };
@@ -525,11 +470,9 @@ const DEVICE_FEATURE_TYPES = {
   },
   SIREN: {
     BINARY: 'binary',
-    LMH_VOLUME: 'lmh_volume',
-    MELODY: 'melody',
   },
-  CHILD_LOCK: {
-    BINARY: 'binary',
+  ACCESS_CONTROL: {
+    MODE: 'mode',
   },
   CUBE: {
     MODE: 'mode',
@@ -537,9 +480,6 @@ const DEVICE_FEATURE_TYPES = {
   },
   BATTERY: {
     INTEGER: 'integer',
-  },
-  BATTERY_LOW: {
-    BINARY: 'binary',
   },
   VIBRATION_SENSOR: {
     BINARY: 'binary',
@@ -564,14 +504,8 @@ const DEVICE_FEATURE_TYPES = {
     MODE: 'mode',
     TARGET_TEMPERATURE: 'target-temperature',
   },
-  HEATER: {
-    PILOT_WIRE_MODE: 'pilot-wire-mode',
-  },
   SURFACE: {
     DECIMAL: 'decimal',
-  },
-  TAMPER: {
-    BINARY: 'binary',
   },
   TELEVISION: {
     BINARY: 'binary',
@@ -611,7 +545,6 @@ const DEVICE_FEATURE_TYPES = {
     PREVIOUS: 'previous',
     NEXT: 'next',
     PLAYBACK_STATE: 'playback_state',
-    PLAY_NOTIFICATION: 'play_notification',
   },
   ENERGY_SENSOR: {
     BINARY: 'binary',
@@ -624,7 +557,6 @@ const DEVICE_FEATURE_TYPES = {
   },
   SPEED_SENSOR: {
     DECIMAL: 'decimal',
-    INTEGER: 'integer',
   },
   UV_SENSOR: {
     INTEGER: 'integer',
@@ -645,9 +577,6 @@ const DEVICE_FEATURE_TYPES = {
   },
   VOC_SENSOR: {
     DECIMAL: 'decimal',
-  },
-  VOC_INDEX_SENSOR: {
-    INTEGER: 'integer',
   },
   SHUTTER: {
     STATE: 'state',
@@ -675,9 +604,6 @@ const DEVICE_FEATURE_TYPES = {
   TEXT: {
     TEXT: 'text',
   },
-  RISK: {
-    INTEGER: 'integer',
-  },
 };
 
 const DEVICE_FEATURE_UNITS = {
@@ -692,7 +618,6 @@ const DEVICE_FEATURE_UNITS = {
   HECTO_PASCAL: 'hPa',
   BAR: 'bar',
   PSI: 'psi',
-  MILLIBAR: 'milli-bar',
   // Light units
   LUX: 'lux',
   // Concentration units
@@ -775,8 +700,6 @@ const DEVICE_FEATURE_UNITS = {
   AQI: 'aqi',
   // For air quality (pm2.5, formaldehyd)
   MICROGRAM_PER_CUBIC_METER: 'microgram-per-cubic-meter',
-  // Noise units
-  DECIBEL: 'decibel',
 };
 
 const WEATHER_UNITS = {
@@ -809,7 +732,6 @@ const DEVICE_FEATURE_UNITS_BY_CATEGORY = {
     DEVICE_FEATURE_UNITS.HECTO_PASCAL,
     DEVICE_FEATURE_UNITS.BAR,
     DEVICE_FEATURE_UNITS.PSI,
-    DEVICE_FEATURE_UNITS.MILLIBAR,
   ],
   [DEVICE_FEATURE_CATEGORIES.TEMPERATURE_SENSOR]: [
     DEVICE_FEATURE_UNITS.CELSIUS,
@@ -910,7 +832,6 @@ const ACTIONS_STATUS = {
 const DEVICE_POLL_FREQUENCIES = {
   EVERY_MINUTES: 60 * 1000,
   EVERY_30_SECONDS: 30 * 1000,
-  EVERY_15_SECONDS: 15 * 1000,
   EVERY_10_SECONDS: 10 * 1000,
   EVERY_2_SECONDS: 2 * 1000,
   EVERY_SECONDS: 1 * 1000,
@@ -977,16 +898,11 @@ const WEBSOCKET_MESSAGE_TYPES = {
     CONNECTED: 'mqtt.connected',
     ERROR: 'mqtt.error',
     INSTALLATION_STATUS: 'mqtt.install-status',
-    DEBUG_NEW_MQTT_MESSAGE: 'mqtt.debug.new-mqtt-message',
-  },
-  ZWAVEJS_UI: {
-    CONNECTED: 'zwavejs-ui.connected',
-    ERROR: 'zwavejs-ui.error',
-    SCAN_COMPLETED: 'zwavejs-ui.scan-completed',
   },
   ZIGBEE2MQTT: {
     DISCOVER: 'zigbee2mqtt.discover',
     STATUS_CHANGE: 'zigbee2mqtt.status-change',
+    MQTT_ERROR: 'zigbee2mqtt.mqtt-error',
     PERMIT_JOIN: 'zigbee2mqtt.permit-join',
   },
   XIAOMI: {
@@ -1013,14 +929,6 @@ const WEBSOCKET_MESSAGE_TYPES = {
     STATUS: 'tuya.status',
     DISCOVER: 'tuya.discover',
   },
-  NETATMO: {
-    STATUS: 'netatmo.status',
-    ERROR: {
-      CONNECTED: 'netatmo.error-connected',
-      CONNECTING: 'netatmo.error-connecting',
-      PROCESSING_TOKEN: 'netatmo.error-processing-token',
-    },
-  },
   MELCLOUD: {
     STATUS: 'melcloud.status',
     DISCOVER: 'melcloud.discover',
@@ -1035,11 +943,6 @@ const DASHBOARD_TYPE = {
   MAIN: 'main',
 };
 
-const DASHBOARD_VISIBILITY = {
-  PRIVATE: 'private',
-  PUBLIC: 'public',
-};
-
 const DASHBOARD_BOX_TYPE = {
   ALARM: 'alarm',
   WEATHER: 'weather',
@@ -1051,7 +954,6 @@ const DASHBOARD_BOX_TYPE = {
   DEVICES: 'devices',
   CHART: 'chart',
   ECOWATT: 'ecowatt',
-  EDF_TEMPO: 'edf-tempo',
   CLOCK: 'clock',
   SCENE: 'scene',
   MUSIC: 'music',
@@ -1084,11 +986,9 @@ const JOB_TYPES = {
   GLADYS_GATEWAY_BACKUP: 'gladys-gateway-backup',
   DEVICE_STATES_PURGE_SINGLE_FEATURE: 'device-state-purge-single-feature',
   DEVICE_STATES_PURGE: 'device-state-purge',
-  DEVICE_STATES_PURGE_ALL_SQLITE_STATES: 'device-state-purge-all-sqlite-states',
   VACUUM: 'vacuum',
   SERVICE_ZIGBEE2MQTT_BACKUP: 'service-zigbee2mqtt-backup',
   SERVICE_NODE_RED_BACKUP: 'service-node-red-backup',
-  MIGRATE_SQLITE_TO_DUCKDB: 'migrate-sqlite-to-duckdb',
 };
 
 const JOB_STATUS = {
@@ -1145,7 +1045,6 @@ const AVAILABLE_LANGUAGES_LIST = createList(AVAILABLE_LANGUAGES);
 const SESSION_TOKEN_TYPE_LIST = createList(SESSION_TOKEN_TYPES);
 const DEVICE_FEATURE_UNITS_LIST = createList(DEVICE_FEATURE_UNITS);
 const DASHBOARD_TYPE_LIST = createList(DASHBOARD_TYPE);
-const DASHBOARD_VISIBILITY_LIST = createList(DASHBOARD_VISIBILITY);
 const DASHBOARD_BOX_TYPE_LIST = createList(DASHBOARD_BOX_TYPE);
 const DEVICE_FEATURE_STATE_AGGREGATE_TYPES_LIST = createList(DEVICE_FEATURE_STATE_AGGREGATE_TYPES);
 const JOB_TYPES_LIST = createList(JOB_TYPES);
@@ -1156,9 +1055,7 @@ const ALARM_MODES_LIST = createList(ALARM_MODES);
 module.exports.STATE = STATE;
 module.exports.BUTTON_STATUS = BUTTON_STATUS;
 module.exports.COVER_STATE = COVER_STATE;
-module.exports.SIREN_LMH_VOLUME = SIREN_LMH_VOLUME;
 module.exports.AC_MODE = AC_MODE;
-module.exports.PILOT_WIRE_MODE = PILOT_WIRE_MODE;
 module.exports.EVENTS = EVENTS;
 module.exports.LIFE_EVENTS = LIFE_EVENTS;
 module.exports.STATES = STATES;
@@ -1200,8 +1097,6 @@ module.exports.SERVICE_STATUS_LIST = createList(SERVICE_STATUS);
 module.exports.SYSTEM_VARIABLE_NAMES = SYSTEM_VARIABLE_NAMES;
 
 module.exports.DASHBOARD_TYPE = DASHBOARD_TYPE;
-module.exports.DASHBOARD_VISIBILITY = DASHBOARD_VISIBILITY;
-module.exports.DASHBOARD_VISIBILITY_LIST = DASHBOARD_VISIBILITY_LIST;
 module.exports.DASHBOARD_TYPE_LIST = DASHBOARD_TYPE_LIST;
 module.exports.DASHBOARD_BOX_TYPE = DASHBOARD_BOX_TYPE;
 module.exports.DASHBOARD_BOX_TYPE_LIST = DASHBOARD_BOX_TYPE_LIST;
@@ -1228,4 +1123,3 @@ module.exports.ALARM_MODES = ALARM_MODES;
 module.exports.ALARM_MODES_LIST = ALARM_MODES_LIST;
 
 module.exports.MUSIC_PLAYBACK_STATE = MUSIC_PLAYBACK_STATE;
-module.exports.OPENING_SENSOR_STATE = OPENING_SENSOR_STATE;

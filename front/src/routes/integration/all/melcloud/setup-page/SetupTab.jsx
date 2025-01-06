@@ -44,7 +44,7 @@ class SetupTab extends Component {
     }
   }
 
-  saveConfiguration = async e => {
+  async saveConfiguration(e) {
     e.preventDefault();
     this.setState({
       melcloudSaveSettingsStatus: RequestStatus.Getting
@@ -68,13 +68,13 @@ class SetupTab extends Component {
         melcloudSaveSettingsStatus: RequestStatus.Error
       });
     }
-  };
+  }
 
-  updateConfiguration = e => {
+  updateConfiguration(e) {
     this.setState({
       [e.target.name]: e.target.value
     });
-  };
+  }
 
   togglePassword = () => {
     const { showPassword } = this.state;
@@ -123,7 +123,7 @@ class SetupTab extends Component {
                       placeholder={<Text id="integration.melcloud.setup.usernamePlaceholder" />}
                       value={state.melCloudUsername}
                       class="form-control"
-                      onInput={this.updateConfiguration}
+                      onInput={this.updateConfiguration.bind(this)}
                     />
                   </Localizer>
                 </div>
@@ -140,7 +140,7 @@ class SetupTab extends Component {
                         placeholder={<Text id="integration.melcloud.setup.passwordPlaceholder" />}
                         value={state.melCloudPassword}
                         className="form-control"
-                        onInput={this.updateConfiguration}
+                        onInput={this.updateConfiguration.bind(this)}
                       />
                     </Localizer>
                     <span class="input-icon-addon cursor-pointer" onClick={this.togglePassword}>
@@ -156,7 +156,7 @@ class SetupTab extends Component {
 
                 <div class="row mt-5">
                   <div class="col">
-                    <button type="submit" class="btn btn-success" onClick={this.saveConfiguration}>
+                    <button type="submit" class="btn btn-success" onClick={this.saveConfiguration.bind(this)}>
                       <Text id="integration.melcloud.setup.saveLabel" />
                     </button>
                   </div>

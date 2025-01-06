@@ -27,7 +27,6 @@ const NodeRedPage = ({ children, user }) => (
 
                   <DeviceConfigurationLink
                     user={user}
-                    configurationKey="integrations"
                     documentKey="node-red"
                     linkClass="list-group-item list-group-item-action d-flex align-items-center"
                   >

@@ -1,4 +1,4 @@
-const getApexChartBarOptions = ({ displayAxes, series, colors, locales, defaultLocale }) => {
+const getApexChartBarOptions = ({ displayAxes, series, COLORS, locales, defaultLocale }) => {
   const options = {
     chart: {
       locales,
@@ -59,17 +59,10 @@ const getApexChartBarOptions = ({ displayAxes, series, colors, locales, defaultL
     },
     yaxis: {
       labels: {
-        padding: 4,
-        formatter: function(value) {
-          if (Math.abs(value) < 1) {
-            return value; // For very low values, like crypto prices, use the normal value
-          } else {
-            return value.toFixed(2); // 2 decimal places for other values
-          }
-        }
+        padding: 4
       }
     },
-    colors,
+    colors: COLORS,
     legend: {
       show: displayAxes,
       position: 'bottom'

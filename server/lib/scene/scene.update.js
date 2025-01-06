@@ -34,12 +34,13 @@ async function update(selector, scene) {
 
   await existingScene.update(scene);
 
+  await db.TagScene.destroy({
+    where: {
+      scene_id: existingScene.id,
+    },
+  });
+
   if (scene.tags) {
-    await db.TagScene.destroy({
-      where: {
-        scene_id: existingScene.id,
-      },
-    });
     await db.TagScene.bulkCreate(
       scene.tags.map((tag) => ({
         scene_id: existingScene.id,

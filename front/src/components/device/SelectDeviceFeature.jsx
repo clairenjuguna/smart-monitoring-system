@@ -9,7 +9,7 @@ class SelectDeviceFeature extends Component {
   getOptions = async () => {
     try {
       // we get the rooms with the devices
-      const rooms = await this.props.httpClient.get('/api/v1/room', { expand: 'devices' });
+      const rooms = await this.props.httpClient.get('/api/v1/room?expand=devices');
       const deviceOptions = [];
 
       const deviceDictionnary = {};
@@ -123,7 +123,6 @@ class SelectDeviceFeature extends Component {
         value={selectedOption}
         onChange={this.handleChange}
         options={deviceOptions}
-        styles={{ menu: base => ({ ...base, zIndex: 2 }) }}
       />
     );
   }

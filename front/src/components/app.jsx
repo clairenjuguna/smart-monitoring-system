@@ -103,11 +103,11 @@ import LANManagerSettingsPage from '../routes/integration/all/lan-manager/settin
 import MqttDevicePage from '../routes/integration/all/mqtt/device-page';
 import MqttDeviceSetupPage from '../routes/integration/all/mqtt/device-page/setup';
 import MqttSetupPage from '../routes/integration/all/mqtt/setup-page';
-import MqttDebugPage from '../routes/integration/all/mqtt/debug-page/Debug';
 
 // Zigbee2mqtt
 import Zigbee2mqttPage from '../routes/integration/all/zigbee2mqtt/device-page';
 import Zigbee2mqttDiscoverPage from '../routes/integration/all/zigbee2mqtt/discover-page';
+import Zigbee2mqttSettingsPage from '../routes/integration/all/zigbee2mqtt/settings-page';
 import Zigbee2mqttSetupPage from '../routes/integration/all/zigbee2mqtt/setup-page';
 import Zigbee2mqttEditPage from '../routes/integration/all/zigbee2mqtt/edit-page';
 
@@ -139,23 +139,9 @@ import TuyaEditPage from '../routes/integration/all/tuya/edit-page';
 import TuyaSetupPage from '../routes/integration/all/tuya/setup-page';
 import TuyaDiscoverPage from '../routes/integration/all/tuya/discover-page';
 
-// Netatmo integration
-import NetatmoPage from '../routes/integration/all/netatmo/device-page';
-import NetatmoSetupPage from '../routes/integration/all/netatmo/setup-page';
-import NetatmoDiscoverPage from '../routes/integration/all/netatmo/discover-page';
-
 // Sonos integration
 import SonosDevicePage from '../routes/integration/all/sonos/device-page';
 import SonosDiscoveryPage from '../routes/integration/all/sonos/discover-page';
-
-// Google Cast integration
-import GoogleCastDevicePage from '../routes/integration/all/google-cast/device-page';
-import GoogleCastDiscoveryPage from '../routes/integration/all/google-cast/discover-page';
-
-// ZWaveJS-UI integration
-import ZwaveJSUIDevicePage from '../routes/integration/all/zwavejs-ui/device-page';
-import ZwaveJSUIDiscoveryPage from '../routes/integration/all/zwavejs-ui/discover-page';
-import ZwaveJSUISetupPage from '../routes/integration/all/zwavejs-ui/setup-page';
 
 // MELCloud integration
 import MELCloudPage from '../routes/integration/all/melcloud/device-page';
@@ -267,9 +253,9 @@ const AppRouter = connect(
         <MqttDeviceSetupPage path="/dashboard/integration/device/mqtt/edit" />
         <MqttDeviceSetupPage path="/dashboard/integration/device/mqtt/edit/:deviceSelector" />
         <MqttSetupPage path="/dashboard/integration/device/mqtt/setup" />
-        <MqttDebugPage path="/dashboard/integration/device/mqtt/debug" />
         <Zigbee2mqttPage path="/dashboard/integration/device/zigbee2mqtt" />
         <Zigbee2mqttDiscoverPage path="/dashboard/integration/device/zigbee2mqtt/discover" />
+        <Zigbee2mqttSettingsPage path="/dashboard/integration/device/zigbee2mqtt/settings" />
         <Zigbee2mqttSetupPage path="/dashboard/integration/device/zigbee2mqtt/setup" />
         <Zigbee2mqttEditPage path="/dashboard/integration/device/zigbee2mqtt/edit/:deviceSelector" />
 
@@ -293,19 +279,8 @@ const AppRouter = connect(
         <TuyaDiscoverPage path="/dashboard/integration/device/tuya/discover" />
         <TuyaSetupPage path="/dashboard/integration/device/tuya/setup" />
 
-        <NetatmoPage path="/dashboard/integration/device/netatmo" />
-        <NetatmoDiscoverPage path="/dashboard/integration/device/netatmo/discover" />
-        <NetatmoSetupPage path="/dashboard/integration/device/netatmo/setup" />
-
         <SonosDevicePage path="/dashboard/integration/device/sonos" />
         <SonosDiscoveryPage path="/dashboard/integration/device/sonos/discover" />
-
-        <GoogleCastDevicePage path="/dashboard/integration/device/google-cast" />
-        <GoogleCastDiscoveryPage path="/dashboard/integration/device/google-cast/discover" />
-
-        <ZwaveJSUIDevicePage path="/dashboard/integration/device/zwavejs-ui" />
-        <ZwaveJSUIDiscoveryPage path="/dashboard/integration/device/zwavejs-ui/discover" />
-        <ZwaveJSUISetupPage path="/dashboard/integration/device/zwavejs-ui/setup" />
 
         <MELCloudPage path="/dashboard/integration/device/melcloud" />
         <MELCloudEditPage path="/dashboard/integration/device/melcloud/edit/:deviceSelector" />
@@ -330,8 +305,8 @@ const AppRouter = connect(
         <GoogleHomeWelcomePage path="/dashboard/integration/communication/googlehome" />
         <GoogleHomeGateway path="/dashboard/integration/device/google-home/authorize" />
         <AlexaWelcomePage path="/dashboard/integration/communication/alexa" />
-        <AlexaGateway path="/dashboard/integration/device/alexa/authorize" />
         <OwntracksWelcomePage path="/dashboard/integration/device/owntracks" />
+        <AlexaGateway path="/dashboard/integration/device/alexa/authorize" />
         <EnedisGateway path="/dashboard/integration/device/enedis" />
         <EnedisGatewayUsagePoints path="/dashboard/integration/device/enedis/usage-points" />
         <EnedisGateway path="/dashboard/integration/device/enedis/redirect" />

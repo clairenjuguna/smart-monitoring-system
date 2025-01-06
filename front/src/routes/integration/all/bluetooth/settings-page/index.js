@@ -5,7 +5,7 @@ import BluetoothSettingsTab from './BluetoothSettingsTab';
 import actions from '../commons/actions';
 
 const BluetoothSettingsPage = props => (
-  <BluetoothPage user={props.user}>
+  <BluetoothPage>
     <BluetoothSettingsTab {...props} />
   </BluetoothPage>
 );

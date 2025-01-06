@@ -1,4 +1,3 @@
-const { Op } = require('sequelize');
 const db = require('../../models');
 const { NotFoundError } = require('../../utils/coreErrors');
 
@@ -12,17 +11,9 @@ const { NotFoundError } = require('../../utils/coreErrors');
  */
 async function getBySelector(userId, selector) {
   const dashboard = await db.Dashboard.findOne({
-    attributes: ['id', 'name', 'selector', 'type', 'visibility', 'user_id', 'created_at', 'updated_at', 'boxes'],
+    attributes: ['id', 'name', 'selector', 'type', 'created_at', 'updated_at', 'boxes'],
     where: {
-      // I can see dashboard I created or public dashboard
-      [Op.or]: [
-        {
-          user_id: userId,
-        },
-        {
-          visibility: 'public',
-        },
-      ],
+      user_id: userId,
       selector,
     },
   });

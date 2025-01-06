@@ -1,6 +1,5 @@
 const { expect } = require('chai');
 const { authenticatedRequest } = require('../request.test');
-const { DASHBOARD_VISIBILITY } = require('../../../utils/constants');
 
 describe('POST /api/v1/dashboard', () => {
   it('should create dashboard', async () => {
@@ -10,7 +9,6 @@ describe('POST /api/v1/dashboard', () => {
         name: 'my dashboard',
         type: 'main',
         position: 0,
-        visibility: DASHBOARD_VISIBILITY.PRIVATE,
         boxes: [
           [
             {
@@ -67,8 +65,6 @@ describe('GET /api/v1/dashboard/:dashboard_selector', () => {
               },
             ],
           ],
-          user_id: '0cd30aef-9c4e-4a23-88e3-3547971296e5',
-          visibility: 'private',
           updated_at: '2019-02-12T07:49:07.556Z',
           created_at: '2019-02-12T07:49:07.556Z',
         });
@@ -92,7 +88,6 @@ describe('PATCH /api/v1/dashboard/:dashboard_selector', () => {
           selector: 'test-dashboard',
           position: 0,
           user_id: '0cd30aef-9c4e-4a23-88e3-3547971296e5',
-          visibility: 'private',
           type: 'main',
           boxes: [
             [

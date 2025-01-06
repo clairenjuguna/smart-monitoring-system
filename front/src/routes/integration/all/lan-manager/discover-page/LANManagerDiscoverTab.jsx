@@ -23,9 +23,9 @@ const LANManagerDiscoverTab = ({
   return (
     <div class="card">
       <div class="card-header">
-        <h1 class="card-title">
+        <h3 class="card-title">
           <Text id="integration.lanManager.discover.title" />
-        </h1>
+        </h3>
         <div class="page-options d-flex">
           {lanManagerDiscoverUpdate && (
             <button class="btn btn-outline-success mr-2" onClick={getDiscoveredDevices}>

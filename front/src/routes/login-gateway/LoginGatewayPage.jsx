@@ -14,9 +14,9 @@ const LoginGatewayPage = ({ children, ...props }) => (
           </h2>
         </div>
         <GatewayLoginForm {...props} />
-        <div class="text-center text-muted">
+        {/* <div class="text-center text-muted">
           <MarkupText id="login.needHelpText" />
-        </div>
+        </div> */}
       </div>
     </div>
   </div>

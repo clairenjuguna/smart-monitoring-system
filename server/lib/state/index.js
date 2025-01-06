@@ -33,17 +33,6 @@ function get(entity, entitySelector) {
 }
 
 /**
- * @description Return all keys.
- * @param {string} entity - The type of entity we should get the value from.
- * @returns {any} Return the full state in store.
- * @example
- * stateManager.get('device', 'main-lamp');
- */
-function getAllKeys(entity) {
-  return Object.keys(this.state[entity]);
-}
-
-/**
  * @description Return the value of a key in the store.
  * @param {string} entity - The type of entity we should get the value from.
  * @param {string} entitySelector - The selector to identify one entity.
@@ -82,7 +71,6 @@ const StateManager = function StateManager(event) {
     deviceByExternalId: {},
     deviceById: {},
     deviceFeature: {},
-    deviceFeatureById: {},
     deviceFeatureByExternalId: {},
     service: {},
     serviceById: {},
@@ -96,6 +84,5 @@ StateManager.prototype.setState = setState;
 StateManager.prototype.deleteState = deleteState;
 StateManager.prototype.get = get;
 StateManager.prototype.getKey = getKey;
-StateManager.prototype.getAllKeys = getAllKeys;
 
 module.exports = StateManager;

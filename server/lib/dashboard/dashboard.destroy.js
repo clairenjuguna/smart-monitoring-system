@@ -1,4 +1,3 @@
-const { Op } = require('sequelize');
 const db = require('../../models');
 const { NotFoundError } = require('../../utils/coreErrors');
 
@@ -12,15 +11,7 @@ const { NotFoundError } = require('../../utils/coreErrors');
 async function destroy(userId, selector) {
   const dashboard = await db.Dashboard.findOne({
     where: {
-      // I can destroy dashboard I created or public dashboard
-      [Op.or]: [
-        {
-          user_id: userId,
-        },
-        {
-          visibility: 'public',
-        },
-      ],
+      user_id: userId,
       selector,
     },
   });

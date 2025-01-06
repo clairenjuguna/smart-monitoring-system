@@ -1,7 +1,7 @@
 {
   "global": {
-    "logoAlt": "Gladys logo",
-    "needHelpText": "Need help? Join us on <a href=\"https://en-community.gladysassistant.com/\" target=\"_blank\" rel=\"noopener noreferrer\"> Gladys Community</a>.",
+    "logoAlt": "IHA logo",
+    "needHelpText": "Need help? Contact Us.",
     "new": "New",
     "orderDirAsc": "A - Z",
     "orderDirDesc": "Z - A",
@@ -18,21 +18,15 @@
     "fahrenheit": "F",
     "metersPerSec": "m/s",
     "milesPerHour": "m/h",
-    "selectPlaceholder": "Select...",
-    "yes": "Yes",
-    "no": "No"
+    "selectPlaceholder": "Select..."
   },
   "color": {
-    "aqua": "Aqua",
-    "black": "Black",
     "blue": "Blue",
-    "green": "Green",
-    "grey": "Grey",
-    "orange": "Orange",
-    "pink": "Pink",
-    "purple": "Purple",
     "red": "Red",
-    "yellow": "Yellow"
+    "green": "Green",
+    "black": "Black",
+    "yellow": "Yellow",
+    "purple": "Purple"
   },
   "calendar": {
     "allDay": "All Day",
@@ -47,22 +41,22 @@
     "time": "Time",
     "event": "Event",
     "noEventsInRange": "There are no events in this range.",
-    "noCalendarsConnected": "No calendars connected. To connect an external calendar, go to the integrations page or ask a user in your Gladys instance to share you his calendars."
+    "noCalendarsConnected": "No calendars connected. To connect an external calendar, go to the integrations page or ask a user in your IHA instance to share you his calendars."
   },
   "device": {
     "searchPlaceHolder": "Search devices",
     "noFeatures": "No features",
-    "tooMuchStatesToDelete": "This device has {{count}} states in database. To prevent your Gladys instance to be slow while deleting them, we've started a delete of those states slowly in background. You can come back to delete this device later when the device will not have any states anymore. To follow the delete job, <a href=\"/dashboard/settings/jobs\">click here</a>."
+    "tooMuchStatesToDelete": "This device has {{count}} states in database. To prevent your IHA instance to be slow while deleting them, we've started a delete of those states slowly in background. You can come back to delete this device later when the device will not have any states anymore. To follow the delete job, <a href=\"/dashboard/settings/jobs\">click here</a>."
   },
   "login": {
-    "title": "Gladys Assistant",
+    "title": "Smart Home Monitoring System For Children With Epilepsy",
     "welcome": "Welcome",
     "createAccountStep": "Create account",
     "preferencesStep": "Your preferences",
     "houseStep": "Configure house",
     "success": "Success!",
     "cardTitle": "Login to your account",
-    "loginWithGladysGatewayButton": "Login with Gladys Gateway",
+    "loginWithGladysGatewayButton": "Login with IHA Gateway",
     "emailLabel": "Email Address",
     "emailPlaceholder": "Enter your email",
     "passwordLabel": "Password",
@@ -71,7 +65,7 @@
     "loginButtonText": "Log in",
     "wrongCredentials": "Wrong email/password.",
     "invalidEmail": "Invalid email",
-    "needHelpText": "Need help? Join us on <a href=\"https://en-community.gladysassistant.com/\" target=\"_blank\" rel=\"noopener noreferrer\"> Gladys Community</a>."
+    "needHelpText": "Need help? Join us on <a href=\"https://en-community.gladysassistant.com/\" target=\"_blank\" rel=\"noopener noreferrer\"> IHA Community</a>."
   },
   "locked": {
     "cardTitle": "Locked House",
@@ -84,18 +78,18 @@
   },
   "signup": {
     "welcome": {
-      "title": "Welcome to Gladys!",
-      "introSentence": "First, thank you for choosing me. I'm Gladys, a privacy-friendly home assistant for your house.",
-      "introTimeToCreateAccount": "It's time to create a local account for your Gladys setup.",
-      "introDontWorryLocal": "Don't worry: Gladys is fully self-hosted, and all the information you'll enter is only saved in the local database of Gladys.",
-      "introInCaseOfIssues": "In case you have issues installing Gladys, check out our <a  href=\"https://gladysassistant.com/docs\" target=\"_blank\" rel=\"noopener noreferrer\">documentation</a> or ask a question on <a href=\"https://en-community.gladysassistant.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Gladys community</a>.",
-      "introReadMoreGladysGateway": "Read more about <a href=\"https://gladysassistant.com/plus\" target=\"_blank\" rel=\"noopener noreferrer\">Gladys Plus.</a>",
-      "buttonCreateAccountGladysGateway": "Gladys Plus backup restore",
+      "title": "Welcome to IHA!",
+      "introSentence": "First, thank you for choosing me. I'm IHA, a privacy-friendly home assistant for your house.",
+      "introTimeToCreateAccount": "It's time to create a local account for your IHA setup.",
+      "introDontWorryLocal": "Don't worry: IHA is fully self-hosted, and all the information you'll enter is only saved in the local database of IHA.",
+      "introInCaseOfIssues": "In case you have issues installing IHA, check out our <a  href=\"https://gladysassistant.com/docs\" target=\"_blank\" rel=\"noopener noreferrer\">documentation</a> or ask a question on <a href=\"https://en-community.gladysassistant.com/\" target=\"_blank\" rel=\"noopener noreferrer\">IHA community</a>.",
+      "introReadMoreGladysGateway": "Read more about <a href=\"https://gladysassistant.com/plus\" target=\"_blank\" rel=\"noopener noreferrer\">IHA Plus.</a>",
+      "buttonCreateAccountGladysGateway": "IHA Plus backup restore",
       "buttonCreateAccountWithEmail": "Create local account"
     },
     "createLocalAccount": {
-      "title": "Create your local Gladys account",
-      "description": "All information entered here is only saved locally in Gladys database. You can update it later at any time.",
+      "title": "Create your local IHA account",
+      "description": "All information entered here is only saved locally in IHA database. You can update it later at any time.",
       "firstnameLabel": "First Name",
       "firstnamePlaceHolder": "Enter your first name",
       "lastnameLabel": "Last Name",
@@ -103,7 +97,6 @@
       "languageLabel": "Language",
       "english": "English",
       "french": "Français",
-      "german": "Deutsch",
       "birthdateLabel": "Birthdate",
       "birthdatePlaceHolder": "Enter your birthdate",
       "january": "January",
@@ -130,14 +123,14 @@
       "passwordError": "Password should be at least 8 characters.",
       "passwordRepeatError": "Passwords do not match.",
       "birthdateError": "Birthdate is required.",
-      "networkError": "Network Error: We didn't succeed in contacting your Gladys instance. Are you connected to the network? Is your Gladys instance running?",
+      "networkError": "Network Error: We didn't succeed in contacting your IHA instance. Are you connected to the network? Is your IHA instance running?",
       "emailAlreadyExistError": "A user with this email already exist.",
       "selectorAlreadyExistError": "A user with this first name already exist.",
       "createAccountButton": "Create Account"
     },
     "restoreBackupSetBackupKey": {
       "title": "Enter your backup key",
-      "description": "As Gladys Plus backups are end-to-end encrypted, we need you to enter your backup key. Your local instance can only decrypt the backup with this backup key.",
+      "description": "As IHA Plus backups are end-to-end encrypted, we need you to enter your backup key. Your local instance can only decrypt the backup with this backup key.",
       "backupKeyLabel": "Backup key",
       "backupKeyPlaceholder": "Enter your backup key",
       "cancelButton": "Cancel",
@@ -145,7 +138,7 @@
     },
     "restoreBackupInProgress": {
       "title": "Restore in progress...",
-      "description": "At the end of the restore process, Gladys will restart automatically.",
+      "description": "At the end of the restore process, IHA will restart automatically.",
       "errored": "Backup restore failed, maybe the restore key is not valid",
       "updateRestoreKeyButton": "Update restore key"
     },
@@ -176,7 +169,7 @@
     },
     "configureHouse": {
       "title": "Configure your house",
-      "description": "All information is only saved in Gladys local database. If you have several houses, you can configure them later in Gladys.",
+      "description": "All information is only saved in IHA local database. If you have several houses, you can configure them later in IHA.",
       "houseNameLabel": "Name",
       "houseNamePlaceHolder": "Enter your house name",
       "houseNameError": "House name is required",
@@ -193,7 +186,7 @@
       "validationError": "House name should be between 1 and 40 characters",
       "validationErrorRoom": "Room name should be between 1 and 40 characters",
       "alarmTitle": "Alarm",
-      "alarmDescription": "If you are using the alarm mode in Gladys, you can configure the alarm deactivation code and the delay before the alarm triggers here. This delay will only apply in the case of manual triggering and not in scenes.",
+      "alarmDescription": "If you are using the alarm mode in IHA, you can configure the alarm deactivation code and the delay before the alarm triggers here. This delay will only apply in the case of manual triggering and not in scenes.",
       "alarmCodeLabel": "Alarm Code",
       "alarmCodePlaceholder": "Enter a numeric code between 4 and 8 digits",
       "alarmDelayBeforeArmingLabel": "Delay before arming the alarm",
@@ -209,9 +202,9 @@
     },
     "success": {
       "title": "Thank you!",
-      "introduction": "I'm <a href=\"https://twitter.com/pierregillesl\" target=\"_blank\" rel=\"noopener noreferrer\">Pierre-Gilles Leymarie</a>, and I started working on Gladys Assistant in 2013.",
-      "thanksForChoosingOpenSource": "I would like to thank you for choosing Gladys. I hope you'll enjoy using this software as much as I enjoyed building it.",
-      "ifYouWantToSupportThisSotware": "I rely on contributions to make this project substainable. If you want to support Gladys and get access to additional features, read more about <a href=\"https://gladysassistant.com/plus\" target=\"_blank\" rel=\"noopener noreferrer\">Gladys Plus</a>.",
+      "introduction": "I'm <a href=\"https://twitter.com/pierregillesl\" target=\"_blank\" rel=\"noopener noreferrer\">Pierre-Gilles Leymarie</a>, and I started working on IHA Assistant in 2013.",
+      "thanksForChoosingOpenSource": "I would like to thank you for choosing IHA. I hope you'll enjoy using this software as much as I enjoyed building it.",
+      "ifYouWantToSupportThisSotware": "I rely on contributions to make this project substainable. If you want to support IHA and get access to additional features, read more about <a href=\"https://gladysassistant.com/plus\" target=\"_blank\" rel=\"noopener noreferrer\">IHA Plus</a>.",
       "goToDashboardButton": "Go to the Dashboard"
     }
   },
@@ -233,22 +226,12 @@
       "houseLabel": "House",
       "tabletModeDisabled": "Tablet Mode Disabled"
     },
-    "duckDbMigrationInProgress": "Your Gladys instance is migrating its database to DuckDB, a new, more powerful database system for time-series data. This task may take some time, during which time not all your charts will be available. Migration progress = {{progress}}%.",
     "editDashboardSaveButton": "Save",
     "emptyDashboardSentenceTop": "Looks like your dashboard is not configured yet.",
     "emptyDashboardSentenceBottom": "Click on the \"Edit\" button to design your dashboard.",
     "noDashboardSentenceBottom": "Click on the \"New\" button to create a new dashboard",
-    "gatewayInstanceNotFoundError": "Your Gladys instance is not connected to the Gladys Gateway",
+    "gatewayInstanceNotFoundError": "Your IHA instance is not connected to the IHA Gateway",
     "editDashboardNameLabel": "Name",
-    "editDashboardVisibility": "Visibility",
-    "editDashboardVisibilityDescription": "Public dashboards will be visible to all members of the Gladys installation.",
-    "editDashboardVisibilityNotEditableNotCreator": "You cannot edit the sharing because you are not the creator of this dashboard.",
-    "visibilities": {
-      "private": "private",
-      "public": "public"
-    },
-    "editDashboardAddColumnButton": "Add a column on dashboard",
-    "editDashboardBoxNotEmpty": "You cannot delete this column as it contains widgets.",
     "editDashboardMyDashboards": "My dashboards",
     "editDashboardExplanation": "Each dashboard has 3 columns, which you can fill in according to your preferences. Click on the + button to add a new widget. You can move this widget by grabbing it and moving it around.",
     "reorderDashboardButton": "Re-order dashboards",
@@ -267,7 +250,6 @@
       "devices": "Devices",
       "chart": "Chart",
       "ecowatt": "Ecowatt (France)",
-      "edf-tempo": "Tempo EDF",
       "clock": "Clock",
       "scene": "Scene",
       "music": "Music"
@@ -277,9 +259,9 @@
       "deleteButton": "Delete",
       "weather": {
         "editHouseLabel": "Select a house. I will use its latitude/longitude to get the weather.",
-        "houseHasNoCoordinates": "Your house has no coordinates defined. Go to Gladys parameters to define the position of your house.",
+        "houseHasNoCoordinates": "Your house has no coordinates defined. Go to IHA parameters to define the position of your house.",
         "serviceNotConfigured": "The OpenWeather service is not configured. Please go to the 'Integrations' tab, and configure the OpenWeather service.",
-        "requestToThirdPartyFailed": "The request to OpenWeather API failed. Is your Gladys instance connected to the internet? Please go to the OpenWeather configuration panel to troubleshoot this problem.",
+        "requestToThirdPartyFailed": "The request to OpenWeather API failed. Is your IHA instance connected to the internet? Please go to the OpenWeather configuration panel to troubleshoot this problem.",
         "clickHere": "Click here to access the OpenWeather configuration panel.",
         "unknownError": "We are unable to get the weather for this house. Did you define a house for this box?",
         "editModeLabel": "Select display mode:",
@@ -297,8 +279,7 @@
         "noRecentValue": "No recent value",
         "deviceTitle": "{{name}} - {{type}}",
         "addButton": "+",
-        "substractButton": "-",
-        "motionDetected": "Motion detected"
+        "substractButton": "-"
       },
       "devices": {
         "editDeviceFeaturesLabel": "Select the devices you want to display:",
@@ -326,14 +307,14 @@
       },
       "camera": {
         "editCameraLabel": "Select the camera you want to display here.",
-        "noImageToShow": "No image to show. Are you sure you camera is connected and accessible to Gladys?",
+        "noImageToShow": "No image to show. Are you sure you camera is connected and accessible to IHA?",
         "editBoxNameLabel": "Enter the name you want to give to the box:",
         "editBoxNamePlaceholder": "Name of the box",
         "latencyBoxName": "Latency",
         "latencyBoxDescription": "The lower the latency you select, the faster the live stream will start. However, to have a low latency, you need a very fast internet connection with a minimum of ping or the video will be jerky. We recommend medium or low latency.",
-        "upgradeGladysPlusPlanError": "Camera streaming is not included in your Gladys Plus plan. You need to update it in Settings -> Billing.",
+        "upgradeGladysPlusPlanError": "Camera streaming is not included in your IHA Plus plan. You need to update it in Settings -> Billing.",
         "liveStartError": "An error occured while starting this live stream. Are you sure the URL of your camera is a video flux and not an image?",
-        "notNotSupportedBrowser": "This browser is not supported. To enable end-to-end encryption of this video stream, we use the MediaSource API, which may not be supported on this browser. We recommend Firefox, Safari, or any Chromium-based browser.",
+        "notNotSupportedBrowser": "This browser is not supported. In order to enable end-to-end encryption of this video stream, we use the MediaSource API, which is unfortunately not available on Safari iPhone. Strangely, this feature is available on Safari iPad and MacOS... We'll have to be patient, let's hope the API will be available on iPhone soon!",
         "tooManyRequests": "You have reached your monthly video bandwidth limit. Contact us by email or on the forum to get more bandwidth!",
         "liveAutoStartLabel": "Start automatically the live streaming",
         "liveAutoStartDescription": "Warning: This can increase the load on your machine/network.",
@@ -353,32 +334,22 @@
         "lastThreeMonths": "Last 3 months",
         "lastYear": "Last year",
         "noValue": "No values recorded on this interval.",
-        "noValueWarning": "Warning: if you just configured this device, it may take some time before you see something here as Gladys needs some time to collect enough data. For interval superior to 24h, it may take up to 24h before you see something here.",
-        "noChartType": "No chart type selected",
-        "noChartTypeWarning": "If you just configured this device, please go back to the box edit page and select a chart type.",
+        "noValueWarning": "Warning: if you just configured this device, it may take some time before you see something here as IHA needs some time to collect enough data. For interval superior to 24h, it may take up to 24h before you see something here.",
         "editNameLabel": "Enter the name of this box",
         "editDeviceFeaturesLabel": "Select the device you want to display here",
         "editRoomLabel": "Select the room you want to display here",
         "editNamePlaceholder": "Name displayed on the dashboard",
         "chartType": "Select the type of chart to display",
-        "chartColor": "Select the color of chart",
-        "dataColor": "Select color for {{featureLabel}}",
-        "timelineColor": "Select color for position",
         "line": "Line",
         "area": "Area",
         "bar": "Bar",
-        "timeline": "Binary",
         "stepline": "Step Line",
         "displayAxes": "Display axes?",
         "displayVariation": "Display variation?",
         "yes": "Yes",
         "no": "No",
         "preview": "Preview",
-        "showPreviewButton": "Show preview",
-        "on": "On",
-        "off": "Off",
-        "start_date": "Start date: ",
-        "end_date": "End date: "
+        "showPreviewButton": "Show preview"
       },
       "ecowatt": {
         "title": "Ecowatt France",
@@ -389,18 +360,6 @@
         "ok": "Network ok",
         "warning": "Network warning",
         "critical": "Network critical"
-      },
-      "edfTempo": {
-        "description": "This widget allows you to display the current EDF Tempo state.",
-        "link": "Learn more about EDF Tempo",
-        "blueDay": "Blue Day",
-        "whiteDay": "White Day",
-        "redDay": "Red Day",
-        "notDefinedDay": "Not Defined",
-        "currentHourState": "Currently",
-        "peakHour": "Peak Hour",
-        "offPeakHour": "Off-Peak Hour",
-        "dayPeakTitle": "Tempo days"
       },
       "clock": {
         "analog": "Analog",
@@ -462,10 +421,9 @@
     },
     "telegram": {
       "title": "Telegram",
-      "description": "Chat with Gladys remotely through Telegram.",
-      "documentation": "Telegram documentation",
-      "introduction": "To connect Gladys to Telegram, you first need to create a Telegram bot using the Botfather. Send a <b>/newbot</b> message to the <a href=\"https://telegram.me/BotFather\">@BotFather</a> in Telegram. Then, enter the API key he gave you below.",
-      "link": "<b>ACTION REQUIRED:</b> To talk to Gladys in Telegram, click on <a href=\"{{link}}\">this link</a>. Don't speak in Telegram directly to your bot before having click on this link, otherwise your bot won't be able to know that it's you who are sending a message.",
+      "description": "Chat with IHA remotely through Telegram.",
+      "introduction": "To connect IHA to Telegram, you first need to create a Telegram bot using the Botfather. Send a <b>/newbot</b> message to the <a href=\"https://telegram.me/BotFather\">@BotFather</a> in Telegram. Then, enter the API key he gave you below.",
+      "link": "<b>ACTION REQUIRED:</b> To talk to IHA in Telegram, click on <a href=\"{{link}}\">this link</a>. Don't speak in Telegram directly to your bot before having click on this link, otherwise your bot won't be able to know that it's you who are sending a message.",
       "note": "This link is unique to your account, do not send it to other users.",
       "configurationError": "We were not able to configure your account. Are you sure this token is valid?",
       "apiKey": "Telegram Bot API Key",
@@ -473,8 +431,7 @@
     },
     "nextcloudTalk": {
       "title": "Nextcloud Talk",
-      "description": "Speak with Gladys thanks to Nextcloud Talk.",
-      "documentation": "Nextcloud Talk documentation",
+      "description": "Speak with IHA thanks to Nextcloud Talk.",
       "introduction": "To speak through Nextcloud Talk, you need a specific Nextcloud account for your bot.",
       "url": "Nextcloud host",
       "urlInfo": "Enter your Nextcloud base URL.",
@@ -493,17 +450,15 @@
       "description": "Control Philips Hue Lights and plugs with the official hub",
       "deviceTab": "Devices",
       "setupTab": "Setup Bridges",
-      "documentation": "Philips Hue documentation",
+      "documentation": "Documentation",
       "setup": {
         "connectedBridgesTitle": "Connected bridges",
         "disconnectButton": "Disconnect",
         "bridgesOnNetwork": "Bridges on network",
         "connectButton": "Connect/Reconnect",
-        "syncBridges": "Sync bridges",
-        "bridgeNotUpToDateInfo": "If you've just added a bulb to the Philips Hue app and that bulb isn't directly controllable by Gladys, you need to come here and click the \"Sync Bridges\" button, which will bring back all the information about this new bulb into Gladys.",
         "scanButton": "Scan network",
         "bridgeButtonNotPressed": "Bridge button not pressed: Please press the button on your Philips Hue bridge and try again.",
-        "unknownError": "An unknown error occurred. Please try again or contact Gladys community.",
+        "unknownError": "An unknown error occurred. Please try again or contact IHA community.",
         "noBridgesFound": "We didn't find any Philips Hue bridges on your network. Are you sure you are connected to the same network as your bridge and your bridge is turned on?",
         "manualConfiguration": {
           "title": "Manual configuration",
@@ -512,21 +467,20 @@
         }
       },
       "device": {
-        "title": "Devices in Gladys",
+        "title": "Devices in IHA",
         "deviceOnNetworkTitle": "Devices detected on network",
         "connectButton": "Connect/Reconnect",
         "noDevices": "No Philips Hue device added yet.",
-        "deviceNotHandled": "Device not handled yet, please contact us to help us connect it in Gladys!",
+        "deviceNotHandled": "Device not handled yet, please contact us to help us connect it in IHA!",
         "noDevicesFound": "No devices found. Make sure you have connected one Philips Hue bridge in the setup tab.",
         "createGithubIssue": "Suggest this device"
       }
     },
     "rtspCamera": {
       "title": "Cameras",
-      "description": "Display your cameras video flux in Gladys.",
+      "description": "Display your cameras video flux in IHA.",
       "search": "Search cameras",
       "new": "New",
-      "documentation": "Camera documentation",
       "documentationButton": "Documentation",
       "nameLabel": "Camera Name",
       "namePlaceholder": "Enter the name of your camera",
@@ -545,94 +499,11 @@
       "saveButton": "Save",
       "deleteButton": "Delete",
       "saveError": "There was an error saving the camera.",
-      "testConnectionError": "There was an error while getting the RTSP Flux. Are you sure the provided URL is right and accessible from Gladys instance?",
+      "testConnectionError": "There was an error while getting the RTSP Flux. Are you sure the provided URL is right and accessible from IHA instance?",
       "rotationO": "No rotation",
       "rotation90": "90°",
       "rotation18O": "180°",
       "rotation27O": "270°"
-    },
-    "netatmo": {
-      "title": "Netatmo",
-      "description": "Control Netatmo equipment",
-      "deviceTab": "Devices",
-      "discoverTab": "Netatmo Discovery",
-      "setupTab": "Setup",
-      "documentation": "Netatmo Documentation",
-      "discoverDeviceDescr": "Automatically scan Netatmo devices",
-      "status": {
-        "notConfigured": "The Netatmo service is not configured",
-        "disconnect": "Gladys is not connected to Netatmo",
-        "notConnected": "Gladys failed to connect to the Netatmo account, please verify your credentials on the ",
-        "setupPageLink": "Netatmo Setup Page.",
-        "connect": "Gladys is connected to Netatmo",
-        "connecting": "Configuration saved. Connecting to your Netatmo account...",
-        "processingToken": "Connecting to your Netatmo account... Retrieving access token.",
-        "getDevicesValues": "Data recovery in progress...",
-        "dicoveringDevices": "Device recovery in progress...",
-        "errorConnecting": {
-          "other_error": "Error during authorization. You can inspect the error in your browser's console with a right click. If the error persists, please post the logs on the forum.",
-          "access_denied": "Authorization declined, please try again and accept the request for access to your data.",
-          "invalid_client": "Invalid client ID. Please verify your Netatmo account information and that the account is not banned or disabled on <a href=\"https://dev.netatmo.com/apps/\" target=\"_blank\" rel=\"noopener noreferrer\">My App</a>.",
-          "get_access_token_fail": "Incorrect information entered or account disabled. Please check your Netatmo account information and that the account is not banned or disabled <a href=\"https://dev.netatmo.com/apps/\" target=\"_blank\" rel=\"noopener noreferrer\">My App</a>."
-        },
-        "weatherApiNotConfigured": "Please go to the \"Configuration\" tab to activate access to the \"Weather\" API in order to have access to the full information of your station.",
-        "energyApiNotConfigured": "Please go to the \"Configuration\" tab to activate access to the \"Energy\" API in order to have access to the full information of your devices."
-      },
-      "device": {
-        "title": "Netatmo Devices in Gladys",
-        "descriptionInformation": "State retrieval is currently done every 2 minutes (Netatmo API limitation).",
-        "noDeviceFound": "No Netatmo devices have been added yet.",
-        "sidLabel": "Netatmo device SID",
-        "nameLabel": "Device name",
-        "namePlaceholder": "Enter your device name",
-        "modelLabel": "Model",
-        "roomLabel": "Room",
-        "connectedPlugLabel": "Connected to bridge",
-        "roomNetatmoApiLabel": "Room in Netatmo API",
-        "featuresLabel": "Features",
-        "saveButton": "Save",
-        "saveNotAllowButton": "Save not possible",
-        "deleteButton": "Delete",
-        "noValueReceived": "No value received."
-      },
-      "discover": {
-        "title": "Your Netatmo Devices Compatible with Gladys",
-        "description": "Your Netatmo devices must be added to your Netatmo account before being added to Gladys, which currently only supports Thermostats and the valves associated with their Plug (API Energy) as well as weather stations and their modules (API Weather). If you are missing devices, please check that you have selected the correct APIs on the configuration page. The first discovery is automatic. Press 'Refresh' if you wish to retrieve new features of your devices.",
-        "descriptionCompatibility": "For any requests to add devices and/or features, please visit the <a href=\"https://en-community.gladysassistant.com/c/feature-requests\" target=\"_blank\" rel=\"noopener noreferrer\">Gladys Assistant Forum - Feature Requests Category</a>.",
-        "descriptionInformation": "State retrieval is currently done every 2 minutes (Netatmo API limitation).",
-        "noDeviceFound": "No Netatmo devices were found. If you are certain that you have a Netatmo device supported by Gladys, have you completed all the steps in the documentation to register your devices on the Netatmo API?",
-        "alreadyCreatedButton": "Already Created",
-        "unmanagedModelButton": "Unsupported model",
-        "updateButton": "Update",
-        "scan": "Scan",
-        "refresh": "Refresh"
-      },
-      "setup": {
-        "title": "Netatmo Setup",
-        "description": "You can connect Gladys to your Netatmo account to control the associated devices.",
-        "descriptionCreateAccount": "You need to create an account on <a href=\"https://auth.netatmo.com/en-us/access/login\" target=\"_blank\" rel=\"noopener noreferrer\">Netatmo Connect</a>.",
-        "descriptionCreateProject": "You will then need to create an \"application\" in your Netatmo developer account via the <a href=\"https://dev.netatmo.com/apps/\" target=\"_blank\" rel=\"noopener noreferrer\">My App</a>.",
-        "descriptionGetKeys": "You will then have access to two keys: \"client ID\" and \"client secret\" to copy below.",
-        "descriptionScopeInformation": "When you connect Gladys to your dedicated Netatmo App, you grant it permission to access your data in read and write modes (referred to as \"read\" and \"write\" scopes). You don't have to configure anything, these scopes are automatically integrated and will be presented to you during the connection request (see documentation if needed). Of course, since Gladys is installed locally, none of these data is exposed.",
-        "titleAdditionalInformationEnergyApi": "Additional Information on the Operation of the \"Energy\" API:",
-        "descriptionAdditionalInformationEnergyApi": "You must select the \"Energy\" API at the bottom of the page to access the corresponding devices. Temperature commands are performed at the room level. Therefore, both pieces of information are available as features for more control. If you have other temperature sensors in the same room as your Thermostat, it's the average temperature of that room that will be considered to trigger the heating control switch.",
-        "titleAdditionalInformationWeatherApi": "Additional Information on the Operation of the \"Weather\" API:",
-        "descriptionAdditionalInformationWeatherApi": "You must select the \"Weather\" API at the bottom of the page to access the corresponding devices. If you also have devices belonging to the \"Energy\" API (Plug, thermostat or valve) you will have access to an additional functionality on indoor hygrometer devices to obtain the average temperature of the corresponding room. So don't forget to select the \"Energy\" API to access this functionality.",
-        "clientIdLabel": "Client ID",
-        "clientIdPlaceholder": "Client ID from My Apps in Netatmo Connect",
-        "clientSecretLabel": "Client Secret",
-        "clientSecretPlaceholder": "Client secret from My Apps in Netatmo Connect",
-        "connectionInfoLabel": "When you change this information, a new token is required. Disconnecting will also erase your access token. A new connection request will therefore be made to the Netatmo API when you click on these buttons.",
-        "energyApiLabel": "Enable \"Energy\" API (retrieve Netatmo Plug, Thermostat, and Valve devices)",
-        "weatherApiLabel": "Enable \"Weather\" API (retrieve Netatmo Weather Station devices)",
-        "saveLabel": "Save and connect",
-        "disconnectLabel": "Disconnect"
-      },
-      "error": {
-        "defaultError": "An error occurred while registering the device.",
-        "defaultDeletionError": "An error occurred while deleting the device.",
-        "conflictError": "The current device is already in Gladys."
-      }
     },
     "tasmota": {
       "title": "Tasmota",
@@ -641,7 +512,7 @@
       "mqttDiscoverTab": "MQTT discover",
       "httpDiscoverTab": "HTTP discover",
       "device": {
-        "title": "Tasmota devices in Gladys",
+        "title": "Tasmota devices in IHA",
         "editButton": "Edit",
         "noDeviceFound": "No Tasmota device found.",
         "protocolLabel": "Protocol",
@@ -696,11 +567,10 @@
     },
     "tpLink": {
       "title": "TP-Link",
-      "description": "Control TP-Link Bulbs and Plugs in Gladys",
+      "description": "Control TP-Link Bulbs and Plugs in IHA",
       "deviceTab": "Devices",
-      "documentation": "TP-Link documentation",
       "device": {
-        "title": "Devices in Gladys",
+        "title": "Devices in IHA",
         "nameLabel": "Name",
         "noNameLabel": "No name",
         "roomLabel": "Room",
@@ -712,7 +582,7 @@
         "noDevices": "No TP-Link device added yet.",
         "noDevicesFound": "No devices found. Make sure you have connected one TP-Link Device (Bulb/Plug) to your WiFi.",
         "deviceOnNetworkTitle": "Devices detected on network",
-        "deviceNotHandled": "Device not handled yet, please contact us to help us connect it in Gladys!",
+        "deviceNotHandled": "Device not handled yet, please contact us to help us connect it in IHA!",
         "createGithubIssue": "Suggest this device",
         "saveError": "Error while saving, please try again.",
         "deleteError": "Error when deleting, please try again."
@@ -723,75 +593,49 @@
       "description": "Control your Zigbee devices with Zigbee2mqtt",
       "deviceTab": "Devices",
       "discoverTab": "Discover",
+      "settingsTab": "Settings",
       "setupTab": "Setup",
       "status": {
         "notConfigured": "Zigbee2mqtt USB dongle is not configured, please go to ",
         "notEnabled": "Zigbee2mqtt is not activated, please go to ",
+        "mqttNotInstalled": "MQTT broker failed to install",
+        "mqttNotRunning": "MQTT broker failed to start",
+        "zigbee2mqttNotInstalled": "Zigbee2mqtt failed to install",
+        "zigbee2mqttNotRunning": "Zigbee2mqtt failed to start",
+        "gladysNotConnected": "IHA failed to connect to MQTT",
+        "zigbee2mqttNotConnected": "Zigbee2mqtt failed to connect to MQTT",
         "settingsPageLink": "USB dongle configuration page",
         "setupPageLink": "Zigbee2mqtt configuration page"
       },
+      "settings": {
+        "title": "Zigbee2mqtt USB dongle Settings",
+        "description": "To use Zigbee2mqtt in IHA, you need to have a Zigbee2mqtt USB Dongle attached to your IHA instance.",
+        "zigbee2mqttUsbDriverPathLabel": "Select the USB port where your Zigbee2mqtt Dongle is connected",
+        "zigbee2mqttUsbDriverPathPlaceholder": "USB port",
+        "zigbee2mqttUsbDongleNameLabel": "Select your Zigbee Dongle model",
+        "zigbee2mqttUsbDongleNamePlaceholder": "Zigbee Dongle model",
+        "saveButton": "Save Settings",
+        "refreshButton": "Refresh USB list",
+        "notAttached": "IHA is not attached to any Zigbee2mqtt USB Dongle.",
+        "attached": "Zigbee2mqtt USB Dongle configured.",
+        "saving": "Saving USB Dongle configuration..."
+      },
       "setup": {
-        "title": "Zigbee2mqtt Service Configuration",
-        "modes": {
-          "local": {
-            "title": "Installation from Gladys",
-            "description": "Gladys will configure two Docker containers: MQTT and Zigbee2mqtt.",
-            "dockerInstallationRequirementLabel": "Gladys must run under Docker",
-            "dockerNetworkHostRequirementLabel": "Gladys Docker container must be started with the option \"network=host\"",
-            "usbDongleRequirementLabel": "Zigbee USB dongle must be connected",
-            "detailsDescription": "To use Zigbee2mqtt with Gladys, a Zigbee USB dongle must be inserted.",
-            "usbDriverPathLabel": "Select the USB port where the Zigbee dongle is inserted",
-            "usbDriverPathPlaceholder": "USB Port",
-            "usbDongleNameLabel": "Select the model of the Zigbee dongle used",
-            "usbDongleNamePlaceholder": "Zigbee Dongle Model",
-            "z2mTcpPortLabel": "Enter the TCP port exposed by the Zigbee2Mqtt web application",
-            "z2mTcpPortDescription": "If left empty, a random port will be used.",
-            "summary": {
-              "title": "Configuration",
-              "usbPort": "USB Port",
-              "dongleName": "Dongle",
-              "unknownDongle": "Not defined",
-              "tcpPort": "TCP Port"
-            }
-          },
-          "remote": {
-            "title": "Connect to an Existing Installation",
-            "description": "Gladys will connect to an existing external installation through MQTT.",
-            "z2mInstallationRequirementLabel": "A standalone Zigbee2Mqtt application",
-            "mqttBrokerRequirementLabel": "An MQTT broker connected to the Zigbee2Mqtt application",
-            "detailsDescription": "With this configuration mode, it is possible to connect to an external Zigbee2Mqtt installation with its MQTT broker.",
-            "mqttModeLabel": "Choose MQTT broker",
-            "external": {
-              "modeLabel": "External MQTT"
-            },
-            "summary": {
-              "title": "Configuration",
-              "mqttMode": "MQTT Broker"
-            }
-          }
-        },
-        "requirementsLabel": "<u>Conditions</u>:",
-        "selectInstallationMode": "Choose",
-        "changeButtonLabel": "Change",
-        "resetLabel": "Cancel",
-        "errorLoadingStatesLabel": "An error occurred while loading Gladys service information. Make sure Gladys is up to date, otherwise check the logs.",
-        "saveError": "The configuration did not allow the service to start, please verify it.",
-        "enableLabel": "Enable or disable the service",
-        "enableDescription": "At the next restart of Gladys, the service will start again. Depending on the power of your machine and the speed of your network, starting this service in \"Installation from Gladys\" mode can take between 2 minutes and 1 hour. It is possible to permanently disable the service from this page: <a href=\"/dashboard/settings/service\">Settings > Services</a>.",
-        "toggleError": "An error occurred. Please check the service configuration.",
-        "serviceStatus": "Service Status",
-        "description": "This service uses two Docker containers (MQTT broker and Zigbee2mqtt). Enable Zigbee2mqtt to deploy these containers. For more information, visit the Zigbee2mqtt documentation page.",
-        "nonDockerEnv": "Gladys is currently not running in Docker, it is impossible to enable Zigbee2mqtt from Gladys.",
-        "invalidDockerNetwork": "Gladys is based on a custom installation, to install Zigbee2mqtt from this page, the Gladys Docker container must be started with the \"network=host\" option.",
+        "title": "Zigbee2mqtt configuration",
+        "description": "This service uses two independent docker containers (MQTT broker and Zigbee2mqtt). Enable Zigbee2mqtt for deploying these containers.\nLearn more on the Zigbee2mqtt documentation page",
+        "enableLabel": "Zigbee2mqtt activation",
+        "nonDockerEnv": "IHA is not running on Docker, you cannot install a MQTT broker from here.",
+        "invalidDockerNetwork": "IHA is under custom installation, to install broker from here, IHA container should be configured with \"host\" network mode.",
         "enableZigbee2mqtt": "Enable Zigbee2mqtt",
-        "containersStatus": "Containers related to Zigbee2mqtt",
+        "containersStatus": "Zigbee2mqtt Containers",
+        "serviceStatus": "Zigbee2mqtt Service Status",
         "link": "Link",
-        "connected": "Zigbee2mqtt started successfully.",
-        "error": "An error occurred while starting the Zigbee2mqtt service.",
+        "connected": "Zigbee2mqtt was started with success.",
+        "error": "An error occurred while starting Zigbee2mqtt.",
         "mqttZigbeeLink": "MQTT - Zigbee",
-        "gladysMqttLink": "Gladys - MQTT",
+        "gladysMqttLink": "IHA - MQTT",
         "zigbee2Mqtt": "Zigbee2mqtt",
-        "gladys": "Gladys",
+        "gladys": "IHA",
         "mqtt": "MQTT",
         "status": "Status",
         "connectionUrl": "Zigbee2mqtt Interface URL: <a href=\"{{url}}\" target=\"_blank\">{{url}}</a>"
@@ -805,9 +649,9 @@
         "permitJoin": "Permit joining",
         "hideExistingDevices": "Hide already added devices",
         "noDeviceDiscovered": "No new device discovered, please click on scan button.",
-        "serverNoResponse": "Gladys server is not available.",
-        "serverNoResponseWebSocker": "Gladys server is not available. Please refresh the page.",
-        "deviceNotHandled": "Device not handled yet, please contact us to help us connect it in Gladys!",
+        "serverNoResponse": "IHA server is not available.",
+        "serverNoResponseWebSocker": "IHA server is not available. Please refresh the page.",
+        "deviceNotHandled": "Device not handled yet, please contact us to help us connect it in IHA!",
         "createGithubIssue": "Suggest this device"
       },
       "noDeviceFound": "No Zigbee2mqtt device found.",
@@ -829,19 +673,20 @@
       "description": "Control your devices with Node-RED.",
       "setupTab": "Setup",
       "documentation": "Node-RED documentation",
+
       "status": {
         "notInstalled": "Node-RED server failed to install.",
         "notRunning": "Node-RED server failed to start.",
         "running": "Node-RED successfully started.",
         "notEnabled": "Node-RED is not activated.",
-        "nonDockerEnv": "Gladys is not running on Docker, you cannot install a Node-RED server from here.",
-        "invalidDockerNetwork": "Gladys is under custom installation, to install server from here, Gladys container should be configured with \"host\" network mode."
+        "nonDockerEnv": "IHA is not running on Docker, you cannot install a Node-RED server from here.",
+        "invalidDockerNetwork": "IHA is under custom installation, to install server from here, IHA container should be configured with \"host\" network mode."
       },
       "setup": {
         "title": "Node-RED configuration",
-        "description": "This service uses Docker container. Enable Node-RED for deploying this container.\nLearn more on the node-red documentation page",
-        "descriptionBackup": "For the moment, Node-RED is not backup into Gladys Plus.\nIf you want a backup for Node-RED, please follow this <a href=\"https://community.gladysassistant.com/t/mini-tuto-backup-par-email-des-flows-node-red/8402\" target=\"_blank\" rel=\"noopener noreferrer\">docs</a>",
-        "error": "An error occured while starting Node-RED.",
+        "description": "This service uses docker container. Enable Node-RED for deploying this container.\nLearn more on the node-red documentation page",
+        "descriptionBackup": "For the moment, Node-RED is not backup into IHA Plus.\nIf you want a backup for Node-RED, please follow this <a href=\"https://community.gladysassistant.com/t/mini-tuto-backup-par-email-des-flows-node-red/8402\" target=\"_blank\" rel=\"noopener noreferrer\">docs</a>",
+        "error": "An error occured while starting  Node-RED.",
         "enableLabel": "Node-RED activation",
         "enableNodeRed": "Enable",
         "disableNodeRed": "Disable",
@@ -852,19 +697,19 @@
         "containersStatus": "Containers related to Node-RED",
         "status": "Status",
         "node-red": "Node-RED",
-        "gladys": "Gladys",
+        "gladys": "IHA",
         "usernameLabel": "Username",
         "passwordLabel": "Password",
-        "urlLabel": "Node-RED interface url: <a href=\"{{nodeRedUrl}}\" target=\"_blank\">{{nodeRedUrl}}</a> (Not accessible from Gladys Plus)"
+        "urlLabel": "Node-RED interface url: <a href=\"{{nodeRedUrl}}\" target=\"_blank\">{{nodeRedUrl}}</a> (Not accessible from IHA Plus)"
       }
     },
+
     "googleHome": {
       "title": "Google Home",
-      "documentation": "Google Home documentation",
-      "description": "Control your Gladys device with your voice in Google Home",
-      "longDescription": "It's possible to use Google Home to control your Gladys devices by voice. To configure Google Home with Gladys, follow this tutorial <a href=\"https://gladysassistant.com/docs/integrations/google-home/\"  target=\"_blank\" rel=\"noopener noreferrer\">in our documentation</a>.",
-      "pageTitle": "Gladys Assistant",
-      "cardTitle": "Do you want to connect Gladys Assistant to Google?",
+      "description": "Control your IHA device with your voice in Google Home",
+      "longDescription": "It's possible to use Google Home to control your IHA devices by voice. To configure Google Home with IHA, follow this tutorial <a href=\"https://gladysassistant.com/docs/integrations/google-home/\"  target=\"_blank\" rel=\"noopener noreferrer\">in our documentation</a>.",
+      "pageTitle": "IHA Assistant",
+      "cardTitle": "Do you want to connect IHA Assistant to Google?",
       "pageDescription": "By signin in, you are authorizing Google to access your devices.",
       "error": "An error occured. Please retry !",
       "connectedAs": "Connected as",
@@ -878,11 +723,10 @@
     },
     "alexa": {
       "title": "Amazon Alexa",
-      "documentation": "Alexa documentation",
-      "description": "Control your Gladys device with your voice in Alexa",
-      "longDescription": "It's possible to use Amazon Alexa to control your Gladys devices by voice. To configure Alexa with Gladys, follow this tutorial <a href=\"https://gladysassistant.com/docs/integrations/alexa/\"  target=\"_blank\" rel=\"noopener noreferrer\">in our documentation</a>.",
-      "pageTitle": "Gladys Assistant",
-      "cardTitle": "Do you want to connect Gladys Assistant to Amazon Alexa?",
+      "description": "Control your IHA device with your voice in Alexa",
+      "longDescription": "It's possible to use Amazon Alexa to control your IHA devices by voice. To configure Alexa with IHA, follow this tutorial <a href=\"https://gladysassistant.com/docs/integrations/alexa/\"  target=\"_blank\" rel=\"noopener noreferrer\">in our documentation</a>.",
+      "pageTitle": "IHA Assistant",
+      "cardTitle": "Do you want to connect IHA Assistant to Amazon Alexa?",
       "pageDescription": "By signin in, you are authorizing Alexa to access your devices.",
       "error": "An error occured. Please retry !",
       "connectedAs": "Connected as",
@@ -896,18 +740,17 @@
     },
     "enedis": {
       "title": "Enedis",
-      "description": "Your electricity consumption data in Gladys",
+      "description": "Your electricity consumption data in IHA",
       "welcomeTab": "Connection with Enedis",
       "usagePointsTab": "My meters",
-      "documentation": "Enedis documentation",
       "welcome": {
         "title": "Connection with Enedis",
-        "longDescription": "Enedis manages the electricity network up to the electricity meter. To retrieve your electricity consumption in Gladys, authorise Enedis to send us your Linky data.",
+        "longDescription": "Enedis manages the electricity network up to the electricity meter. To retrieve your electricity consumption in IHA, authorise Enedis to send us your Linky data.",
         "longDescription2": "Enedis is the operator of the public electricity distribution network in 95% of mainland France.",
         "longDescription3": "To give your permission, you must create a personal Enedis account if you do not already have one. It also allows you to monitor and manage your electricity consumption data. You will need your electricity bill to create your account.",
         "buttonDescription": "By clicking on this button, you will access your personal Enedis account where you can give your consent for Enedis to transmit your data to us:",
         "error": "An error occurred during the linking process with your Enedis account, please try again.",
-        "notOnGladysGateway": "This integration is available via Gladys Plus, to connect/re-connect go to the Gladys Plus interface, available here:",
+        "notOnGladysGateway": "This integration is available via IHA Plus, to connect/re-connect go to the IHA Plus interface, available here:",
         "connectedToUsagePointds": "Successfully connected to Enedis! The first sync will take from 2 to 3 hours depending on the volume of request on Enedis API. No need to keep this tab open during this time.",
         "reconnectInfo": "If you ever want to refresh your access key, you can repeat the login process. It is necessary to log in again once every 2 years.",
         "dailyConsumptionFeatureName": "Daily consumption"
@@ -930,40 +773,37 @@
         "lastValueLabel": "Last value :",
         "numberOfStatesLabel": "Number of synchronised states:",
         "gladysPlusRefreshProgressLabel": "Synchronisation in progress...",
-        "gladysPlusRefreshProgressDescription": "Gladys Plus is currently refreshing its cache via the Enedis API. This synchronisation may take some time, as Enedis imposes query limits. No needs to keep this tab open.",
-        "refreshLocal": "Synchronise with Gladys Plus",
-        "explanation": "The synchronization with Enedis is done automatically between Gladys Plus and Enedis every day between 8:30 and 11:30. It is possible that on some days the data may be available late. On the Gladys side, Gladys automatically synchronizes with Gladys Plus every hour.",
+        "gladysPlusRefreshProgressDescription": "IHA Plus is currently refreshing its cache via the Enedis API. This synchronisation may take some time, as Enedis imposes query limits. No needs to keep this tab open.",
+        "refreshLocal": "Synchronise with IHA Plus",
+        "explanation": "The synchronization with Enedis is done automatically between IHA Plus and Enedis every day between 8:30 and 11:30. It is possible that on some days the data may be available late. On the IHA side, IHA automatically synchronizes with IHA Plus every hour.",
         "saveButton": "Save",
         "deleteButton": "Delete"
       }
     },
     "homekit": {
       "title": "Apple HomeKit",
-      "documentation": "HomeKit documentation",
-      "description": "Connect Gladys to HomeKit and use Siri to control your devices.",
-      "introduction": "To connect Gladys to HomeKit, you need an Apple device (iPhone, iPad, iPod touch).",
-      "qrCode": "Scan this QR code from your iOS Home app to add Gladys and all compatible devices.",
+      "description": "Connect IHA to HomeKit and use Siri to control your devices.",
+      "introduction": "To connect IHA to HomeKit, you need an Apple device (iPhone, iPad, iPod touch).",
+      "qrCode": "Scan this QR code from your iOS Home app to add IHA and all compatible devices.",
       "configurationError": "An error appears while getting settings.",
-      "reload": "If you add a device recently on Gladys and it is not on Home app, try to reload the service with this button.",
+      "reload": "If you add a device recently on IHA and it is not on Home app, try to reload the service with this button.",
       "reloadButton": "Reload",
-      "reset": "If there are any connection problems between your Home app and HomeKit Gladys bridge you can try to reset it by clicking the button below. <b>WARNING</b>, you will need to remove and add the Gladys bridge again to your Home application on your Apple device.",
+      "reset": "If there are any connection problems between your Home app and HomeKit IHA bridge you can try to reset it by clicking the button below. <b>WARNING</b>, you will need to remove and add the IHA bridge again to your Home application on your Apple device.",
       "resetButton": "Reset",
       "resetError": "An error appears while resetting bridge."
     },
     "owntracks": {
-      "title": "OwnTracks",
-      "description": "Send your GPS location to Gladys with a mobile app",
-      "documentation": "OwnTracks documentation",
-      "longDescription": "OwnTracks is an open-source app running on iOS and Android that let you send your geolocation to a server. You can use OwnTracks to trigger scenes based on your geolocation. To configure OwnTracks with Gladys, follow this tutorial <a href=\"https://gladysassistant.com/docs/integrations/owntracks/\"  target=\"_blank\" rel=\"noopener noreferrer\">in our documentation</a>."
+      "title": "Owntracks",
+      "description": "Send your GPS location to IHA with a mobile app",
+      "longDescription": "Owntracks is an open-source app running on iOS and Android that let you send your geolocation to a server. You can use Owntracks to trigger scenes based on your geolocation. To configure Owntracks with IHA, follow this tutorial <a href=\"https://gladysassistant.com/docs/integrations/owntracks/\"  target=\"_blank\" rel=\"noopener noreferrer\">in our documentation</a>."
     },
     "zwave": {
       "title": "Open-Zwave [OLD]",
       "description": "This integration is deprecated, we are migrating to zwave-js-ui.",
-      "documentation": "Open-Zwave documentation",
       "device": {
         "title": "Legacy Open-Zwave Devices",
         "convertToMqtt": "Convert to MQTT device",
-        "oldIntegrationWarning": "This integration was based on Open-Zwave and is now DEPRECATED. We are migrating to Zwave-js-ui, but in the meantime we recommend that you use Node-RED + Zwave-js-ui + Gladys. <br /> <br /> If you want to help us develop this integration, join-us on the <a href=\"https://en-community.gladysassistant.com/\" target=\"_blank\" rel=\"noopener noreferrer\">forum</a>!",
+        "oldIntegrationWarning": "This integration was based on Open-Zwave and is now DEPRECATED. We are migrating to Zwave-js-ui, but in the meantime we recommend that you use Node-RED + Zwave-js-ui + IHA. <br /> <br /> If you want to help us develop this integration, join-us on the <a href=\"https://en-community.gladysassistant.com/\" target=\"_blank\" rel=\"noopener noreferrer\">forum</a>!",
         "noDevices": "No Z-Wave devices added yet.",
         "scanButton": "Scan",
         "nameLabel": "Name",
@@ -978,9 +818,8 @@
     },
     "openWeather": {
       "title": "OpenWeather API",
-      "documentation": "OpenWeather documentation",
       "description": "Display the weather in your town on your dashboard.",
-      "introduction": "This integration helps you integrate with OpenWeather API to get the weather in Gladys.",
+      "introduction": "This integration helps you integrate with OpenWeather API to get the weather in IHA.",
       "instructions": "You first need to create an account on OpenWeather API website: <a href=\"https://openweathermap.org/api\">https://openweathermap.org/api</a>.",
       "apiKeyLabel": "Then, enter your API key here:",
       "apiKeyPlaceholder": "Enter OpenWeather API key",
@@ -1005,13 +844,13 @@
       "deleteButton": "Delete",
       "unmanagedModelButton": "Model not managed or available",
       "status": {
-        "notConnected": "Gladys failed to connect to Tuya cloud account, please go to ",
+        "notConnected": "IHA failed to connect to Tuya cloud account, please go to ",
         "setupPageLink": "Tuya configuration page.",
         "online": "Online",
         "offline": "Offline"
       },
       "device": {
-        "title": "Devices in Gladys",
+        "title": "Devices in IHA",
         "updates": "Check updates",
         "editButton": "Edit",
         "noDeviceFound": "No Tuya device found.",
@@ -1026,7 +865,7 @@
       },
       "setup": {
         "title": "Tuya configuration",
-        "description": "You can connect Gladys to your Tuya cloud account to control the related devices.",
+        "description": "You can connect IHA to your Tuya cloud account to control the related devices.",
         "descriptionCreateAccount": "You need to create an account at <a href=\"https://www.tuya.com/\" target=\"_blank\" rel= \"noopener noreferrer\">Tuya</a>.",
         "descriptionCreateProject": "You must then create a \"Cloud Project\" in your Tuya account.",
         "descriptionGetKeys": "You will have access to the Access Key and the Secret Key.",
@@ -1056,7 +895,7 @@
       "error": {
         "defaultError": "There was an error saving the device.",
         "defaultDeletionError": "There was an error deleting the device.",
-        "conflictError": "Current device is already in Gladys."
+        "conflictError": "Current device is already in IHA."
       }
     },
     "sonos": {
@@ -1075,7 +914,7 @@
       "alreadyCreatedButton": "Already Created",
       "deleteButton": "Delete",
       "device": {
-        "title": "Sonos Devices in Gladys",
+        "title": "Sonos Devices in IHA",
         "editButton": "Edit",
         "noDeviceFound": "No Sonos devices found.",
         "featuresLabel": "Features"
@@ -1091,99 +930,7 @@
       "error": {
         "defaultError": "An error occurred while saving the device.",
         "defaultDeletionError": "An error occurred while deleting the device.",
-        "conflictError": "The current device is already in Gladys."
-      }
-    },
-    "google-cast": {
-      "title": "Google Cast",
-      "description": "Control Google Cast devices on your local network",
-      "deviceTab": "Devices",
-      "discoverTab": "Google Cast Discovery",
-      "setupTab": "Setup",
-      "documentation": "Google Cast Documentation",
-      "discoverDeviceDescr": "Automatically scan for Google Cast devices",
-      "nameLabel": "Device Name",
-      "namePlaceholder": "Enter your device name",
-      "hostLabel": "IP Address",
-      "roomLabel": "Room",
-      "saveButton": "Save",
-      "alreadyCreatedButton": "Already Created",
-      "deleteButton": "Delete",
-      "device": {
-        "title": "Google Cast Devices in Gladys",
-        "editButton": "Edit",
-        "noDeviceFound": "No Google Cast device found.",
-        "featuresLabel": "Features"
-      },
-      "discover": {
-        "title": "Devices detected on your local network",
-        "description": "Google Cast devices are automatically discovered.",
-        "error": "Error discovering Google Cast devices. Is your Google Cast speaker powered on and accessible on the local network?",
-        "noDeviceFound": "No Google Cast devices have been discovered.",
-        "errorWhileScanning": "An error occurred while scanning.",
-        "scan": "Scan"
-      },
-      "error": {
-        "defaultError": "An error occurred while saving the device.",
-        "defaultDeletionError": "An error occurred while deleting the device.",
-        "conflictError": "The current device is already in Gladys."
-      }
-    },
-    "zwavejs-ui": {
-      "title": "ZWave JS UI",
-      "description": "Control your devices in Z-Wave JS UI",
-      "deviceTab": "Devices",
-      "discoverTab": "Z-Wave JS UI Discovery",
-      "setupTab": "Configuration",
-      "documentation": "Z-Wave JS UI Documentation",
-      "discoverDeviceDescr": "Automatically scan for Z-Wave JS UI devices",
-      "nameLabel": "Device Name",
-      "namePlaceholder": "Enter your device name",
-      "locationLabel": "Device Location",
-      "noFeaturesHandled": "This device is not yet supported by Gladys; feel free to submit it for inclusion!",
-      "featuresLabel": "Features",
-      "roomLabel": "Room",
-      "saveButton": "Save",
-      "alreadyCreatedButton": "Already Created",
-      "deleteButton": "Delete",
-      "alphaWarning": "This integration is in alpha and currently only supports few devices. We welcome any assistance to integrate other devices!",
-      "device": {
-        "title": "Z-Wave JS UI Devices in Gladys",
-        "editButton": "Edit",
-        "noDeviceFound": "No Z-Wave JS UI devices found.",
-        "featuresLabel": "Features"
-      },
-      "discover": {
-        "title": "Devices detected on your Z-Wave JS UI instance",
-        "description": "Z-Wave JS UI devices are automatically discovered.",
-        "error": "Error discovering Z-Wave JS UI devices. Is your MQTT broker available and accessible?",
-        "noDeviceFound": "No Z-Wave JS UI devices were discovered.",
-        "errorWhileScanning": "An error occurred during discovery.",
-        "scan": "Scan"
-      },
-      "setup": {
-        "title": "Configuration",
-        "description": "You must connect Gladys to the MQTT broker to which your Z-Wave JS UI instance is connected. This integration is for users who already have Z-Wave devices. If you are starting your installation, we recommend using the Zigbee protocol.",
-        "zwaveJsUiConfigurationTitle": "Configure Z-Wave JS UI",
-        "zwaveJsUiConfigurationMqttDescription": "On the Z-Wave JS UI side, you need to fill in the \"Name\" field in \"MQTT\" with \"zwave-js-ui,\" otherwise, the prefix for some MQTT topics will be incorrect.",
-        "zwaveJsUiConfigurationGatewayDescription": "Next, please fill in the \"Gateway\" section with these exact parameters:",
-        "mqttConfigurationTitle": "Configure MQTT Server",
-        "urlLabel": "Broker URL",
-        "urlPlaceholder": "Ex: mqtt://[mqtt-broker-address]:[port]",
-        "userLabel": "Username",
-        "userPlaceholder": "Enter the MQTT broker username",
-        "passwordLabel": "Password",
-        "passwordPlaceholder": "Enter the MQTT broker password",
-        "saveLabel": "Save Configuration",
-        "error": "An error occurred while saving the configuration.",
-        "connecting": "Configuration saved. Connecting to the MQTT broker...",
-        "connected": "Successfully connected to the MQTT broker!",
-        "notConnected": "Error connecting. Please check your configuration."
-      },
-      "error": {
-        "defaultError": "An error occurred while saving the device.",
-        "defaultDeletionError": "An error occurred while deleting the device.",
-        "conflictError": "The current device is already in Gladys."
+        "conflictError": "The current device is already in IHA."
       }
     },
     "melcloud": {
@@ -1192,7 +939,6 @@
       "deviceTab": "Devices",
       "discoverTab": "MELCloud discover",
       "setupTab": "Setup",
-      "documentation": "MELCloud documentation",
       "discoverDeviceDescr": "Automatically scan MELCloud devices",
       "nameLabel": "Device Name",
       "namePlaceholder": "Enter the name of your device",
@@ -1204,13 +950,13 @@
       "deleteButton": "Delete",
       "unmanagedModelButton": "Model not managed or available",
       "status": {
-        "notConnected": "Gladys failed to connect to MELCloud cloud account, please go to ",
+        "notConnected": "IHA failed to connect to MELCloud cloud account, please go to ",
         "setupPageLink": "MELCloud configuration page.",
         "online": "Online",
         "offline": "Offline"
       },
       "device": {
-        "title": "Devices in Gladys",
+        "title": "Devices in IHA",
         "updates": "Check updates",
         "editButton": "Edit",
         "noDeviceFound": "No MELCloud device found.",
@@ -1218,14 +964,14 @@
       },
       "discover": {
         "title": "Devices detected on your MELCloud cloud account",
-        "description": "MELCloud devices are automatically discovered. Your MELClou devices need to be added to your MELCloud cloud account before.",
+        "description": "MELCloud devices are automatically discovered. Your eWeLink devices need to be added to your eWeLink cloud account before.",
         "error": "Error discovering MELCloud devices. Please verify your credentials on Setup.",
         "noDeviceFound": "No MELCloud device discovered.",
         "scan": "Scan"
       },
       "setup": {
         "title": "MELCloud configuration",
-        "description": "You can connect Gladys to your MELCloud account to control the related devices.",
+        "description": "You can connect IHA to your MELCloud account to control the related devices.",
         "username": "Email",
         "usernamePlaceholder": "Enter your MELCloud account email address",
         "password": "Password",
@@ -1239,17 +985,14 @@
       "error": {
         "defaultError": "There was an error saving the device.",
         "defaultDeletionError": "There was an error deleting the device.",
-        "conflictError": "Current device is already in Gladys."
+        "conflictError": "Current device is already in IHA."
       }
     },
     "mqtt": {
       "title": "MQTT",
       "description": "Connect to a local or remote MQTT server",
       "deviceTab": "Devices",
-      "debugTab": "MQTT Debug",
       "setupTab": "Setup",
-      "documentation": "MQTT documentation",
-      "apiDocumentation": "MQTT API documentation ",
       "status": {
         "notConfigured": "MQTT service is not configured, please go to ",
         "notConnected": "MQTT service failed to connect to network, please go to ",
@@ -1278,41 +1021,35 @@
         "nameLabel": "Name",
         "namePlaceholder": "Enter feature name",
         "externalIdLabel": "Feature external ID",
-        "externalIdMessage": "The external ID is an unique ID which helps you identify this device outside of Gladys when sending a MQTT message. It musts start with \"mqtt:\". Read the MQTT API documentation <a href=\"https://gladysassistant.com/en/docs/api/mqtt-api\">here</a>.",
+        "externalIdMessage": "The external ID is an unique ID which helps you identify this device outside of IHA when sending a MQTT message. It musts start with \"mqtt:\". Read the MQTT API documentation <a href=\"https://gladysassistant.com/en/docs/api/mqtt-api\">here</a>.",
         "externalIdPlaceholder": "Feature MQTT message key",
         "minLabel": "Minimum value",
         "minPlaceholder": "Enter feature minimum value",
         "maxLabel": "Maximum value",
         "maxPlaceholder": "Enter feature maximum value",
         "readOnlyLabel": "Is it a sensor?",
-        "readOnlyButton": "Yes, it's a sensor sending data to Gladys only.",
+        "readOnlyButton": "Yes, it's a sensor sending data to IHA only.",
         "addButton": "Add feature",
         "mqttTopicToPublishExampleLabel": "MQTT Topic to publish",
-        "mqttTopicToPublishExampleDescription": "Gladys is listening to this topic. If you publish a value in this topic, it'll be associated with this device. (see <a href=\"https://gladysassistant.com/docs/api/mqtt-api/\" target=\"_blank\" rel=\"noopener noreferrer\">doc</a>)",
+        "mqttTopicToPublishExampleDescription": "IHA is listening to this topic. If you publish a value in this topic, it'll be associated with this device. (see <a href=\"https://gladysassistant.com/docs/api/mqtt-api/\" target=\"_blank\" rel=\"noopener noreferrer\">doc</a>)",
         "mqttTopicToListenExampleLabel": "MQTT Topic to listen",
-        "mqttTopicToListenExampleDescription": "Gladys will publish in this topic if the device is controlled in Gladys. You need to listen to this topic. (see <a href=\"https://gladysassistant.com/docs/api/mqtt-api/\" target=\"_blank\" rel=\"noopener noreferrer\">doc</a>)",
-        "mqttCustomTopic": "Custom MQTT Topic",
-        "mqttCustomTopicDescription": "Gladys offers a default MQTT API but allows you to use custom topics if you are using a device that publishes on a particular topic natively.",
-        "mqttCustomTopicPlaceholder": "Enter MQTT topic",
+        "mqttTopicToListenExampleDescription": "IHA will publish in this topic if the device is controlled in IHA. You need to listen to this topic. (see <a href=\"https://gladysassistant.com/docs/api/mqtt-api/\" target=\"_blank\" rel=\"noopener noreferrer\">doc</a>)",
         "copyMqttTopic": "Copy MQTT Topic",
-        "mqttCustomObjectPath": "MQTT JSON Message",
-        "mqttCustomObjectPathDescription": "If your connected object sends MQTT messages in the form of a JSON, Gladys allows you to specify here the path of the property to be used by Gladys. Example: property1.property2.property3. Leave blank if the format is not JSON.",
-        "mqttCustomObjectPathPlaceholder": "Path to follow in the JSON",
         "copied": "Copied!",
         "copyFailed": "Fail to copy",
         "deleteLabel": "Delete feature"
       },
       "setup": {
         "title": "MQTT configuration",
-        "mqttDescription": "You can connect Gladys to a MQTT broker to send & receive MQTT messages. Learn more about Gladys MQTT API <a href=\"https://gladysassistant.com/en/docs/api/mqtt-api\">here</a>.",
+        "mqttDescription": "You can connect IHA to a MQTT broker to send & receive MQTT messages. Learn more about IHA MQTT API <a href=\"https://gladysassistant.com/en/docs/api/mqtt-api\">here</a>.",
         "embeddedBrokerLabel": "Broker Docker container",
-        "nonDockerEnv": "Gladys is not running on Docker, you cannot install a MQTT broker from here.",
-        "invalidDockerNetwork": "Gladys is under custom installation, to install broker from here, Gladys container should be configured with \"host\" network mode.",
+        "nonDockerEnv": "IHA is not running on Docker, you cannot install a MQTT broker from here.",
+        "invalidDockerNetwork": "IHA is under custom installation, to install broker from here, IHA container should be configured with \"host\" network mode.",
         "installBrokerContainer": "Use broker in a Docker container.",
-        "brokerDockerNotInstalled": "No broker is available yet on current Docker environment, continue to install and configure <a href=\"https://mosquitto.org/\">eclipse-mosquitto</a> broker inside a Docker container.  Warning: this option will launch a Mosquitto container on port 1883. If you already have an MQTT server on this machine on port 1883, this won't work.",
+        "brokerDockerNotInstalled": "No broker is available yet on current Docker environment, continue to install and configure <a href=\"https://mosquitto.org/\">eclipse-mosquitto</a> broker inside a Docker container.",
         "installBrokerButton": "Install broker on Docker",
         "installingBrokerButton": "Installation in progress...",
-        "installBrokerError": "An error occured while installing Docker container, please consult Gladys logs.",
+        "installBrokerError": "An error occured while installing Docker container, please consult IHA logs.",
         "urlLabel": "Broker URL",
         "urlPlaceholder": "Ex: mqtt://[mqtt-broker-address]:[port]",
         "userLabel": "Username",
@@ -1324,17 +1061,8 @@
         "connecting": "Configuration saved. Now connecting to your MQTT broker...",
         "connected": "Connected to the MQTT broker with success !",
         "connectionError": "Error while connecting, please check your configuration.",
-        "networkError": "Unable to contact Gladys, is your Gladys instance connected and accessible?",
+        "networkError": "Unable to contact IHA, is your IHA instance connected and accessible?",
         "disconnected": "Disconnected from MQTT broker."
-      },
-      "debug": {
-        "title": "Debug MQTT",
-        "description": "This tab allows you to see in real-time the MQTT messages arriving on your Gladys instance, enabling you to debug easily. After 2 minutes on this tab, debug mode will automatically deactivate. You can reactivate it with the refresh button at the top right.",
-        "activateDebugMode": "Activate",
-        "debugModeActivated": "Debug mode activated",
-        "date": "Time",
-        "topic": "Topic",
-        "message": "Message Content"
       }
     },
     "broadlink": {
@@ -1342,7 +1070,6 @@
       "description": "Control your Broadlink devices.",
       "remoteTab": "Devices",
       "peripheralTab": "Discover devices",
-      "documentation": "Broadlink documentation",
       "peripheral": {
         "title": "Available Broadlink devices",
         "description": "Here are discovered Broadlink devices, if one is missing, please check its network link.",
@@ -1466,9 +1193,8 @@
       "title": "LAN Manager",
       "description": "Manage you device through you local network.",
       "deviceTab": "Devices",
-      "discoverTab": "LAN Discover",
-      "setupTab": "Presence scanner",
-      "documentation": "Lan Manager documentation",
+      "discoverTab": "Discover",
+      "setupTab": "Setup",
       "device": {
         "title": "LAN Devices",
         "search": "Search devices",
@@ -1489,10 +1215,10 @@
         "discoveringError": "An error occurred, check scanner configuration, or check logs."
       },
       "setup": {
-        "title": "Presence scanner",
+        "title": "LAN Settings",
         "errorLabel": "An error occurred while loading configuration.",
         "noConfigLabel": "Configuration not loaded, please retry.",
-        "presenceScannerDescription": "The presence scanner feature is doing a network scan at a defined interval. When a device is detected, the device will be flagged as \"seen\" in Gladys. In scene, you can create a trigger on this state change to set you home when a device is detected at home for example.",
+        "presenceScannerDescription": "The presence scanner feature is doing a network scan at a defined interval. When a device is detected, the device will be flagged as \"seen\" in IHA. In scene, you can create a trigger on this state change to set you home when a device is detected at home for example.",
         "presenceScannerStatusLabel": "Enable or disable presence scanner",
         "presenceScannerFrequencyLabel": "Scanner interval",
         "presenceScannerFrequencyUnit": "minutes",
@@ -1512,10 +1238,8 @@
     "xiaomi": {
       "title": "Xiaomi Home",
       "description": "Control Xiaomi home devices with the official hub",
-      "deviceTab": "Devices",
-      "documentation": "Xiaomi documentation",
       "device": {
-        "title": "Xiaomi devices in Gladys",
+        "title": "Xiaomi devices in IHA",
         "noDevices": "No Xiaomi devices added yet.",
         "sidLabel": "Xiaomi SID",
         "ipLabel": "IP Address",
@@ -1526,10 +1250,10 @@
         "editButton": "Edit details"
       },
       "setup": {
-        "title": "Xiaomi devices not in Gladys",
+        "title": "Xiaomi devices not in IHA",
         "description": "Devices detected by the Xiaomi Gateway will be added here when they send data. Your Xiaomi Gateway needs to be in developer mode. Learn more <a href=\"https://gladysassistant.com/en/docs/integrations/xiaomi\">here</a>.",
-        "createDeviceInGladys": "Connect in Gladys",
-        "createDeviceError": "There was an error while creating this device in Gladys. ",
+        "createDeviceInGladys": "Connect in IHA",
+        "createDeviceError": "There was an error while creating this device in IHA. ",
         "deviceCreatedSuccess": "The device was successfully added."
       },
       "models": {
@@ -1546,11 +1270,10 @@
       "accountTab": "Account",
       "syncTab": "Synchronization",
       "shareTab": "Sharing",
-      "documentation": "CalDav documentation",
       "description": "Sync your CalDAV calendars and use them in scenes.",
-      "accountIntroduction": "To sync Gladys calendar using CalDAV, you first need an external compatible calendar. Then enter the configuration below.",
+      "accountIntroduction": "To sync IHA calendar using CalDAV, you first need an external compatible calendar. Then enter the configuration below.",
       "syncIntroduction": "Choose calendars to synchronize.",
-      "shareIntroduction": "Choose calendars you want to share with other Gladys users of this installation. If shared, those calendars will be available in scenes, and displayed in the calendar tab to every user of this installation.",
+      "shareIntroduction": "Choose calendars you want to share with other IHA users of this installation. If shared, those calendars will be available in scenes, and displayed in the calendar tab to every user of this installation.",
       "hostLabel": "CalDAV host",
       "hostInfo": "Choose your calendar host to be helped during configuration.",
       "services": {
@@ -1616,9 +1339,8 @@
       "title": "Bluetooth",
       "description": "Control your Bluetooth devices and detect your presence.",
       "deviceTab": "Devices",
-      "discoverTab": "Bluetooth discover",
+      "discoverTab": "Discover",
       "setupTab": "Presence scanner",
-      "documentation": "Bluetooth documentation",
       "bluetoothNotReadyError": "Bluetooth device is not reachable, please check it is enabled.",
       "device": {
         "title": "Bluetooth Devices",
@@ -1640,10 +1362,10 @@
         "title": "Bluetooth Discover",
         "scanButton": "Scan",
         "noDeviceFound": "No bluetooth device discovered.",
-        "createDeviceInGladys": "Connect in Gladys",
-        "updateDeviceInGladys": "Update in Gladys",
+        "createDeviceInGladys": "Connect in IHA",
+        "updateDeviceInGladys": "Update in IHA",
         "deviceCreatedSuccess": "The device was successfully added",
-        "createDeviceError": "There was an error while creating this device in Gladys. ",
+        "createDeviceError": "There was an error while creating this device in IHA. ",
         "notManagedByBluteoothButton": "Managed by \"{{service}}\" service",
         "notManagedByBluteooth": "You cannot manage this device here as it is already manager by \"{{service}}\" service.",
         "saveSuccess": "Bluetooth device successfully created.",
@@ -1660,7 +1382,7 @@
         "title": "Presence scanner",
         "noConfigLabel": "Configuration not loaded, please retry.",
         "errorLabel": "An error occurred while loading configuration.",
-        "presenceScannerDescription": "The presence scanner feature is doing a bluetooth scan at a defined interval. When a device is detected, the device will be flagged as \"seen\" in Gladys. In scene, you can create a trigger on this state change to set you home when a device is detected at home for example.",
+        "presenceScannerDescription": "The presence scanner feature is doing a bluetooth scan at a defined interval. When a device is detected, the device will be flagged as \"seen\" in IHA. In scene, you can create a trigger on this state change to set you home when a device is detected at home for example.",
         "presenceScannerStatusLabel": "Enable or disable presence scanner",
         "presenceScannerFrequencyLabel": "Scanner interval",
         "presenceScannerFrequencyUnit": "minutes",
@@ -1675,7 +1397,6 @@
       "deviceTab": "Devices",
       "discoverTab": "eWeLink discover",
       "setupTab": "Setup",
-      "documentation": "eWeLink documentation",
       "discoverDeviceDescr": "Automatically scan eWeLink devices",
       "nameLabel": "Device Name",
       "namePlaceholder": "Enter the name of your device",
@@ -1687,13 +1408,13 @@
       "deleteButton": "Delete",
       "unmanagedModelButton": "Model not managed or available",
       "status": {
-        "notConnected": "Gladys failed to connect to eWeLink cloud account, please go to ",
+        "notConnected": "IHA failed to connect to eWeLink cloud account, please go to ",
         "setupPageLink": "eWeLink configuration page.",
         "online": "Online",
         "offline": "Offline"
       },
       "device": {
-        "title": "Devices in Gladys",
+        "title": "Devices in IHA",
         "updates": "Check updates",
         "editButton": "Edit",
         "noDeviceFound": "No eWeLink device found.",
@@ -1708,7 +1429,7 @@
       },
       "setup": {
         "title": "eWeLink configuration",
-        "eweLinkDescription": "You can connect Gladys to your eWeLink cloud account to command the associated devices.",
+        "eweLinkDescription": "You can connect IHA to your eWeLink cloud account to command the associated devices.",
         "userLabel": "Username",
         "userPlaceholder": "Enter eWeLink username",
         "passwordLabel": "Password",
@@ -1723,23 +1444,22 @@
       "error": {
         "defaultError": "There was an error saving the device.",
         "defaultDeletionError": "There was an error deleting the device.",
-        "conflictError": "Current device is already in Gladys."
+        "conflictError": "Current device is already in IHA."
       }
     },
     "openai": {
       "title": "OpenAI ChatGPT",
-      "documentation": "ChatGPT documentation",
-      "description": "Give Gladys the power of artifical intelligence",
-      "firstExplanation": "Gladys can use OpenAI ChatGPT artificial intelligence to help you communicate with your connected home.",
+      "description": "Give IHA the power of artifical intelligence",
+      "firstExplanation": "IHA can use OpenAI ChatGPT artificial intelligence to help you communicate with your connected home.",
       "aFewExamples": "A few examples of things you can ask: ",
       "turnOnTheLight": "Turn on the light in the kitchen",
       "sizeOfEiffelTower": "What's the size of the Eiffel Tower ?",
       "eggDuration": "How do you make hard boiled eggs ?",
       "showMeTheCameraInTheKitchen": "Show me the camera in the kitchen",
-      "activateOpenAiChat": "Activate ChatGPT in Gladys chat",
+      "activateOpenAiChat": "Activate ChatGPT in IHA chat",
       "rateLimit": "As ChatGPT API is not free, this integration is limited to 1000 requests per month.",
-      "notOnGladysPlus": "As ChatGPT API is not free, this integration is only available to Gladys Plus users.",
-      "subscribeToGladysPlus": "<a href=\"https://gladysassistant.com/plus/\"  target=\"_blank\" rel=\"noopener noreferrer\">Click here</a> to subscribe to Gladys Plus."
+      "notOnGladysPlus": "As ChatGPT API is not free, this integration is only available to IHA Plus users.",
+      "subscribeToGladysPlus": "<a href=\"https://gladysassistant.com/plus/\"  target=\"_blank\" rel=\"noopener noreferrer\">Click here</a> to subscribe to IHA Plus."
     }
   },
   "editScene": {
@@ -1750,7 +1470,7 @@
     "iconLabel": "Icon",
     "editDescriptionPlaceholder": "Enter a scene description",
     "tagsTitle": "Tags",
-    "editTagsPlaceholder": "Enter or choose a tag scene",
+    "editTagsPlaceholder": "Enter a scene tags",
     "createTag": "Create tag: '{{tagName}}'",
     "startButton": "Start",
     "saveButton": "Save",
@@ -1792,14 +1512,6 @@
         "textPlaceholder": "Message text",
         "explanationText": "To inject a variable in the text, press '{{'. To set a variable value, you need to use the 'Get device value' box before this one."
       },
-      "askAi": {
-        "description": "This action will send a message to the AI (ChatGPT) via Gladys Plus and will reply to you with a message. If you attach a camera image, the AI will be able to see what is on the image and even take action accordingly.",
-        "userLabel": "Gladys will respond to",
-        "cameraLabel": "Attach a camera image (optional)",
-        "textLabel": "My question for the AI",
-        "textPlaceholder": "Message text",
-        "explanationText": "To insert a variable, type '{{'. Be careful, you must have defined a variable beforehand in a 'Retrieve the last state' action placed before this message block."
-      },
       "turnOnLights": {
         "label": "Select the lights you want to turn on"
       },
@@ -1809,20 +1521,6 @@
       "toggleLights": {
         "label": "Select the lights you want to toggle",
         "description": "This action turn on the light if state is off or turn off the light if state is on"
-      },
-      "blinkLights": {
-        "label": "Select the lights you want to make blink",
-        "description": "Configure blinking duration and speed",
-        "blinkingTime": {
-          "label": "Duration (in seconds)",
-          "placeholder": "3"
-        },
-        "blinkingSpeed": {
-          "label": "Mode",
-          "slow": "Slow",
-          "medium": "Medium",
-          "fast": "Fast"
-        }
       },
       "turnOnSwitches": {
         "label": "Select the switches you want to turn on"
@@ -1869,7 +1567,7 @@
         "userLeftHomeDescription": "This action set the user as \"left home\"."
       },
       "checkUserPresence": {
-        "description": "When this action is executed, Gladys checks if one of the selected device was seen at home in the last X minutes. If one of the device was seen, the action does nothing more. If no device was seen, the user is marked as \"left home\".",
+        "description": "When this action is executed, IHA checks if one of the selected device was seen at home in the last X minutes. If one of the device was seen, the action does nothing more. If no device was seen, the user is marked as \"left home\".",
         "userLabel": "User",
         "houseLabel": "House",
         "deviceLabel": "Devices",
@@ -1899,7 +1597,7 @@
       },
       "scene": {
         "label": "Select a scene",
-        "notice": "The trigger conditions of the called scene will be ignored. If a scene calls another scene, and vice versa, Gladys will not fall into an infinite loop: each scene will be executed once."
+        "notice": "The trigger conditions of the called scene will be ignored. If a scene calls another scene, and vice versa, IHA will not fall into an infinite loop: each scene will be executed once."
       },
       "houseEmptyOrNot": {
         "houseIsEmptyDescription": "If the house is empty, the scene will continue. Otherwise, the scene will stop.",
@@ -1924,21 +1622,6 @@
         "warning": "Network warning",
         "critical": "Network critical"
       },
-      "edfTempoCondition": {
-        "description": "The scene will continue if the following conditions on EDF Tempo are met.",
-        "selectDay": "For the day",
-        "today": "Today",
-        "tomorrow": "Tomorrow",
-        "selectPeakDayType": "If the day is",
-        "blueDay": "Blue Day",
-        "whiteDay": "White Day",
-        "redDay": "Red Day",
-        "noPeakDayCheck": "Any",
-        "noPeakHourCheck": "Any",
-        "selectPeakHourType": "And if it's",
-        "peakHour": "Peak Hour",
-        "offPeakHour": "Off-Peak Hour"
-      },
       "alarmCheckMode": {
         "description": "The scene will continue if the alarm is in the selected mode.",
         "houseLabel": "House",
@@ -1955,13 +1638,6 @@
         "messageLabel": "Message",
         "variablesExplanation": "To inject a variable in the text, press '{{ '. To set a variable value, you need to use the 'Get device value' box before this one.",
         "messagePlaceholder": "My message"
-      },
-      "playNotification": {
-        "description": "This action will make Gladys speak on the selected speaker.",
-        "needGladysPlus": "Requires Gladys Plus as Text-To-Speech APIs are paid.",
-        "deviceLabel": "Speaker",
-        "textLabel": "Message to speak on the speaker",
-        "variablesExplanation": "To inject a variable, type '{{ '. Note: You must have defined a variable beforehand in a 'Retrieve Last State' action placed before this message block."
       }
     },
     "actions": {
@@ -1980,8 +1656,7 @@
       "light": {
         "turn-on": "Turn On the Lights",
         "turn-off": "Turn Off the Lights",
-        "toggle": "Toggle the Lights",
-        "blink": "Make the Lights blink"
+        "toggle": "Toggle the Lights"
       },
       "switch": {
         "turn-on": "Turn On the Switches",
@@ -2014,21 +1689,12 @@
       "ecowatt": {
         "condition": "Condition on Ecowatt (France)"
       },
-      "edf-tempo": {
-        "condition": "Condition on EDF-Tempo"
-      },
       "alarm": {
         "check-alarm-mode": "If the alarm is in mode",
         "set-alarm-mode": "Set alarm mode to"
       },
       "mqtt": {
         "send": "Send MQTT Message"
-      },
-      "music": {
-        "play-notification": "Talk on a speaker"
-      },
-      "ai": {
-        "ask": "Ask AI"
       }
     },
     "variables": {
@@ -2078,7 +1744,7 @@
         "too-many-codes-tests": "Alarm: Too many invalid codes"
       },
       "system": {
-        "start": "Gladys starting"
+        "start": "IHA starting"
       },
       "mqtt": {
         "received": "Receive message from MQTT"
@@ -2179,7 +1845,7 @@
         "houseLabel": "House"
       },
       "gladysStart": {
-        "description": "This scene will be executed each time Gladys starts"
+        "description": "This scene will be executed each time IHA starts"
       },
       "mqttReceived": {
         "description": "This scene will run when a message is received in the selected MQTT topic",
@@ -2196,7 +1862,7 @@
     "editYourProfileTitle": "Edit your profile",
     "userRole": "User",
     "adminRole": "Administrator",
-    "roleDescription": "An admin has all rights in the Gladys instance. A user can just edit his dashboard, talk to Gladys, see his calendars & map. He cannot create scenes, edit preferences or modify an integration configuration.",
+    "roleDescription": "An admin has all rights in the IHA instance. A user can just edit his dashboard, talk to IHA, see his calendars & map. He cannot create scenes, edit preferences or modify an integration configuration.",
     "invitationPending": "Pending",
     "invitationSuccess": "Accepted",
     "firstnameLabel": "First Name",
@@ -2220,7 +1886,6 @@
     "languageLabel": "Language",
     "english": "English",
     "french": "Français",
-    "german": "Deutsch",
     "roleLabel": "Role",
     "passwordLabel": "Password (min 8 characters)",
     "passwordPlaceholder": "Enter your password",
@@ -2236,11 +1901,11 @@
     "passwordError": "Password should be at least 8 characters.",
     "passwordRepeatError": "Passwords do not match.",
     "birthdateError": "Birthdate is required.",
-    "networkError": "Network Error: We didn't succeed in contacting your Gladys instance. Are you connected to the network? Is your Gladys instance running?",
+    "networkError": "Network Error: We didn't succeed in contacting your IHA instance. Are you connected to the network? Is your IHA instance running?",
     "emailAlreadyExistError": "A user with this email already exist.",
     "selectorAlreadyExistError": "A user with this first name already exist.",
     "instanceAlreadyConfiguredError": "This instance is already configured. You cannot create another account.",
-    "unknownError": "An unknown error occured. Please try again or contact Gladys community."
+    "unknownError": "An unknown error occured. Please try again or contact IHA community."
   },
   "settings": {
     "title": "Settings",
@@ -2248,7 +1913,7 @@
     "usersTab": "Users",
     "sessionsTab": "Sessions",
     "systemTab": "System",
-    "gatewayTab": "Gladys Plus",
+    "gatewayTab": "IHA Plus",
     "backupTab": "Backups",
     "serviceTab": "Services",
     "billingTab": "Billing",
@@ -2329,27 +1994,27 @@
     "action": "Action"
   },
   "forgotPassword": {
-    "title": "Gladys Assistant",
+    "title": "IHA Assistant",
     "cardTitle": "Recover your password",
     "emailLabel": "Email",
     "backToLogin": "Back to login",
     "emailPlaceholder": "Enter your email",
     "button": "Recover my password",
     "wrongEmailError": "This is not a valid email",
-    "networkError": "Network Error: We didn't succeed in contacting your Gladys instance. Are you connected to the network? Is your Gladys instance running?",
-    "unknownError": "An unknown error occured. Please try again or contact Gladys community.",
-    "success": "Success! You should see a reset password link in Gladys logs.",
+    "networkError": "Network Error: We didn't succeed in contacting your IHA instance. Are you connected to the network? Is your IHA instance running?",
+    "unknownError": "An unknown error occured. Please try again or contact IHA community.",
+    "success": "Success! You should see a reset password link in IHA logs.",
     "userNotFound": "There is no account linked to this email.",
-    "rateLimitError": "You have tried this form too many time. Please retry in 30 minutes or restart your Gladys instance now.",
+    "rateLimitError": "You have tried this form too many time. Please retry in 30 minutes or restart your IHA instance now.",
     "invalidEmail": "We are unable to verify your email address.",
     "validationLinkConfirmation": "Are you sure you clicked/copied the link correctly?",
-    "contactUs": "If it still not working, please contact us on <a href=\"https://twitter.com/gladysassistant\">Twitter</a> or on <a href=\"https://en-community.gladysassistant.com\">Gladys Community</a>.",
+    "contactUs": "If it still not working, please contact us on <a href=\"https://twitter.com/gladysassistant\">Twitter</a> or on <a href=\"https://en-community.gladysassistant.com\">IHA Community</a>.",
     "emailConfirmed": "Email Confirmed",
     "signIn": "Sign in",
     "confirmationInProgress": "Confirmation in progress..."
   },
   "resetPassword": {
-    "title": "Gladys Assistant",
+    "title": "IHA Assistant",
     "cardTitle": "Reset your password",
     "passwordLabel": "Password (min 8 characters)",
     "passwordPlaceholder": "Enter your password",
@@ -2366,13 +2031,13 @@
     "alreadyHaveAccount": "Already have account? <a href=\"/login\">Sign in</a>"
   },
   "httpErrors": {
-    "rateLimitError": "You have tried this form too many time. Please retry in 30 minutes or restart your Gladys instance now.",
-    "unknownError": "An unknown error occured. Please try again or contact Gladys community.",
-    "networkError": "Network Error:  We didn't succeed in contacting your Gladys instance. Are you connected to the network? Is your Gladys instance running?"
+    "rateLimitError": "You have tried this form too many time. Please retry in 30 minutes or restart your IHA instance now.",
+    "unknownError": "An unknown error occured. Please try again or contact IHA community.",
+    "networkError": "Network Error:  We didn't succeed in contacting your IHA instance. Are you connected to the network? Is your IHA instance running?"
   },
   "jobsSettings": {
     "jobsTitle": "Background tasks",
-    "jobsDescription": "This view is a bit more technical than the rest of Gladys Assistant. The goal of this view is to help you have a better idea of what's running in the background, and in case you wonder why something is wrong in Gladys, you can come here to debug what happened.",
+    "jobsDescription": "This view is a bit more technical than the rest of IHA Assistant. The goal of this view is to help you have a better idea of what's running in the background, and in case you wonder why something is wrong in IHA, you can come here to debug what happened.",
     "jobType": "Type",
     "jobProgress": "%",
     "jobStatus": "Status",
@@ -2383,15 +2048,13 @@
       "daily-device-state-aggregate": "Daily sensors aggregation",
       "hourly-device-state-aggregate": "Hourly sensors aggregation",
       "device-state-purge": "Cleaning old device states",
-      "gladys-gateway-backup": "Gladys Plus backup",
+      "gladys-gateway-backup": "IHA Plus backup",
       "device-state-purge-single-feature": "Single device feature states clean",
       "vacuum": "Database cleaning",
-      "service-zigbee2mqtt-backup": "Zigbee2MQTT backup",
-      "migrate-sqlite-to-duckdb": "DuckDB migration",
-      "device-state-purge-all-sqlite-states": "Purge all SQLite states"
+      "service-zigbee2mqtt-backup": "Zigbee2MQTT backup"
     },
     "jobErrors": {
-      "purged-when-restarted": "Gladys Assistant restarted while this job was still running, so it was purged. It doesn't mean the job has failed, it's a normal behavior."
+      "purged-when-restarted": "IHA Assistant restarted while this job was still running, so it was purged. It doesn't mean the job has failed, it's a normal behavior."
     },
     "jobStatuses": {
       "success": "Success",
@@ -2404,11 +2067,11 @@
     "disk": "Disk",
     "uptime": "Uptime",
     "gladysVersion": "Version",
-    "gladysVersionValue": "Gladys {{version}}",
+    "gladysVersionValue": "IHA {{version}}",
     "operations": "Operations",
-    "upToDate": "Gladys is up to date",
+    "upToDate": "IHA is up to date",
     "newUpgradeAvailable": "New upgrade available",
-    "newUpgradeAvailableText": "Gladys will update itself automatically if you installed Gladys with the official Gladys Raspberry Pi OS image. If you installed Gladys manually, make sure you have watchtower running.",
+    "newUpgradeAvailableText": "IHA will update itself automatically if you installed IHA with the official IHA Raspberry Pi OS image. If you installed IHA manually, make sure you have watchtower running.",
     "download": "Download",
     "notAvailable": "Not available on custom install.",
     "containers": "Containers",
@@ -2416,21 +2079,21 @@
     "containerCreated": "Created",
     "containerStatus": "Status",
     "downloadFinished": "Download finished.",
-    "restartingGladys": "Restarting Gladys...",
+    "restartingGladys": "Restarting IHA...",
     "configurationTitle": "Configuration",
     "timezone": "Timezone",
     "timezoneText": "The timezone is used in scheduled scene.",
     "deviceStateRetentionTime": "Keep Device State History",
-    "deviceStateRetentionTimeDescription": "How long Gladys will keep your device states in database.",
+    "deviceStateRetentionTimeDescription": "How long IHA will keep your device states in database.",
     "deviceAggregatesStateRetentionTime": "Keep Aggregated States",
-    "deviceAggregatesStateRetentionTimeDescription": "Gladys calculates pre-calculated state histories to have lighter data to display on the dashboard. You can select here how long this data should be kept.",
+    "deviceAggregatesStateRetentionTimeDescription": "IHA calculates pre-calculated state histories to have lighter data to display on the dashboard. You can select here how long this data should be kept.",
     "numberOfHoursBeforeStateIsOutdated": "Time to expiry of a state",
     "numberOfHoursBeforeStateIsOutdatedDescription": "This delay corresponds to the number of hours before a sensor status is considered \"expired\" and therefore no longer displayed on the dashboard.",
     "hours": "hours",
     "vacuumDatabaseTitle": "Database cleaning",
-    "vacuumDatabaseDescription": "By clicking on this button, Gladys will start cleaning the database to free up space. This does not delete any data, it just physically remove old deleted data. Be careful, this task can take some time to run, and during that time Gladys will not be available.",
+    "vacuumDatabaseDescription": "By clicking on this button, IHA will start cleaning the database to free up space. This does not delete any data, it just physically remove old deleted data. Be careful, this task can take some time to run, and during that time IHA will not be available.",
     "vacuumDatabaseButton": "Start database cleaning",
-    "vacuumDatabaseStarted": "Database cleaning has started... Gladys will not be available until this job finishes.",
+    "vacuumDatabaseStarted": "Database cleaning has started... IHA will not be available until this job finishes.",
     "containerState": {
       "created": "Created",
       "restarting": "Restarting",
@@ -2441,24 +2104,13 @@
       "dead": "Dead"
     },
     "batteryLevel": "Battery level alert",
-    "batteryLevelDescription": "Every Saturday at 9:00 am, a message will be sent to all administrators if a device's battery level falls below the chosen threshold.",
-    "duckDbMigrationTitle": "Migration to DuckDB",
-    "duckDbMigrationDescription": "We are migrating to a new database system for sensor data. Gladys will automatically migrate your data, but will not delete your data from your SQLite database to prevent data loss.",
-    "duckDbMigrationProgressTitle": "Migration Progress",
-    "duckDbMigrationMigrationDone": "Migration completed:",
-    "duckDbNumberOfStatesinSQlite": "Number of states in SQLite",
-    "duckDbNumberOfStatesinDuckDb": "Number of states in DuckDB",
-    "restartMigrationTitle": "Restart Migration",
-    "confirm": "Confirm",
-    "cancel": "Cancel",
-    "purgeSQliteTitle": "Purge SQLite states",
-    "purgeSQliteDescription": "Once all states are deleted from SQLite, you will need to perform a \"database cleanup\" on the tab to the right to free up disk space. This step may take some time."
+    "batteryLevelDescription": "Every Saturday at 9:00 am, a message will be sent to all administrators if a device's battery level falls below the chosen threshold."
   },
   "newArea": {
     "createNewZoneButton": "Create new zone",
     "cardTitleCreate": "Create a new zone",
     "cardTitleEdit": "Edit a zone",
-    "cardDescription": "In Gladys, you can defines \"zones\". Those zones are useful in scene, if you want to trigger a scenario when a user enters/leaves a zone.",
+    "cardDescription": "In IHA, you can defines \"zones\". Those zones are useful in scene, if you want to trigger a scenario when a user enters/leaves a zone.",
     "nameLabel": "Name",
     "namePlaceholder": "Enter the name of the zone",
     "radiusLabel": "Radius (in meter)",
@@ -2503,14 +2155,14 @@
     "unselectTags": "Unselect all tags"
   },
   "gateway": {
-    "instanceConfiguredTitle": "Gladys Plus",
-    "yourGatewayIsConfigured": "Your Gladys Plus account is configured.",
-    "yourGatewayIsConnected": "Your Gladys instance is connected to the remote gateway.",
-    "yourGatewayIsNotConnected": "Your Gladys instance is currently not connected to the remote gateway.",
+    "instanceConfiguredTitle": "IHA Plus",
+    "yourGatewayIsConfigured": "Your IHA Plus account is configured.",
+    "yourGatewayIsConnected": "Your IHA instance is connected to the remote gateway.",
+    "yourGatewayIsNotConnected": "Your IHA instance is currently not connected to the remote gateway.",
     "instanceRsaKey": "Instance RSA key fingerprint",
     "instanceEcdsaKey": "Instance ECDSA key fingerprint",
     "backupKeyTitle": "Backup Key",
-    "backupKeyDescription": "Your backup key is used to securely encrypt your Gladys backups. Please save this key somewhere outside of Gladys to be able to restore Gladys. We recommend using a password manager for that.",
+    "backupKeyDescription": "Your backup key is used to securely encrypt your IHA backups. Please save this key somewhere outside of IHA to be able to restore IHA. We recommend using a password manager for that.",
     "backupKeyLabel": "Your backup key",
     "backupKeyPlaceholder": "Enter/Restore a backup key",
     "saveBackupKeyButton": "Save",
@@ -2522,23 +2174,23 @@
     "usersListDescription": "To ensure that your local instance remains secure, you need to manually grant access to each users in this list.",
     "disconnectTitle": "Disconnect your Plus account",
     "disconnectButton": "Disconnect",
-    "gatewayConnectedSuccessTitle": "Gladys Plus connected with success!",
-    "gatewayConnectedSuccessDescription": "Your Gladys instance was successfully connected.",
-    "gatewayConnectedSuccessBackupKey": "It'll backup automatically everyday, encrypted with the following key. So you can restore your instance later, please save this encryption key somewhere, outside of Gladys. Without this key, you will not be able to restore Gladys.",
+    "gatewayConnectedSuccessTitle": "IHA Plus connected with success!",
+    "gatewayConnectedSuccessDescription": "Your IHA instance was successfully connected.",
+    "gatewayConnectedSuccessBackupKey": "It'll backup automatically everyday, encrypted with the following key. So you can restore your instance later, please save this encryption key somewhere, outside of IHA. Without this key, you will not be able to restore IHA.",
     "gatewayConnectedSuccessButton": "I saved the backup key!",
-    "accountExpired": "Your Gladys Plus account has expired. To renew your subscription, you can go to the <a href=\"/dashboard/settings/billing\">billing tab</a>."
+    "accountExpired": "Your IHA Plus account has expired. To renew your subscription, you can go to the <a href=\"/dashboard/settings/billing\">billing tab</a>."
   },
   "gatewayPricing": {
-    "pricingTitle": "Gladys Plus",
-    "pricingSentence": "Gladys Assistant is free to use, but you can subscribe to Gladys Plus for additional premium features like end-to-end encrypted remote access, automatic backups and access to a REST API accessible from anywhere in the world.",
-    "whyIsGladysPlusPaid": "Why is Gladys Plus paid and not free like Gladys?",
-    "whyIsGladysPlusPaidAnswer": "Gladys Plus is an online service that has cost: hosting, bandwidth, storage, development and maintenance. To support those costs, we prefer asking for a monthly fee rather than adding ads or selling users data: it's not the philosophy of the project. We respect our users privacy, and want them to own their data at home.",
-    "supportOpenSource": "By subscribing to Gladys Plus, you are supporting the development of a privacy-friendly & open-source alternative. Thanks for your support ! 🙂",
-    "knowMoreButton": "Read more about Gladys Plus",
-    "alreadyGladysPlusSubscriber": "Already a Gladys Plus Subscriber? Click here to login!"
+    "pricingTitle": "IHA Plus",
+    "pricingSentence": "IHA Assistant is free to use, but you can subscribe to IHA Plus for additional premium features like end-to-end encrypted remote access, automatic backups and access to a REST API accessible from anywhere in the world.",
+    "whyIsGladysPlusPaid": "Why is IHA Plus paid and not free like IHA?",
+    "whyIsGladysPlusPaidAnswer": "IHA Plus is an online service that has cost: hosting, bandwidth, storage, development and maintenance. To support those costs, we prefer asking for a monthly fee rather than adding ads or selling users data: it's not the philosophy of the project. We respect our users privacy, and want them to own their data at home.",
+    "supportOpenSource": "By subscribing to IHA Plus, you are supporting the development of a privacy-friendly & open-source alternative. Thanks for your support ! 🙂",
+    "knowMoreButton": "Read more about IHA Plus",
+    "alreadyGladysPlusSubscriber": "Already a IHA Plus Subscriber? Click here to login!"
   },
   "gatewayLogin": {
-    "cardTitle": "Login to your Gladys Plus account",
+    "cardTitle": "Login to your IHA Plus account",
     "emailLabel": "Email Address",
     "emailPlaceholder": "Enter your email",
     "passwordLabel": "Password",
@@ -2547,9 +2199,9 @@
     "loginButtonText": "Log in",
     "wrongCredentials": "Wrong email/password.",
     "invalidEmail": "Invalid email",
-    "networkError": "Network Error: Are you sure your Gladys instance is connected to the internet?",
-    "userNotAcceptedLocally": "Your user is not accepted locally, please go back to your Gladys instance and allow access to this user in settings.",
-    "gatewayNoInstanceFound": "No Instance found. You need to first connect your instance to Gladys.",
+    "networkError": "Network Error: Are you sure your IHA instance is connected to the internet?",
+    "userNotAcceptedLocally": "Your user is not accepted locally, please go back to your IHA instance and allow access to this user in settings.",
+    "gatewayNoInstanceFound": "No Instance found. You need to first connect your instance to IHA.",
     "gatewayAccessBilling": "To access billing, click here.",
     "unknownError": "An unknown error occurred. Please contact us for more information.",
     "twoFactorCodeLabel": "Two Factor code",
@@ -2559,8 +2211,8 @@
   },
   "gatewayBackup": {
     "title": "Backups",
-    "youNeedToUpgrade": "This feature is not available on your Gladys Plus plan. You must upgrade to a higher plan to access backups.",
-    "description": "If you are subscribed to Gladys Plus, Gladys creates encrypted backup of your instance every 24 hours. Only you can decrypt backups. You can restore those backups in one-click in this installation, or any new setup.",
+    "youNeedToUpgrade": "This feature is not available on your IHA Plus plan. You must upgrade to a higher plan to access backups.",
+    "description": "If you are subscribed to IHA Plus, IHA creates encrypted backup of your instance every 24 hours. Only you can decrypt backups. You can restore those backups in one-click in this installation, or any new setup.",
     "createdAtColumn": "Date",
     "sizeColumn": "Size",
     "restoreColumn": "Restore",
@@ -2568,11 +2220,11 @@
     "confirmRestore": "Confirm",
     "cancelRestore": "Cancel",
     "restoreInProgressTitle": "Restoring backup in progress...",
-    "gladysRestartingTitle": "Gladys Assistant is restarting...",
+    "gladysRestartingTitle": "IHA Assistant is restarting...",
     "backupNowButton": "Backup now",
     "backupStarted": "Backup started...",
-    "notConfigured": "Gladys Plus need to be configured to enable backups. Go to the Gladys Plus tab to configure it.",
-    "restoreFailed": "Restoring the backup failed. Are you sure you have the same backup key used during the backup ? You can go to the Gladys Plus tab in settings to set another backup key."
+    "notConfigured": "IHA Plus need to be configured to enable backups. Go to the IHA Plus tab to configure it.",
+    "restoreFailed": "Restoring the backup failed. Are you sure you have the same backup key used during the backup ? You can go to the IHA Plus tab in settings to set another backup key."
   },
   "alarmModes": {
     "armed": "armed",
@@ -2589,7 +2241,6 @@
     "hPa": "Hectopascal (hPa)",
     "bar": "Bar",
     "psi": "Pound-force per square inch (psi)",
-    "milli-bar": "Millibar (mbar)",
     "lux": "Lux",
     "ppm": "Parts per million (ppm)",
     "ppb": "Parts per billion (ppb)",
@@ -2655,8 +2306,7 @@
     "microgram-per-cubic-meter": "Microgram per cubic meter (µg/m³)",
     "square-centimeter": "Square centimer (cm²)",
     "square-meter": "Square meter (m²)",
-    "square-kilometer": "Square kilometer (km²)",
-    "decibel": "Decibel (dB)"
+    "square-kilometer": "Square kilometer (km²)"
   },
   "deviceFeatureUnitShort": {
     "celsius": "°C",
@@ -2666,7 +2316,6 @@
     "pascal": "Pa",
     "hPa": "hPa",
     "bar": "bar",
-    "milli-bar": "mbar",
     "psi": "psi",
     "lux": "lx",
     "ppm": "ppm",
@@ -2733,17 +2382,11 @@
     "microgram-per-cubic-meter": "µg/m³",
     "square-centimeter": "cm²",
     "square-meter": "m²",
-    "square-kilometer": "km²",
-    "decibel": "dB"
+    "square-kilometer": "km²"
   },
   "deviceFeatureAction": {
     "category": {
       "shutter": {
-        "stateLiveFinished": {
-          "zero": "Stop",
-          "one": "Open",
-          "other": "Closed"
-        },
         "state": {
           "zero": "Stop",
           "one": "Open",
@@ -2751,11 +2394,6 @@
         }
       },
       "curtain": {
-        "stateLiveFinished": {
-          "zero": "Stop",
-          "one": "Open",
-          "other": "Closed"
-        },
         "state": {
           "zero": "Stop",
           "one": "Open",
@@ -2767,23 +2405,6 @@
           "auto": "Auto",
           "cooling": "Cool",
           "heating": "Heat"
-        }
-      },
-      "heater": {
-        "pilot-wire-mode": {
-          "comfort": "Comfort",
-          "eco": "Eco",
-          "off": "Off",
-          "frost-protection": "Frost Protection",
-          "comfort_-1": "Comfort -1°C",
-          "comfort_-2": "Comfort -2°C"
-        }
-      },
-      "siren": {
-        "lmh_volume": {
-          "low": "Low",
-          "medium": "Medium",
-          "high": "High"
         }
       }
     }
@@ -2837,20 +2458,7 @@
           "35": "Emergency",
           "36": "Disarm",
           "37": "Arm day zones",
-          "38": "Arm all zones",
-          "39": "On press",
-          "40": "On hold",
-          "41": "Up press",
-          "42": "Up hold",
-          "43": "Down press",
-          "44": "Down hold",
-          "45": "Off press",
-          "46": "Off hold",
-          "47": "Single press",
-          "48": "Long press",
-          "49": "Short release",
-          "50": "Long release",
-          "51": "Double press"
+          "38": "Arm all zones"
         }
       },
       "opening-sensor": {
@@ -2873,29 +2481,6 @@
           "zero": "No",
           "one": "Yes"
         }
-      },
-      "battery-low": {
-        "binary": {
-          "other": "No value received",
-          "zero": "No",
-          "one": "Yes"
-        }
-      },
-      "tamper": {
-        "binary": {
-          "other": "No value received",
-          "zero": "No",
-          "one": "Yes"
-        }
-      },
-      "risk": {
-        "integer": {
-          "no-risk": "No Risk",
-          "low-risk": "Low",
-          "medium-risk": "Medium",
-          "high-risk": "High",
-          "unknown": "Unknown"
-        }
       }
     }
   },
@@ -2915,10 +2500,6 @@
     "battery": {
       "shortCategoryName": "Battery",
       "integer": "Battery"
-    },
-    "battery-low": {
-      "shortCategoryName": "Low Battery",
-      "binary": "Low battery (yes/no)"
     },
     "temperature-sensor": {
       "shortCategoryName": "Temperature sensor",
@@ -2958,9 +2539,9 @@
       "shortCategoryName": "Counter",
       "integer": "Counter (integer)"
     },
-    "child-lock": {
-      "shortCategoryName": "Child Lock",
-      "binary": "Child lock"
+    "access-control": {
+      "shortCategoryName": "Access Control",
+      "mode": "Access Control Mode"
     },
     "smoke-sensor": {
       "shortCategoryName": "Smoke sensor",
@@ -2973,8 +2554,7 @@
     },
     "co2-sensor": {
       "shortCategoryName": "Co2 Sensor",
-      "decimal": "Co2 (decimal)",
-      "integer": "Co2 (integer)"
+      "decimal": "Co2 (decimal)"
     },
     "switch": {
       "shortCategoryName": "Switch",
@@ -2988,9 +2568,7 @@
     },
     "siren": {
       "shortCategoryName": "Siren",
-      "binary": "Siren",
-      "lmh_volume": "Siren volume",
-      "melody": "Melody"
+      "binary": "Siren"
     },
     "cube": {
       "shortCategoryName": "Cube",
@@ -3003,8 +2581,7 @@
     },
     "pressure-sensor": {
       "shortCategoryName": "Pressure sensor",
-      "decimal": "Pressure (decimal)",
-      "integer": "Pressure (integer)"
+      "decimal": "Pressure (decimal)"
     },
     "leak-sensor": {
       "shortCategoryName": "Leak sensor",
@@ -3052,14 +2629,6 @@
       "binary": "Switch (On/Off)",
       "mode": "Mode",
       "target-temperature": "Temperature"
-    },
-    "heater": {
-      "shortCategoryName": "Heating",
-      "pilot-wire-mode": "Mode"
-    },
-    "tamper": {
-      "shortCategoryName": "Tamper",
-      "binary": "Tamper (yes/no)"
     },
     "television": {
       "shortCategoryName": "Television",
@@ -3114,8 +2683,7 @@
     },
     "speed-sensor": {
       "shortCategoryName": "Speed sensor",
-      "decimal": "Speed (decimal)",
-      "integer": "Speed (integer)"
+      "decimal": "Speed"
     },
     "precipitation-sensor": {
       "shortCategoryName": "Precipitation sensor",
@@ -3133,10 +2701,6 @@
     "voc-sensor": {
       "shortCategoryName": "VOC Sensor",
       "decimal": "VOC (decimal)"
-    },
-    "voc-index-sensor": {
-      "shortCategoryName": "VOC Index",
-      "integer": "VOC Index (integer)"
     },
     "shutter": {
       "shortCategoryName": "Shutter",
@@ -3179,20 +2743,7 @@
       "pause": "Music pause button",
       "previous": "Music previous button",
       "next": "Music next button",
-      "playback_state": "Music playback state",
-      "play_notification": "Broadcast a notification"
-    },
-    "noise-sensor": {
-      "shortCategoryName": "Sound sensor",
-      "integer": "Noise (integer)"
-    },
-    "angle-sensor": {
-      "shortCategoryName": "Angle sensor",
-      "integer": "Angle (integer)"
-    },
-    "risk": {
-      "shortCategoryName": "Risk",
-      "integer": "Risk Level"
+      "playback_state": "Music playback state"
     },
     "unknown": {
       "shortCategoryName": "Unknown",
@@ -3201,7 +2752,7 @@
   },
   "errorPage": {
     "title": "Oops... This page does not exist.",
-    "description": "If you think it's a Gladys Assistant bug, please report it to our team!",
+    "description": "If you think it's a IHA Assistant bug, please report it to our team!",
     "goBack": "Go Back"
   },
   "chat": {
@@ -3211,9 +2762,9 @@
     "sendingInProgress": "Sending...",
     "typingInProgress": "Typing...",
     "gpt3Integration": "ChatGPT integration",
-    "gpt3IntegrationExplanation": "Gladys is now compatible with ChatGPT, which gives her an over-sized intelligence! For more information,",
+    "gpt3IntegrationExplanation": "IHA is now compatible with ChatGPT, which gives her an over-sized intelligence! For more information,",
     "gpt3ClickHere": "click-here!",
-    "gladysAlt": "Gladys",
+    "gladysAlt": "IHA",
     "examples": {
       "whatsTheWeatherLike": "\"What's the weather like?\"",
       "whatsTheTemperatureKitchen": "\"What's the temperature in the kitchen?\"",
@@ -3221,7 +2772,7 @@
     }
   },
   "header": {
-    "gladysAssistant": "Gladys Assistant",
+    "gladysAssistant": "IHA Assistant",
     "home": "Home",
     "chat": "Chat",
     "devices": "Devices",
@@ -3235,11 +2786,11 @@
     "signOut": "Sign Out"
   },
   "gatewayLinkUser": {
-    "title": "Configure Gladys Plus",
-    "label": "Select you Gladys user",
-    "description": "Before selecting your user here, please make sure that this user is accepted locally in your Gladys instance (In \"Settings\" => \"Gladys Plus\" => \"Users\").",
-    "noInstanceFound": "Your Gladys instance is not connected to the Gladys Gateway. Did you connect to your Gladys Plus account in your Gladys installation?",
-    "error": "An error occurred. Is your user accepted locally in your Gladys instance?",
+    "title": "Configure IHA Plus",
+    "label": "Select you IHA user",
+    "description": "Before selecting your user here, please make sure that this user is accepted locally in your IHA instance (In \"Settings\" => \"IHA Plus\" => \"Users\").",
+    "noInstanceFound": "Your IHA instance is not connected to the IHA Gateway. Did you connect to your IHA Plus account in your IHA installation?",
+    "error": "An error occurred. Is your user accepted locally in your IHA instance?",
     "saveButton": "Save",
     "manageBilling": "To manage your billing, click ",
     "here": "here"
@@ -3256,7 +2807,7 @@
     "unitLabel": "Unit",
     "saveButton": "Save",
     "deleteButton": "Delete",
-    "externalIdMessage": "The feature external ID is an unique ID which helps you identify this feature outside of Gladys, for example when calling the API.",
+    "externalIdMessage": "The feature external ID is an unique ID which helps you identify this feature outside of IHA, for example when calling the API.",
     "minLabel": "Minimum value",
     "minPlaceholder": "Enter feature minimum value",
     "maxLabel": "Maximum value",
@@ -3279,19 +2830,19 @@
     }
   },
   "gatewaySignup": {
-    "title": "Gladys Assistant",
+    "title": "IHA Assistant",
     "alreadyHaveAccount": "Already have an account?",
     "signin": "Sign in",
     "supportText": "Support at hello@gladysassistant.com",
-    "createAccount": "Create your Gladys Plus account",
+    "createAccount": "Create your IHA Plus account",
     "emailAlreadyExistError": "An account with that email already exist",
-    "browserNotCompatibleError": "Sorry, your browser is not compatible with the Gladys Gateway. Your browser should support the WebCrypto API.",
-    "tokenError": "You have to subscribe to the Gladys Community Package on Gladys website first!",
+    "browserNotCompatibleError": "Sorry, your browser is not compatible with the IHA Gateway. Your browser should support the WebCrypto API.",
+    "tokenError": "You have to subscribe to the IHA Community Package on IHA website first!",
     "unknownError": "An unknown error occured. Please retry later or contact me at hello@gladysassistant.com to understand what happened.",
     "invalidInvitationError": "We cannot retrieve your invitation. Maybe it was already used or it has expired! Please contact us at hello@gladysassistant.com."
   },
   "gatewaySubscribe": {
-    "registerGladysPlus": "Register to Gladys Plus",
+    "registerGladysPlus": "Register to IHA Plus",
     "emailAddress": "Email Address",
     "emailAddressPlaceholder": "Enter Email",
     "cardInformations": "Card Information",
@@ -3301,11 +2852,11 @@
     "invalidEmailAddress": "Invalid Email Address",
     "emailAlreadyExist": "An account with this email address already exist!",
     "paymentFailed": "Payment failed. Please try again or try with a different card.",
-    "paymentSuccess": "Congrats, you just subscribed to Gladys Plus. Check your email to get access to the Slack and the Gladys Gateway. Thanks for your support!"
+    "paymentSuccess": "Congrats, you just subscribed to IHA Plus. Check your email to get access to the Slack and the IHA Gateway. Thanks for your support!"
   },
   "gatewayForgotPassword": {
-    "pageTitle": "Gladys Assistant",
-    "formTitle": "Gladys Plus - Forgot Password",
+    "pageTitle": "IHA Assistant",
+    "formTitle": "IHA Plus - Forgot Password",
     "success": "If this account exist, you've receive an email with a reset password link.",
     "emailAddress": "Email Address",
     "sendEmailButton": "Send reset password email",
@@ -3314,9 +2865,9 @@
     "signupLink": "Signup"
   },
   "gatewayResetPassword": {
-    "pageTitle": "Gladys Assistant",
-    "formTitle": "Gladys Plus - Reset Password",
-    "incompatibleBrowserLabel": "Sorry, your browser is not compatible with the Gladys Gateway. Your browser should support the WebCrypto API as well as IndexedDB databases.",
+    "pageTitle": "IHA Assistant",
+    "formTitle": "IHA Plus - Reset Password",
+    "incompatibleBrowserLabel": "Sorry, your browser is not compatible with the IHA Gateway. Your browser should support the WebCrypto API as well as IndexedDB databases.",
     "errorLinkLabel": "We cannot retrieve your reset password link. Maybe it was already used or has expired!",
     "passwordNotMatchingLabel": "Password are not matching.",
     "passwordLabel": "Password (min 8 characters)",
@@ -3329,7 +2880,7 @@
   },
   "gatewayOpenApi": {
     "title": "Open API",
-    "description": "The Open API allows you to send information to Gladys outside of your network.",
+    "description": "The Open API allows you to send information to IHA outside of your network.",
     "moreInformations": "<a href=\"https://gladysassistant.com/docs/plus/open-api\">More information.</a>",
     "warningKeyDisappear": "Warning: You'll see the key only once. Copy paste your key and save it somewhere.",
     "keyName": "Name",
@@ -3342,12 +2893,12 @@
     "neverUsed": "Never"
   },
   "gatewayTwoFactorAuth": {
-    "title": "Gladys Plus",
+    "title": "IHA Plus",
     "configureTitle": "Configure Two-Factor Authentication",
     "configureButton": "Configure 2FA",
     "secretLabel": "Secret",
     "copy": "Copy",
-    "securityIsImportant": "The security of your Gladys Gateway account is really important to us.",
+    "securityIsImportant": "The security of your IHA Gateway account is really important to us.",
     "securityApps": "To ensure that your account remains secure, please enable two-factor authentication using a two-factor app like Authy on <a href=\"https://itunes.apple.com/us/app/authy/id494168017?mt=8\">iOS</a> or <a href=\"https://play.google.com/store/apps/details?id=com.authy.authy\">Android</a>.",
     "invalidCode": "The 2FA code you provided is not valid.",
     "confirmCode": "Confirm Two Factor",

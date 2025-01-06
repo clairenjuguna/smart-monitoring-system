@@ -38,7 +38,6 @@ const SonosPage = ({ children, user }) => (
 
                   <DeviceConfigurationLink
                     user={user}
-                    configurationKey="integrations"
                     documentKey="sonos"
                     linkClass="list-group-item list-group-item-action d-flex align-items-center"
                   >

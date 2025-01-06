@@ -3,6 +3,7 @@ const { expect, assert } = require('chai');
 const fse = require('fs-extra');
 const path = require('path');
 const { fake, assert: fakeAssert } = require('sinon');
+const FfmpegMock = require('./FfmpegMock.test');
 const RtspCameraManager = require('../../../services/rtsp-camera/lib');
 const { NotFoundError } = require('../../../utils/coreErrors');
 const { DEVICE_ROTATION } = require('../../../utils/constants');
@@ -71,7 +72,12 @@ describe('Camera.streaming', () => {
     await fse.ensureDir(gladys.config.tempFolder);
   });
   beforeEach(() => {
-    rtspCameraManager = new RtspCameraManager(gladys, childProcessMock, 'de051f90-f34a-4fd5-be2e-e502339ec9bc');
+    rtspCameraManager = new RtspCameraManager(
+      gladys,
+      FfmpegMock,
+      childProcessMock,
+      'de051f90-f34a-4fd5-be2e-e502339ec9bc',
+    );
   });
   afterEach(() => {
     // remove interval
@@ -89,7 +95,12 @@ describe('Camera.streaming', () => {
         }),
       },
     };
-    rtspCameraManager = new RtspCameraManager(wrongGladys, childProcessMock, 'de051f90-f34a-4fd5-be2e-e502339ec9bc');
+    rtspCameraManager = new RtspCameraManager(
+      wrongGladys,
+      FfmpegMock,
+      childProcessMock,
+      'de051f90-f34a-4fd5-be2e-e502339ec9bc',
+    );
     const promise = rtspCameraManager.startStreaming('my-camera', false, 1);
     await assert.isRejected(promise, NotFoundError);
     wrongGladys.device.getBySelector = fake.resolves({
@@ -147,6 +158,7 @@ describe('Camera.streaming', () => {
     };
     rtspCameraManager = new RtspCameraManager(
       gladysDeviceWithRotation,
+      FfmpegMock,
       childProcessMock,
       'de051f90-f34a-4fd5-be2e-e502339ec9bc',
     );
@@ -182,6 +194,7 @@ describe('Camera.streaming', () => {
     };
     rtspCameraManager = new RtspCameraManager(
       gladysDeviceWithRotation,
+      FfmpegMock,
       childProcessMock,
       'de051f90-f34a-4fd5-be2e-e502339ec9bc',
     );
@@ -217,6 +230,7 @@ describe('Camera.streaming', () => {
     };
     rtspCameraManager = new RtspCameraManager(
       gladysDeviceWithRotation,
+      FfmpegMock,
       childProcessMock,
       'de051f90-f34a-4fd5-be2e-e502339ec9bc',
     );
@@ -248,6 +262,7 @@ describe('Camera.streaming', () => {
     };
     rtspCameraManager = new RtspCameraManager(
       gladysDeviceWithRotation,
+      FfmpegMock,
       childProcessMock,
       'de051f90-f34a-4fd5-be2e-e502339ec9bc',
     );
@@ -284,7 +299,12 @@ describe('Camera.streaming', () => {
     await rtspCameraManager.stopStreaming('my-camera');
   });
   it('should start streaming only once', async () => {
-    rtspCameraManager = new RtspCameraManager(gladys, childProcessMock, 'de051f90-f34a-4fd5-be2e-e502339ec9bc');
+    rtspCameraManager = new RtspCameraManager(
+      gladys,
+      FfmpegMock,
+      childProcessMock,
+      'de051f90-f34a-4fd5-be2e-e502339ec9bc',
+    );
 
     // @ts-ignore
     rtspCameraManager.startStreaming = fake.resolves({});
@@ -297,7 +317,12 @@ describe('Camera.streaming', () => {
     fakeAssert.calledOnce(rtspCameraManager.startStreaming);
   });
   it('should start streaming if not started', async () => {
-    rtspCameraManager = new RtspCameraManager(gladys, childProcessMock, 'de051f90-f34a-4fd5-be2e-e502339ec9bc');
+    rtspCameraManager = new RtspCameraManager(
+      gladys,
+      FfmpegMock,
+      childProcessMock,
+      'de051f90-f34a-4fd5-be2e-e502339ec9bc',
+    );
     // @ts-ignore
     rtspCameraManager.startStreaming = fake.rejects(new Error('test'));
     const promise = rtspCameraManager.startStreamingIfNotStarted('my-camera', false, 1);
@@ -305,7 +330,12 @@ describe('Camera.streaming', () => {
     expect(rtspCameraManager.liveStreamsStarting.size).to.equal(0);
   });
   it('should start streaming locally, then convert local stream to online stream during init', async () => {
-    rtspCameraManager = new RtspCameraManager(gladys, childProcessMock, 'de051f90-f34a-4fd5-be2e-e502339ec9bc');
+    rtspCameraManager = new RtspCameraManager(
+      gladys,
+      FfmpegMock,
+      childProcessMock,
+      'de051f90-f34a-4fd5-be2e-e502339ec9bc',
+    );
     // @ts-ignore
     rtspCameraManager.convertLocalStreamToGateway = fake.resolves(null);
     const promise = rtspCameraManager.startStreamingIfNotStarted('my-camera', false, 1);
@@ -315,7 +345,12 @@ describe('Camera.streaming', () => {
     fakeAssert.calledOnce(rtspCameraManager.convertLocalStreamToGateway);
   });
   it('should start streaming locally, then convert local stream to online stream after stream started', async () => {
-    rtspCameraManager = new RtspCameraManager(gladys, childProcessMock, 'de051f90-f34a-4fd5-be2e-e502339ec9bc');
+    rtspCameraManager = new RtspCameraManager(
+      gladys,
+      FfmpegMock,
+      childProcessMock,
+      'de051f90-f34a-4fd5-be2e-e502339ec9bc',
+    );
     // @ts-ignore
     rtspCameraManager.convertLocalStreamToGateway = fake.resolves(null);
     await rtspCameraManager.startStreamingIfNotStarted('my-camera', false, 1);
@@ -347,6 +382,7 @@ describe('Camera.streaming', () => {
     };
     rtspCameraManager = new RtspCameraManager(
       gladys,
+      FfmpegMock,
       childProcessMockWithCrash,
       'de051f90-f34a-4fd5-be2e-e502339ec9bc',
     );
@@ -382,6 +418,7 @@ describe('Camera.streaming', () => {
     };
     rtspCameraManager = new RtspCameraManager(
       gladys,
+      FfmpegMock,
       childProcessMockWithCrash,
       'de051f90-f34a-4fd5-be2e-e502339ec9bc',
     );
@@ -406,6 +443,7 @@ describe('Camera.streaming', () => {
     };
     rtspCameraManager = new RtspCameraManager(
       gladysWithFailClean,
+      FfmpegMock,
       childProcessMock,
       'de051f90-f34a-4fd5-be2e-e502339ec9bc',
     );
@@ -422,7 +460,12 @@ describe('Camera.streaming', () => {
     await rtspCameraManager.stopStreaming('my-camera');
   });
   it('should return even if stream does not exist in stopStreaming', async () => {
-    rtspCameraManager = new RtspCameraManager(gladys, childProcessMock, 'de051f90-f34a-4fd5-be2e-e502339ec9bc');
+    rtspCameraManager = new RtspCameraManager(
+      gladys,
+      FfmpegMock,
+      childProcessMock,
+      'de051f90-f34a-4fd5-be2e-e502339ec9bc',
+    );
     await rtspCameraManager.stopStreaming('unknown stream');
   });
 });

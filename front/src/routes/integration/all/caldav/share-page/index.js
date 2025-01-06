@@ -16,7 +16,7 @@ class SharePage extends Component {
       props.caldavSaveSharingStatus === RequestStatus.Getting ||
       props.caldavGetSettingsStatus === RequestStatus.Getting;
     return (
-      <CalDAVPage user={props.user}>
+      <CalDAVPage>
         <ShareTab {...props} loading={loading} dictionary={this.props.intl.dictionary.integration.caldav} />
       </CalDAVPage>
     );
@@ -25,7 +25,7 @@ class SharePage extends Component {
 
 export default withIntlAsProp(
   connect(
-    'user,gladysUsers,caldavCalendars,caldavSaveSharingStatus,caldavGetSettingsStatus,calendarsSharing',
+    'gladysUsers,caldavCalendars,caldavSaveSharingStatus,caldavGetSettingsStatus,calendarsSharing',
     actions
   )(SharePage)
 );

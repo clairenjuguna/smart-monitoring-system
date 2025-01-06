@@ -8,7 +8,7 @@ const {
   DEVICE_FEATURE_UNITS,
 } = require('../../../../utils/constants');
 
-describe('Send state to HomeKit', () => {
+describe('Notify change to HomeKit', () => {
   const homekitHandler = {
     serviceId: '7056e3d4-31cc-4d2a-bbdd-128cd49755e6',
     sendState,
@@ -23,12 +23,10 @@ describe('Send state to HomeKit', () => {
         Saturation: 'SATURATION',
         ColorTemperature: 'COLORTEMPERATURE',
         ContactSensorState: 'CONTACTSENSORSTATE',
-        MotionDetected: 'MOTIONDETECTED',
         CurrentTemperature: 'CURRENTTEMPERATURE',
       },
       Service: {
         ContactSensor: 'CONTACTSENSOR',
-        MotionSensor: 'MOTIONSENSOR',
       },
     },
     notifyTimeouts: {},
@@ -82,31 +80,6 @@ describe('Send state to HomeKit', () => {
     await homekitHandler.sendState(accessory, feature, event);
 
     expect(updateCharacteristic.args[0]).eql(['CONTACTSENSORSTATE', 1]);
-  });
-
-  it('should notify motion sensor', async () => {
-    const updateCharacteristic = stub().returns();
-    const accessory = {
-      UUID: '4756151c-369e-4772-8bf7-943a6ac70583',
-      getService: stub().returns({ updateCharacteristic }),
-    };
-
-    const event = {
-      type: EVENTS.DEVICE.NEW_STATE,
-      last_value: 0,
-    };
-
-    const feature = {
-      id: '4f7060d7-7960-4c68-b435-8952bf3f40bf',
-      device_id: '4756151c-369e-4772-8bf7-943a6ac70583',
-      name: 'Motion sensor',
-      category: DEVICE_FEATURE_CATEGORIES.MOTION_SENSOR,
-      type: DEVICE_FEATURE_TYPES.SENSOR.BINARY,
-    };
-
-    await homekitHandler.sendState(accessory, feature, event);
-
-    expect(updateCharacteristic.args[0]).eql(['MOTIONDETECTED', 0]);
   });
 
   it('should notify light brightness', async () => {

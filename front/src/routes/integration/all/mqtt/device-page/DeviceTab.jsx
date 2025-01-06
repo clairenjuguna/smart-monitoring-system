@@ -11,9 +11,9 @@ import CardFilter from '../../../../../components/layout/CardFilter';
 const DeviceTab = ({ children, ...props }) => (
   <div class="card">
     <div class="card-header">
-      <h1 class="card-title">
+      <h3 class="card-title">
         <Text id="integration.mqtt.device.title" />
-      </h1>
+      </h3>
       <div class="page-options d-flex">
         <Localizer>
           <CardFilter

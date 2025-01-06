@@ -1,5 +1,4 @@
 const { QueryTypes } = require('sequelize');
-const Promise = require('bluebird');
 const { NotFoundError, BadParameters } = require('../../utils/coreErrors');
 const { DEVICE_POLL_FREQUENCIES, EVENTS } = require('../../utils/constants');
 const db = require('../../models');
@@ -68,14 +67,6 @@ async function destroy(selector) {
     });
     throw new BadParameters(`${totalNumberOfStates} states in DB. Too much states!`);
   }
-
-  // Delete states from DuckDB
-  await Promise.each(device.features, async (feature) => {
-    await db.duckDbWriteConnectionAllAsync(
-      'DELETE FROM t_device_feature_state WHERE device_feature_id = ?',
-      feature.id,
-    );
-  });
 
   await device.destroy();
 

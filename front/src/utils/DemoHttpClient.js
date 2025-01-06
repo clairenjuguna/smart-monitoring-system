@@ -15,28 +15,14 @@ export class DemoHttpClient {
   };
   setToken() {}
 
-  async get(url, query) {
+  async get(url) {
     await this.getDemoFile();
-    let key = `get ${url}`;
-    let response = this.responses[key];
-
-    if (query) {
-      for (const [index, [param, value]] of Object.entries(query).entries()) {
-        if (index < 1) {
-          key += `?`;
-        } else {
-          key += `&`;
-        }
-        key += `${param}=${value}`;
-      }
-      response = this.responses[key] || response;
-    }
-
-    if (!response) {
+    const key = `get ${url}`;
+    if (!this.responses[key]) {
       console.error(`${key} not found in demo.js`);
       throw new Error(`${key} not found in demo.js`);
     }
-    return Promise.resolve(response);
+    return Promise.resolve(this.responses[key]);
   }
 
   async post(url) {

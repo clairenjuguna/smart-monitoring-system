@@ -13,7 +13,7 @@ class MqttDevicePage extends Component {
 
   render(props, {}) {
     return (
-      <MqttPage user={props.user}>
+      <MqttPage>
         <DeviceTab {...props} />
       </MqttPage>
     );

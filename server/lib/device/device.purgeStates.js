@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const db = require('../../models');
 const logger = require('../../utils/logger');
 const { SYSTEM_VARIABLE_NAMES } = require('../../utils/constants');
@@ -20,6 +21,7 @@ async function purgeStates() {
     logger.debug('Not purging device feature states, deviceStateHistoryInDays = -1');
     return Promise.resolve(false);
   }
+  const queryInterface = db.sequelize.getQueryInterface();
   const now = new Date().getTime();
   // all date before this timestamp will be removed
   const timstampLimit = now - deviceStateHistoryInDaysInt * 24 * 60 * 60 * 1000;
@@ -27,12 +29,11 @@ async function purgeStates() {
   logger.info(
     `Purging device feature states of the last ${deviceStateHistoryInDaysInt} days. States older than ${dateLimit} will be purged.`,
   );
-  await db.duckDbWriteConnectionAllAsync(
-    `
-    DELETE FROM t_device_feature_state WHERE created_at < ?
-  `,
-    dateLimit,
-  );
+  await queryInterface.bulkDelete('t_device_feature_state', {
+    created_at: {
+      [Op.lte]: dateLimit,
+    },
+  });
   return true;
 }
 

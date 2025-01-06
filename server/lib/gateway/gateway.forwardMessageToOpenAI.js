@@ -1,4 +1,3 @@
-const logger = require('../../utils/logger');
 const { Error429 } = require('../../utils/httpErrors');
 
 const intentTranslation = {
@@ -18,18 +17,16 @@ const disableOpenAiFirstReply = new Set(['GET_TEMPERATURE', 'GET_HUMIDITY']);
  * @description Handle a new message sent by a user to Gladys.
  * @param {object} request - A request sent.
  * @param {object} request.message - A message sent by a user.
- * @param {object} request.image - An image to send.
  * @param {Array} request.previousQuestions - List of previous messages.
  * @param {object} request.context - Context of messages (user, etc...).
  * @returns {Promise} Return classification.
  * @example
  * forwardMessageToOpenAI(request);
  */
-async function forwardMessageToOpenAI({ message, image, previousQuestions, context }) {
+async function forwardMessageToOpenAI({ message, previousQuestions, context }) {
   try {
     const response = await this.openAIAsk({
       question: message.text,
-      image,
       previous_questions: previousQuestions,
     });
 
@@ -66,7 +63,6 @@ async function forwardMessageToOpenAI({ message, image, previousQuestions, conte
 
     return classification;
   } catch (e) {
-    logger.warn(e);
     if (e instanceof Error429) {
       await this.message.replyByIntent(message, 'openai.request.tooManyRequests', context);
     } else {

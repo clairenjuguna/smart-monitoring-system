@@ -35,7 +35,15 @@ class ChooseTriggerType extends Component {
       this.setState({
         currentTrigger: selectedOption
       });
-      this.props.updateTriggerProperty(this.props.index, 'type', selectedOption.value);
+    } else {
+      this.setState({
+        currentTrigger: null
+      });
+    }
+  };
+  changeBoxType = () => {
+    if (this.state.currentTrigger) {
+      this.props.updateTriggerProperty(this.props.index, 'type', this.state.currentTrigger.value);
     }
   };
 
@@ -68,6 +76,11 @@ class ChooseTriggerType extends Component {
             options={options}
             onChange={this.handleChange}
           />
+        </div>
+        <div class="form-group">
+          <button onClick={this.changeBoxType} class="btn btn-success">
+            <Text id="editScene.addTriggerButton" />
+          </button>
         </div>
       </div>
     );

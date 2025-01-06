@@ -38,60 +38,55 @@ async function getImage(device) {
       this.gladys.config.tempFolder,
       `camera-${device.id}-${now.getMilliseconds()}-${now.getSeconds()}-${now.getMinutes()}-${now.getHours()}.jpg`,
     );
-
-    const args = ['-i', cameraUrlParam.value, '-f', 'image2', '-vframes', '1', '-qscale:v', '15'];
-
-    args.push('-vf');
+    // we create a writestream
+    const writeStream = fse.createWriteStream(filePath);
+    const outputOptions = [
+      '-vframes 1',
+      '-qscale:v 15', //  Effective range for JPEG is 2-31 with 31 being the worst quality.
+    ];
     switch (cameraRotationParam.value) {
       case DEVICE_ROTATION.DEGREES_90:
-        args.push('scale=640:-1,transpose=1'); // Rotate 90
+        outputOptions.push('-vf scale=640:-1,transpose=1'); // Rotate 90
         break;
       case DEVICE_ROTATION.DEGREES_180:
-        args.push('scale=640:-1,transpose=1,transpose=1'); // Rotate 180
+        outputOptions.push('-vf scale=640:-1,transpose=1,transpose=1'); // Rotate 180
         break;
       case DEVICE_ROTATION.DEGREES_270:
-        args.push('scale=640:-1,transpose=2'); // Rotate 270
+        outputOptions.push('-vf scale=640:-1,transpose=2'); // Rotate 270
         break;
       default:
-        args.push('scale=640:-1'); // Rotate 0
+        outputOptions.push('-vf scale=640:-1'); // Rotate 0
         break;
     }
 
-    // add destination file path
-    args.push(filePath);
-
-    logger.debug(`Getting camera image on URL ${cameraUrlParam.value}`);
-    this.childProcess.execFile(
-      'ffmpeg',
-      args,
-      {
-        timeout: 10 * 1000, // 10 second max
-      },
-      async (error, stdout, stderr) => {
-        if (error) {
-          logger.warn(error);
-          await fse.remove(filePath);
-          return reject(error);
-        }
-        logger.debug('Camera image saved to disk. Reading disk.');
+    // Send a camera thumbnail to this stream
+    // Add a timeout to prevent ffmpeg from running forever
+    this.ffmpeg(cameraUrlParam.value, { timeout: 10 })
+      .format('image2')
+      .outputOptions(outputOptions)
+      .output(writeStream)
+      .on('end', async () => {
         let image;
         try {
           image = await fse.readFile(filePath);
         } catch (e) {
-          await fse.remove(filePath);
-          return reject(e);
+          reject(e);
+          return;
         }
-        logger.debug('Camera image read from disk, converting to base64');
 
         // convert binary data to base64 encoded string
         const cameraImageBase = Buffer.from(image).toString('base64');
-        const cameraImage = `image/jpg;base64,${cameraImageBase}`;
-        logger.debug('Camera converted to base64, resolving.');
+        const cameraImage = `image/png;base64,${cameraImageBase}`;
         resolve(cameraImage);
         await fse.remove(filePath);
-        return null;
-      },
-    );
+      })
+      .on('error', async (err, stdout, stderr) => {
+        logger.debug(`Cannot process video: ${err.message}`);
+        logger.debug(stderr);
+        reject(err.message);
+        await fse.remove(filePath);
+      })
+      .run();
   });
 }
 

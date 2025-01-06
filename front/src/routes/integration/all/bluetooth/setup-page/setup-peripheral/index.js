@@ -81,7 +81,7 @@ class BluetoothConnnectPage extends Component {
     }
 
     return (
-      <BluetoothPage {...uuid} user={this.props.user}>
+      <BluetoothPage {...uuid}>
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">
@@ -98,4 +98,4 @@ class BluetoothConnnectPage extends Component {
   }
 }
 
-export default connect('user,session,httpClient,houses,bluetoothStatus', actions)(BluetoothConnnectPage);
+export default connect('session,httpClient,houses,bluetoothStatus', actions)(BluetoothConnnectPage);

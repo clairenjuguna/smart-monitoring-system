@@ -12,7 +12,7 @@ class LANManagerDevicePage extends Component {
 
   render(props, {}) {
     return (
-      <LANManagerPage user={props.user}>
+      <LANManagerPage>
         <LANManagerDeviceTab {...props} />
       </LANManagerPage>
     );

@@ -97,17 +97,15 @@ class Session {
   }
 
   getRefreshToken() {
-    const user = this.getUser();
-    if (user) {
-      return user.refresh_token;
+    if (this.user) {
+      return this.user.refresh_token;
     }
     return null;
   }
 
   getAccessToken() {
-    const user = this.getUser();
-    if (user) {
-      return user.access_token;
+    if (this.user) {
+      return this.user.access_token;
     }
     return null;
   }

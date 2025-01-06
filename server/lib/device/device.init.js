@@ -1,14 +1,15 @@
 const db = require('../../models');
+const { EVENTS } = require('../../utils/constants');
 const logger = require('../../utils/logger');
 
 /**
  * @description Init devices in local RAM.
- * @param {boolean} startDuckDbMigration - Should start DuckDB migration.
+ * @param {boolean} startDeviceStateAggregate - Start the device aggregate task.
  * @returns {Promise} Resolve with inserted devices.
  * @example
  * gladys.device.init();
  */
-async function init(startDuckDbMigration = true) {
+async function init(startDeviceStateAggregate = true) {
   // load all devices in RAM
   const devices = await db.Device.findAll({
     include: [
@@ -37,11 +38,12 @@ async function init(startDuckDbMigration = true) {
     this.brain.addNamedEntity('device', plainDevice.selector, plainDevice.name);
     return plainDevice;
   });
+  if (startDeviceStateAggregate) {
+    // calculate aggregate data for device states
+    this.eventManager.emit(EVENTS.DEVICE.CALCULATE_HOURLY_AGGREGATE);
+  }
   // setup polling for device who need polling
   this.setupPoll();
-  if (startDuckDbMigration) {
-    this.migrateFromSQLiteToDuckDb();
-  }
   return plainDevices;
 }
 

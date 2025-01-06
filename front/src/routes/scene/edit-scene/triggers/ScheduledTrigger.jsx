@@ -27,28 +27,10 @@ class TurnOnLight extends Component {
     this.resetForm();
     if (schedulerType === 'every-month') {
       this.props.updateTriggerProperty(this.props.index, 'day_of_the_month', 1);
-      this.props.updateTriggerProperty(this.props.index, 'time', '12:00');
     } else if (schedulerType === 'every-week') {
-      this.props.updateTriggerProperty(this.props.index, 'days_of_the_week', [
-        'monday',
-        'tuesday',
-        'wednesday',
-        'thursday',
-        'friday',
-        'saturday',
-        'sunday'
-      ]);
-      this.props.updateTriggerProperty(this.props.index, 'time', '12:00');
-    } else if (schedulerType === 'every-day') {
-      this.props.updateTriggerProperty(this.props.index, 'time', '12:00');
-    } else if (schedulerType === 'custom-time') {
-      let tomorrow = new Date();
-      tomorrow.setDate(tomorrow.getDate() + 1);
-      this.props.updateTriggerProperty(this.props.index, 'time', '12:00');
-      this.props.updateTriggerProperty(this.props.index, 'date', format(tomorrow, 'yyyy-MM-dd'));
+      this.props.updateTriggerProperty(this.props.index, 'days_of_the_week', []);
     } else if (schedulerType === 'interval') {
       this.props.updateTriggerProperty(this.props.index, 'unit', 'second');
-      this.props.updateTriggerProperty(this.props.index, 'interval', 30);
     }
   };
   handleDateChange = date => {
@@ -91,7 +73,7 @@ class TurnOnLight extends Component {
     return (
       <div>
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-4">
             <div class="form-group">
               <div class="form-label">
                 <Text id="editScene.triggersCard.scheduledTrigger.typeLabel" />
@@ -267,7 +249,7 @@ class TurnOnLight extends Component {
             </div>
           )}
           {this.props.trigger.scheduler_type === 'every-week' && (
-            <div class="col-sm-4">
+            <div class="col-sm-2">
               <div class="form-group">
                 <div class="form-label">
                   <Text id="editScene.triggersCard.scheduledTrigger.timeLabel" />

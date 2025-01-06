@@ -2,7 +2,7 @@ ARG TARGET
 ARG VERSION
 ARG BUILD_DATE
 
-FROM ${TARGET}/node:18-slim
+FROM $TARGET/node:18-alpine
 
 LABEL \
   org.label-schema.build-date=$BUILD_DATE \
@@ -11,18 +11,12 @@ LABEL \
 COPY qemu-* /usr/bin/
 
 # System dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-         tzdata \
-         nmap \
-         ffmpeg \
-         sqlite3 \
-         openssl \
-         gzip \
-         udev \
-         bluez \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache tzdata nmap ffmpeg sqlite openssl gzip eudev
 
 WORKDIR /tmp
+
+# Install Bluez dependencies
+RUN apk add --no-cache bluez
 
 # Install Gladys
 RUN mkdir /src
@@ -30,19 +24,10 @@ WORKDIR /src
 ADD . /src
 COPY ./static /src/server/static
 WORKDIR /src/server
-
-# Install build dependencies and application dependencies
-RUN apt-get update && apt-get install -y \
-         build-essential \
-         python3 \
-         python3-pip \
-         git \
-         libffi-dev \
-         && npm ci --unsafe-perm --production \
-         && npm cache clean --force \
-         && apt-get autoremove -y build-essential python3 python3-pip git libffi-dev \
-         && apt-get purge -y --auto-remove \
-         && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache --virtual .build-deps make gcc g++ python3 git libffi-dev linux-headers \
+    && npm ci --unsafe-perm --production \
+    && npm cache clean --force \
+    && apk del .build-deps
 
 ENV NODE_ENV production
 ENV SERVER_PORT 80
@@ -50,4 +35,4 @@ ENV SERVER_PORT 80
 # Export listening port
 EXPOSE 80
 
-CMD ["node", "index.js"]
+CMD ["npm" ,"run", "start:prod"]

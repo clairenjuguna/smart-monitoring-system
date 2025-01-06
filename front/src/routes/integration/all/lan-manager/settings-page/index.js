@@ -4,7 +4,7 @@ import LANManagerPage from '../LANManagerPage';
 import LANManagerSettingsTab from './LANManagerSettingsTab';
 
 const LANManagerSettingsPage = props => (
-  <LANManagerPage user={props.user}>
+  <LANManagerPage>
     <LANManagerSettingsTab {...props} />
   </LANManagerPage>
 );

@@ -15,7 +15,7 @@ class SyncPage extends Component {
     const loading =
       props.caldavSaveSyncStatus === RequestStatus.Getting || props.caldavGetSettingsStatus === RequestStatus.Getting;
     return (
-      <CalDAVPage user={props.user}>
+      <CalDAVPage>
         <SyncTab {...props} loading={loading} dictionary={this.props.intl.dictionary.integration.caldav} />
       </CalDAVPage>
     );
@@ -23,5 +23,5 @@ class SyncPage extends Component {
 }
 
 export default withIntlAsProp(
-  connect('user,caldavCalendars,caldavSaveSyncStatus,caldavGetSettingsStatus,calendarsToSync', actions)(SyncPage)
+  connect('caldavCalendars,caldavSaveSyncStatus,caldavGetSettingsStatus,calendarsToSync', actions)(SyncPage)
 );

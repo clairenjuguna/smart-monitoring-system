@@ -57,14 +57,7 @@ describe('gateway.restoreBackup', () => {
     sinon.reset();
   });
 
-  it('should restore a new style backup (sqlite + duckDB)', async () => {
-    const backupFilePath = path.join(__dirname, 'real-gladys-db-backup.db.gz.dbfile');
-    const parquetFolderPath = path.join(__dirname, 'gladys_backup_parquet_folder');
-    await gateway.restoreBackup(backupFilePath, parquetFolderPath);
-    assert.calledOnceWithExactly(sequelize.close);
-  });
-
-  it('should restore a old style backup (just sqlite)', async () => {
+  it('should restore a backup', async () => {
     const backupFilePath = path.join(__dirname, 'real-gladys-db-backup.db.gz.dbfile');
     await gateway.restoreBackup(backupFilePath);
     assert.calledOnceWithExactly(sequelize.close);

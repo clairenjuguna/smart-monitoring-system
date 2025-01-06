@@ -1,34 +1,149 @@
 const { expect } = require('chai');
 const path = require('path');
 const fs = require('fs');
-const proxyquire = require('proxyquire').noCallThru();
-const sinon = require('sinon');
 
-const { fake, assert } = sinon;
-
-const portfinderMock = {
-  getPortPromise: fake.resolves(12000),
-};
-const configureContainer = proxyquire('../../../../services/zigbee2mqtt/lib/configureContainer', {
-  portfinder: portfinderMock,
-});
-const Zigbee2mqttManager = proxyquire('../../../../services/zigbee2mqtt/lib', {
-  './configureContainer': configureContainer,
-});
+const Zigbee2mqttManager = require('../../../../services/zigbee2mqtt/lib');
 const { DEFAULT } = require('../../../../services/zigbee2mqtt/lib/constants');
 const { ADAPTERS_BY_CONFIG_KEY, CONFIG_KEYS } = require('../../../../services/zigbee2mqtt/adapters');
 
 const serviceId = 'f87b7af2-ca8e-44fc-b754-444354b42fee';
-const configBasePath = path.join(__dirname, 'config');
-const basePathOnContainer = path.join(configBasePath, 'container');
-const configFilePath = path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH);
+const basePathOnContainer = path.join(__dirname, 'container');
 
-const defaultConfigFilePath = path.join(configBasePath, 'z2m_default_config.yaml');
-const mqttConfigFilePath = path.join(configBasePath, 'z2m_mqtt_config.yaml');
-const mqttOtherConfigFilePath = path.join(configBasePath, 'z2m_mqtt-other_config.yaml');
-const deconzConfigFilePath = path.join(configBasePath, 'z2m_adapter-deconz_config.yaml');
-const ezspConfigFilePath = path.join(configBasePath, 'z2m_adapter-ezsp_config.yaml');
-const portConfigFilePath = path.join(configBasePath, 'z2m_port_config.yaml');
+const expectedDefaultContent = `\
+homeassistant: false
+permit_join: false
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://localhost:1884
+serial:
+  port: /dev/ttyACM0
+frontend:
+  port: 8080
+map_options:
+  graphviz:
+    colors:
+      fill:
+        enddevice: "#fff8ce"
+        coordinator: "#e04e5d"
+        router: "#4ea3e0"
+      font:
+        coordinator: "#ffffff"
+        router: "#ffffff"
+        enddevice: "#000000"
+      line:
+        active: "#009900"
+        inactive: "#994444"
+`;
+
+const expectedMqttContent = `\
+homeassistant: false
+permit_join: false
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://localhost:1884
+  user: mqtt-username
+  password: mqtt-password
+serial:
+  port: /dev/ttyACM0
+frontend:
+  port: 8080
+map_options:
+  graphviz:
+    colors:
+      fill:
+        enddevice: "#fff8ce"
+        coordinator: "#e04e5d"
+        router: "#4ea3e0"
+      font:
+        coordinator: "#ffffff"
+        router: "#ffffff"
+        enddevice: "#000000"
+      line:
+        active: "#009900"
+        inactive: "#994444"
+`;
+
+const expectedOtherMqttContent = `\
+homeassistant: false
+permit_join: false
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://localhost:1884
+  user: other-mqtt-username
+  password: other-mqtt-password
+serial:
+  port: /dev/ttyACM0
+frontend:
+  port: 8080
+map_options:
+  graphviz:
+    colors:
+      fill:
+        enddevice: "#fff8ce"
+        coordinator: "#e04e5d"
+        router: "#4ea3e0"
+      font:
+        coordinator: "#ffffff"
+        router: "#ffffff"
+        enddevice: "#000000"
+      line:
+        active: "#009900"
+        inactive: "#994444"
+`;
+
+const expectedEZSPContent = `\
+homeassistant: false
+permit_join: false
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://localhost:1884
+serial:
+  port: /dev/ttyACM0
+  adapter: ezsp
+frontend:
+  port: 8080
+map_options:
+  graphviz:
+    colors:
+      fill:
+        enddevice: "#fff8ce"
+        coordinator: "#e04e5d"
+        router: "#4ea3e0"
+      font:
+        coordinator: "#ffffff"
+        router: "#ffffff"
+        enddevice: "#000000"
+      line:
+        active: "#009900"
+        inactive: "#994444"
+`;
+
+const expectedDeconzContent = `\
+homeassistant: false
+permit_join: false
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://localhost:1884
+serial:
+  port: /dev/ttyACM0
+  adapter: deconz
+frontend:
+  port: 8080
+map_options:
+  graphviz:
+    colors:
+      fill:
+        enddevice: "#fff8ce"
+        coordinator: "#e04e5d"
+        router: "#4ea3e0"
+      font:
+        coordinator: "#ffffff"
+        router: "#ffffff"
+        enddevice: "#000000"
+      line:
+        active: "#009900"
+        inactive: "#994444"
+`;
 
 describe('zigbee2mqtt configureContainer', () => {
   // PREPARE
@@ -47,104 +162,95 @@ describe('zigbee2mqtt configureContainer', () => {
     };
 
     zigbee2mqttManager = new Zigbee2mqttManager(gladys, null, serviceId);
-
-    fs.mkdirSync(path.dirname(configFilePath), { recursive: true });
   });
 
   afterEach(() => {
     fs.rmSync(basePathOnContainer, { force: true, recursive: true });
-    sinon.reset();
   });
 
-  it('it should write default file, overriding TCP port', async () => {
+  it('it should write default file', async () => {
     // PREPARE
-    const config = {};
+    const config = {
+      key: 'value',
+    };
     // EXECUTE
-    const changed = await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
+    await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
     // ASSERT
     // Check that file has been created with defaults
-    const resultContent = fs.readFileSync(configFilePath, 'utf8');
-    const expectedContent = fs.readFileSync(defaultConfigFilePath, 'utf8');
-    expect(resultContent).to.equal(expectedContent);
-    expect(changed).to.be.eq(true);
-    assert.calledOnce(portfinderMock.getPortPromise);
+    const content = fs.readFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), 'utf8');
+    expect(content.toString()).to.equal(expectedDefaultContent);
   });
 
-  it('it should force override to random TCP port', async () => {
+  it('it should not override existong configuration file', async () => {
     // PREPARE
+    // Create directory
+    const configFilepath = path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH);
+    fs.mkdirSync(path.dirname(configFilepath), { recursive: true });
+    // Create custom config file
+    const customConfigContent = 'content: custom';
+    fs.writeFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), customConfigContent);
     const config = {
-      z2mTcpPort: null,
+      key: 'value',
     };
     // EXECUTE
-    const changed = await zigbee2mqttManager.configureContainer(basePathOnContainer, config, true);
+    await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
     // ASSERT
-    const resultContent = fs.readFileSync(configFilePath, 'utf8');
-    const expectedContent = fs.readFileSync(defaultConfigFilePath, 'utf8');
-    expect(resultContent).to.equal(expectedContent);
-    expect(changed).to.be.eq(true);
-    assert.calledOnce(portfinderMock.getPortPromise);
-  });
-
-  it('it should force override to custom TCP port', async () => {
-    // PREPARE
-    const config = {
-      z2mTcpPort: 9999,
-    };
-    // EXECUTE
-    const changed = await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
-    // ASSERT
-    const resultContent = fs.readFileSync(configFilePath, 'utf8');
-    const expectedContent = fs.readFileSync(portConfigFilePath, 'utf8');
-    expect(resultContent).to.equal(expectedContent);
-    expect(changed).to.be.eq(true);
-    assert.notCalled(portfinderMock.getPortPromise);
+    const content = fs.readFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), 'utf8');
+    expect(content.toString()).to.equal(customConfigContent);
   });
 
   it('it should only add mqtt credentials', async () => {
     // PREPARE
+    // Create directory
+    const configFilepath = path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH);
+    fs.mkdirSync(path.dirname(configFilepath), { recursive: true });
+    // Create custom config file
+    fs.writeFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), expectedDefaultContent);
     const config = {
       mqttUsername: 'mqtt-username',
       mqttPassword: 'mqtt-password',
     };
     // EXECUTE
-    const changed = await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
+    await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
     // ASSERT
-    const resultContent = fs.readFileSync(configFilePath, 'utf8');
-    const expectedContent = fs.readFileSync(mqttConfigFilePath, 'utf8');
-    expect(resultContent).to.equal(expectedContent);
-    expect(changed).to.be.eq(true);
+    const content = fs.readFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), 'utf8');
+    expect(content.toString()).to.equal(expectedMqttContent);
   });
 
   it('it should override mqtt credentials', async () => {
     // PREPARE
-    fs.copyFileSync(mqttConfigFilePath, configFilePath);
+    // Create directory
+    const configFilepath = path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH);
+    fs.mkdirSync(path.dirname(configFilepath), { recursive: true });
+    // Create custom config file
+    fs.writeFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), expectedDefaultContent);
     const config = {
       mqttUsername: 'other-mqtt-username',
       mqttPassword: 'other-mqtt-password',
     };
     // EXECUTE
-    const changed = await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
+    await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
     // ASSERT
-    const resultContent = fs.readFileSync(configFilePath, 'utf8');
-    const expectedContent = fs.readFileSync(mqttOtherConfigFilePath, 'utf8');
-    expect(resultContent).to.equal(expectedContent);
-    expect(changed).to.be.eq(true);
+    const content = fs.readFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), 'utf8');
+    expect(content.toString()).to.equal(expectedOtherMqttContent);
   });
 
   it('it should keep mqtt credentials', async () => {
     // PREPARE
-    fs.copyFileSync(mqttConfigFilePath, configFilePath);
+    // Create directory
+    const configFilepath = path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH);
+    fs.mkdirSync(path.dirname(configFilepath), { recursive: true });
+    // Create custom config file
+    fs.writeFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), expectedMqttContent);
     const config = {
       mqttUsername: 'mqtt-username',
       mqttPassword: 'mqtt-password',
     };
     // EXECUTE
-    const changed = await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
+    await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
     // ASSERT
-    const resultContent = fs.readFileSync(configFilePath, 'utf8');
-    const expectedContent = fs.readFileSync(mqttConfigFilePath, 'utf8');
-    expect(resultContent).to.equal(expectedContent);
-    expect(changed).to.be.eq(false);
+    const content = fs.readFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), 'utf8');
+    expect(content.toString()).to.equal(expectedMqttContent);
   });
 
   it('it should only add serial adapter', async () => {
@@ -153,82 +259,90 @@ describe('zigbee2mqtt configureContainer', () => {
       z2mDongleName: ADAPTERS_BY_CONFIG_KEY[CONFIG_KEYS.EZSP][0],
     };
     // EXECUTE
-    const changed = await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
+    await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
     // ASSERT
-    const resultContent = fs.readFileSync(configFilePath, 'utf8');
-    const expectedContent = fs.readFileSync(ezspConfigFilePath, 'utf8');
-    expect(resultContent).to.equal(expectedContent);
-    expect(changed).to.be.eq(true);
+    const content = fs.readFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), 'utf8');
+    expect(content.toString()).to.equal(expectedEZSPContent);
   });
 
   it('it should remove serial adapter (adapter is not set)', async () => {
     // PREPARE
-    fs.copyFileSync(ezspConfigFilePath, configFilePath);
+    // Create directory
+    const configFilepath = path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH);
+    fs.mkdirSync(path.dirname(configFilepath), { recursive: true });
+    // Create custom config file
+    fs.writeFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), expectedEZSPContent);
     const config = {};
     // EXECUTE
-    const changed = await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
+    await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
     // ASSERT
-    const resultContent = fs.readFileSync(configFilePath, 'utf8');
-    const expectedContent = fs.readFileSync(defaultConfigFilePath, 'utf8');
-    expect(resultContent).to.equal(expectedContent);
-    expect(changed).to.be.eq(true);
+    const content = fs.readFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), 'utf8');
+    expect(content.toString()).to.equal(expectedDefaultContent);
   });
 
   it('it should remove serial adapter (adapter is expliclty none)', async () => {
     // PREPARE
-    fs.copyFileSync(ezspConfigFilePath, configFilePath);
+    // Create directory
+    const configFilepath = path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH);
+    fs.mkdirSync(path.dirname(configFilepath), { recursive: true });
+    // Create custom config file
+    fs.writeFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), expectedEZSPContent);
     const config = {
       z2mDongleName: ADAPTERS_BY_CONFIG_KEY[CONFIG_KEYS.NONE][0],
     };
     // EXECUTE
-    const changed = await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
+    await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
     // ASSERT
-    const resultContent = fs.readFileSync(configFilePath, 'utf8');
-    const expectedContent = fs.readFileSync(defaultConfigFilePath, 'utf8');
-    expect(resultContent).to.equal(expectedContent);
-    expect(changed).to.be.eq(true);
+    const content = fs.readFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), 'utf8');
+    expect(content.toString()).to.equal(expectedDefaultContent);
   });
 
   it('it should keep serial adapter', async () => {
     // PREPARE
-    fs.copyFileSync(ezspConfigFilePath, configFilePath);
+    // Create directory
+    const configFilepath = path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH);
+    fs.mkdirSync(path.dirname(configFilepath), { recursive: true });
+    // Create custom config file
+    fs.writeFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), expectedEZSPContent);
     const config = {
       z2mDongleName: ADAPTERS_BY_CONFIG_KEY[CONFIG_KEYS.EZSP][0],
     };
     // EXECUTE
-    const changed = await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
+    await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
     // ASSERT
-    const resultContent = fs.readFileSync(configFilePath, 'utf8');
-    const expectedContent = fs.readFileSync(ezspConfigFilePath, 'utf8');
-    expect(resultContent).to.equal(expectedContent);
-    expect(changed).to.be.eq(false);
+    const content = fs.readFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), 'utf8');
+    expect(content.toString()).to.equal(expectedEZSPContent);
   });
 
   it('it should override serial adapter', async () => {
     // PREPARE
-    fs.copyFileSync(ezspConfigFilePath, configFilePath);
+    // Create directory
+    const configFilepath = path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH);
+    fs.mkdirSync(path.dirname(configFilepath), { recursive: true });
+    // Create custom config file
+    fs.writeFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), expectedEZSPContent);
     const config = {
       z2mDongleName: ADAPTERS_BY_CONFIG_KEY[CONFIG_KEYS.DECONZ][0],
     };
     // EXECUTE
-    const changed = await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
+    await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
     // ASSERT
-    const resultContent = fs.readFileSync(configFilePath, 'utf8');
-    const expectedContent = fs.readFileSync(deconzConfigFilePath, 'utf8');
-    expect(resultContent).to.equal(expectedContent);
-    expect(changed).to.be.eq(true);
+    const content = fs.readFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), 'utf8');
+    expect(content.toString()).to.equal(expectedDeconzContent);
   });
 
   it('it should remove serial adapter (unknown adapter)', async () => {
     // PREPARE
-    fs.copyFileSync(ezspConfigFilePath, configFilePath);
+    // Create directory
+    const configFilepath = path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH);
+    fs.mkdirSync(path.dirname(configFilepath), { recursive: true });
+    // Create custom config file
+    fs.writeFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), expectedEZSPContent);
     const config = { z2mDongleName: 'this-is-not-a-real-adapter' };
     // EXECUTE
-    const changed = await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
+    await zigbee2mqttManager.configureContainer(basePathOnContainer, config);
     // ASSERT
-    const resultContent = fs.readFileSync(configFilePath, 'utf8');
-    const expectedContent = fs.readFileSync(defaultConfigFilePath, 'utf8');
-    expect(resultContent).to.equal(expectedContent);
-    expect(changed).to.be.eq(true);
+    const content = fs.readFileSync(path.join(basePathOnContainer, DEFAULT.CONFIGURATION_PATH), 'utf8');
+    expect(content.toString()).to.equal(expectedDefaultContent);
   });
 });

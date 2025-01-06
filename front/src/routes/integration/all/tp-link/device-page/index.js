@@ -15,7 +15,7 @@ class TpLinkDevicePage extends Component {
 
   render(props, {}) {
     return (
-      <TpLinkPage user={props.user}>
+      <TpLinkPage>
         {props.tpLinkDevices && props.tpLinkDevices.length ? <DevicePage {...props} /> : <div />}
         <FoundDevices {...props} />
       </TpLinkPage>

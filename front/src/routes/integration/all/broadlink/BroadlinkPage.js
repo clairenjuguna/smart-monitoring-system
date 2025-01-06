@@ -1,8 +1,7 @@
 import { Text } from 'preact-i18n';
 import { Link } from 'preact-router/match';
-import DeviceConfigurationLink from '../../../../components/documentation/DeviceConfigurationLink';
 
-const BroadlinkPage = ({ children, user }) => (
+const BroadlinkPage = ({ children }) => (
   <div class="page">
     <div class="page-main">
       <div class="my-3 my-md-5">
@@ -35,18 +34,6 @@ const BroadlinkPage = ({ children, user }) => (
                     </span>
                     <Text id="integration.broadlink.peripheralTab" />
                   </Link>
-
-                  <DeviceConfigurationLink
-                    user={user}
-                    configurationKey="integrations"
-                    documentKey="broadlink"
-                    linkClass="list-group-item list-group-item-action d-flex align-items-center"
-                  >
-                    <span class="icon mr-3">
-                      <i class="fe fe-book-open" />
-                    </span>
-                    <Text id="integration.broadlink.documentation" />
-                  </DeviceConfigurationLink>
                 </div>
               </div>
             </div>

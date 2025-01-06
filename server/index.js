@@ -21,26 +21,6 @@ process.on('uncaughtException', (error, promise) => {
   logger.error(error);
 });
 
-const closeSQLite = async () => {
-  try {
-    await db.sequelize.close();
-    logger.info('SQLite closed.');
-  } catch (e) {
-    logger.info('SQLite database is probably already closed');
-    logger.warn(e);
-  }
-};
-
-const closeDuckDB = async () => {
-  try {
-    await db.duckDb.close();
-    logger.info('DuckDB closed.');
-  } catch (e) {
-    logger.info('DuckDB database is probably already closed');
-    logger.warn(e);
-  }
-};
-
 const shutdown = async (signal) => {
   logger.info(`${signal} received.`);
   // We give Gladys 10 seconds to properly shutdown, otherwise we do it
@@ -48,8 +28,13 @@ const shutdown = async (signal) => {
     logger.info('Timeout to shutdown expired, forcing shut down.');
     process.exit();
   }, 10 * 1000);
-  logger.info('Closing database connections.');
-  await Promise.all([closeSQLite(), closeDuckDB()]);
+  logger.info('Closing database connection.');
+  try {
+    await db.sequelize.close();
+  } catch (e) {
+    logger.info('Database is probably already closed');
+    logger.warn(e);
+  }
   process.exit();
 };
 

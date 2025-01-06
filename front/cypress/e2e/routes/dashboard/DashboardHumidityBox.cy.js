@@ -13,7 +13,6 @@ describe('Dashboard Humidity Box', () => {
         name: 'Test',
         type: 'test',
         selector: 'test',
-        visibility: 'private',
         boxes: [
           [],
           [

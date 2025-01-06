@@ -13,7 +13,11 @@ class CheckStatus extends Component {
     let messageKey;
     let linkUrl = '';
     let linkText = '';
-    if (!props.z2mEnabled) {
+    if (!props.usbConfigured) {
+      messageKey = 'integration.zigbee2mqtt.status.notConfigured';
+      linkUrl = '/dashboard/integration/device/zigbee2mqtt/settings';
+      linkText = 'integration.zigbee2mqtt.status.settingsPageLink';
+    } else if (!props.z2mEnabled) {
       messageKey = 'integration.zigbee2mqtt.status.notEnabled';
       linkUrl = '/dashboard/integration/device/zigbee2mqtt/setup';
       linkText = 'integration.zigbee2mqtt.status.setupPageLink';
@@ -33,6 +37,6 @@ class CheckStatus extends Component {
 }
 
 export default connect(
-  'user,session,usbConfigured,z2mEnabled,zigbee2mqttStatusMqttConnected,zigbee2mqttStatusUsbConfigured,zigbee2mqttConnected',
+  'user,session,usbConfigured,z2mEnabled,zigbee2mqttStatusMqttConnected,zigbee2mqttStatusUsbConfigured',
   actions
 )(CheckStatus);

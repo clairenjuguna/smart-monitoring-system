@@ -21,7 +21,7 @@ class DeviceTab extends Component {
     this.getHouses();
   }
 
-  getTuyaDevices = async () => {
+  async getTuyaDevices() {
     this.setState({
       getTuyaStatus: RequestStatus.Getting
     });
@@ -43,7 +43,7 @@ class DeviceTab extends Component {
         getTuyaStatus: e.message
       });
     }
-  };
+  }
 
   async getHouses() {
     this.setState({
@@ -71,13 +71,12 @@ class DeviceTab extends Component {
     });
     this.getTuyaDevices();
   }
-
-  changeOrderDir = async e => {
+  async changeOrderDir(e) {
     await this.setState({
       orderDir: e.target.value
     });
     this.getTuyaDevices();
-  };
+  }
 
   render({}, { orderDir, search, getTuyaStatus, tuyaDevices, housesWithRooms }) {
     return (
@@ -89,7 +88,7 @@ class DeviceTab extends Component {
           <div class="page-options d-flex">
             <Localizer>
               <CardFilter
-                changeOrderDir={this.changeOrderDir}
+                changeOrderDir={this.changeOrderDir.bind(this)}
                 orderValue={orderDir}
                 search={this.debouncedSearch}
                 searchValue={search}
@@ -116,7 +115,7 @@ class DeviceTab extends Component {
                       deleteButton
                       device={device}
                       deviceIndex={index}
-                      getTuyaDevices={this.getTuyaDevices}
+                      getTuyaDevices={this.getTuyaDevices.bind(this)}
                       housesWithRooms={housesWithRooms}
                     />
                   ))}

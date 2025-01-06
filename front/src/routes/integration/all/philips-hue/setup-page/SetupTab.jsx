@@ -23,19 +23,14 @@ class SetupTab extends Component {
         {props.philipsHueBridgesDevices && props.philipsHueBridgesDevices.length > 0 && (
           <div class="card">
             <div class="card-header">
-              <h1 class="card-title">
+              <h3 class="card-title">
                 <Text id="integration.philipsHue.setup.connectedBridgesTitle" />
-              </h1>
-              <div class="page-options d-flex">
-                <button class="btn btn-secondary" onClick={props.syncWithBridge}>
-                  <Text id="integration.philipsHue.setup.syncBridges" />
-                </button>
-              </div>
+              </h3>
             </div>
             <div class="card-body">
               <div
                 class={cx('dimmer', {
-                  active: props.loading
+                  active: props.philipsHueGetDevicesStatus === RequestStatus.Getting
                 })}
               >
                 <div class="loader" />
@@ -45,10 +40,6 @@ class SetupTab extends Component {
                       <MarkupText id="integration.philipsHue.setup.unknownError" />
                     </p>
                   )}
-                  <p class="alert alert-primary">
-                    <MarkupText id="integration.philipsHue.setup.bridgeNotUpToDateInfo" />
-                  </p>
-                  {props.syncWithBridgeError && <p class="alert alert-danger">{props.syncWithBridgeError}</p>}
                   {props.philipsHueGetDevicesStatus === RequestStatus.Getting && <div class={style.emptyDiv} />}
                   <div class="row">
                     {props.philipsHueBridgesDevices &&
@@ -74,9 +65,9 @@ class SetupTab extends Component {
         )}
         <div class="card">
           <div class="card-header">
-            <h1 class="card-title">
+            <h3 class="card-title">
               <Text id="integration.philipsHue.setup.bridgesOnNetwork" />
-            </h1>
+            </h3>
             <div class="page-options d-flex">
               <button
                 class="btn btn-info"

@@ -2,7 +2,6 @@ const Joi = require('joi');
 const { Op } = require('sequelize');
 const db = require('../../models');
 const logger = require('../../utils/logger');
-const { formatDateInUTC } = require('../../utils/date');
 const { EVENTS, WEBSOCKET_MESSAGE_TYPES } = require('../../utils/constants');
 const { BadParameters } = require('../../utils/coreErrors');
 
@@ -77,24 +76,24 @@ async function saveHistoricalState(deviceFeature, newValue, newValueCreatedAt) {
   }
   // if the deviceFeature should keep history, we save a new deviceFeatureState
   if (deviceFeature.keep_history) {
-    const valueAlreadyExistInDb = await db.duckDbReadConnectionAllAsync(
-      `
-        SELECT * 
-        FROM t_device_feature_state
-        WHERE device_feature_id = ?
-        AND value = ?
-        AND created_at = ?
-      `,
-      deviceFeature.id,
-      newValue,
-      formatDateInUTC(newValueCreatedAtDate),
-    );
+    const valueAlreadyExistInDb = await db.DeviceFeatureState.findOne({
+      where: {
+        device_feature_id: deviceFeature.id,
+        value: newValue,
+        created_at: newValueCreatedAtDate,
+      },
+    });
     // if the value already exist in the DB, don't re-create it
-    if (valueAlreadyExistInDb.length > 0) {
+    if (valueAlreadyExistInDb !== null) {
       logger.debug('device.saveHistoricalState: Not saving value in history, value already exists');
       return;
     }
-    await db.duckDbInsertState(deviceFeature.id, newValue, newValueCreatedAtDate);
+    await db.DeviceFeatureState.create({
+      device_feature_id: deviceFeature.id,
+      value: newValue,
+      created_at: newValueCreatedAtDate,
+      updated_at: newValueCreatedAtDate,
+    });
     // We need to update last aggregate value
     // So that aggregate is calculated again
     const lastDayOfPreviousMonth = new Date(

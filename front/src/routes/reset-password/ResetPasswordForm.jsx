@@ -108,9 +108,9 @@ const ResetPasswordForm = ({ children, ...props }) => (
         </div>
       </div>
     </form>
-    <div class="text-center text-muted">
+    {/* <div class="text-center text-muted">
       <MarkupText id="global.needHelpText" />
-    </div>
+    </div> */}
   </div>
 );
 

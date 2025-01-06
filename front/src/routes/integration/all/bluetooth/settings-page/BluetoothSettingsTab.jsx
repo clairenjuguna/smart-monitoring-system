@@ -57,9 +57,9 @@ class BluetoothSettingsTab extends Component {
     return (
       <div class="card">
         <div class="card-header">
-          <h1 class="card-title">
+          <h3 class="card-title">
             <Text id="integration.bluetooth.setup.title" />
-          </h1>
+          </h3>
         </div>
         <div class="card-body">
           <CheckBluetoothPanel />

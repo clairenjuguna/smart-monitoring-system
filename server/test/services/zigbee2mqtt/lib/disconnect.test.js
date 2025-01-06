@@ -38,13 +38,10 @@ describe('zigbee2mqtt disconnect', () => {
       system: {
         getContainers: fake.resolves([container]),
         stopContainer: fake.resolves(true),
-        removeContainer: fake.resolves(true),
       },
     };
 
     zigbee2MqttManager = new Zigbee2mqttManager(gladys, mqtt, serviceId);
-    zigbee2MqttManager.dockerBased = true;
-    zigbee2MqttManager.networkModeValid = true;
   });
 
   afterEach(() => {
@@ -55,24 +52,16 @@ describe('zigbee2mqtt disconnect', () => {
     // EXECUTE
     await zigbee2MqttManager.disconnect();
     // ASSERT
-    assert.calledThrice(gladys.event.emit);
-    assert.alwaysCalledWithExactly(gladys.event.emit, EVENTS.WEBSOCKET.SEND_ALL, {
+    assert.calledWith(gladys.event.emit, EVENTS.WEBSOCKET.SEND_ALL, {
       type: WEBSOCKET_MESSAGE_TYPES.ZIGBEE2MQTT.STATUS_CHANGE,
-      payload: {
-        dockerBased: true,
-        gladysConnected: false,
-        mqttExist: false,
-        mqttRunning: false,
-        networkModeValid: true,
-        usbConfigured: false,
-        z2mEnabled: false,
-        zigbee2mqttConnected: false,
-        zigbee2mqttExist: false,
-        zigbee2mqttRunning: false,
-      },
     });
+    assert.calledThrice(gladys.event.emit);
     assert.calledTwice(gladys.system.stopContainer);
-    assert.calledTwice(gladys.system.removeContainer);
+
+    expect(zigbee2MqttManager.gladysConnected).to.equal(false);
+    expect(zigbee2MqttManager.mqttRunning).to.equal(false);
+    expect(zigbee2MqttManager.zigbee2mqttRunning).to.equal(false);
+    expect(zigbee2MqttManager.zigbee2mqttConnected).to.equal(false);
   });
 
   it('mqtt connected', async () => {
@@ -81,28 +70,20 @@ describe('zigbee2mqtt disconnect', () => {
     // EXECUTE
     await zigbee2MqttManager.disconnect();
     // ASSERT
-    assert.calledThrice(gladys.event.emit);
-    assert.alwaysCalledWithExactly(gladys.event.emit, EVENTS.WEBSOCKET.SEND_ALL, {
+    assert.calledWith(gladys.event.emit, EVENTS.WEBSOCKET.SEND_ALL, {
       type: WEBSOCKET_MESSAGE_TYPES.ZIGBEE2MQTT.STATUS_CHANGE,
-      payload: {
-        dockerBased: true,
-        gladysConnected: false,
-        mqttExist: false,
-        mqttRunning: false,
-        networkModeValid: true,
-        usbConfigured: false,
-        z2mEnabled: false,
-        zigbee2mqttConnected: false,
-        zigbee2mqttExist: false,
-        zigbee2mqttRunning: false,
-      },
     });
+    assert.calledThrice(gladys.event.emit);
     assert.calledTwice(gladys.system.stopContainer);
-    assert.calledTwice(gladys.system.removeContainer);
-    assert.calledOnce(mqtt.end);
-    assert.calledOnce(mqtt.removeAllListeners);
+    expect(zigbee2MqttManager.gladysConnected).to.equal(false);
+
+    expect(zigbee2MqttManager.mqttRunning).to.equal(false);
+    expect(zigbee2MqttManager.zigbee2mqttRunning).to.equal(false);
+    expect(zigbee2MqttManager.zigbee2mqttConnected).to.equal(false);
 
     expect(zigbee2MqttManager.mqttClient).to.equal(null);
+    assert.calledOnce(mqtt.end);
+    assert.calledOnce(mqtt.removeAllListeners);
   });
 
   it('clear backup interval', async () => {
@@ -113,21 +94,6 @@ describe('zigbee2mqtt disconnect', () => {
     // EXECUTE
     await zigbee2MqttManager.disconnect();
     // ASSERT
-    assert.calledThrice(gladys.event.emit);
-    assert.alwaysCalledWithExactly(gladys.event.emit, EVENTS.WEBSOCKET.SEND_ALL, {
-      type: WEBSOCKET_MESSAGE_TYPES.ZIGBEE2MQTT.STATUS_CHANGE,
-      payload: {
-        dockerBased: true,
-        gladysConnected: false,
-        mqttExist: false,
-        mqttRunning: false,
-        networkModeValid: true,
-        usbConfigured: false,
-        z2mEnabled: false,
-        zigbee2mqttConnected: false,
-        zigbee2mqttExist: false,
-        zigbee2mqttRunning: false,
-      },
-    });
+    assert.calledOnceWithExactly(zigbee2MqttManager.backupScheduledJob.cancel);
   });
 });

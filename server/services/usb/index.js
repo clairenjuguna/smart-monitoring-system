@@ -1,7 +1,7 @@
 const logger = require('../../utils/logger');
 const UsbController = require('./api/usb.controller');
 
-module.exports = function UsbService(gladys, serviceId) {
+module.exports = function ZwaveService(gladys, serviceId) {
   const SerialPort = require('serialport');
   /**
    * @public

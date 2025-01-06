@@ -17,9 +17,6 @@ describe('gateway.backup', async function describe() {
 
   const variable = {};
   const event = {};
-  const user = {};
-  const brain = {};
-  const message = {};
 
   let gateway;
 
@@ -33,7 +30,7 @@ describe('gateway.backup', async function describe() {
       updateProgress: fake.resolves({}),
     };
 
-    variable.getValue = fake.resolves('key');
+    variable.getValue = fake.resolves('variable');
     variable.setValue = fake.resolves(null);
 
     event.on = fake.returns(null);
@@ -66,15 +63,7 @@ describe('gateway.backup', async function describe() {
       shutdown: fake.resolves(true),
     };
 
-    user.getByRole = fake.resolves([
-      { language: 'fr', selector: 'toto-fr' },
-      { language: 'en', selector: 'toto-en' },
-    ]);
-
-    message.sendToUser = fake.returns(null);
-    brain.getReply = fake.returns('Backup failed!');
-
-    gateway = new Gateway(variable, event, system, sequelize, config, user, {}, {}, job, scheduler, message, brain);
+    gateway = new Gateway(variable, event, system, sequelize, config, {}, {}, {}, job, scheduler);
   });
 
   afterEach(() => {
@@ -103,15 +92,6 @@ describe('gateway.backup', async function describe() {
 
     assert.calledOnce(gateway.gladysGatewayClient.initializeMultiPartBackup);
     assert.calledOnce(gateway.gladysGatewayClient.abortMultiPartBackup);
-    assert.calledOnce(user.getByRole);
-    assert.calledWith(brain.getReply, 'fr', 'backup.fail', {
-      errorMessage: 'Error: error',
-    });
-    assert.calledWith(brain.getReply, 'en', 'backup.fail', {
-      errorMessage: 'Error: error',
-    });
-    assert.calledWith(message.sendToUser, 'toto-fr', 'Backup failed!');
-    assert.calledWith(message.sendToUser, 'toto-en', 'Backup failed!');
   });
 
   it('should backup gladys with lots of insert at the same time', async () => {
@@ -125,7 +105,6 @@ describe('gateway.backup', async function describe() {
           value: 1,
         }),
       );
-      promisesDevices.push(db.duckDbInsertState('ca91dfdf-55b2-4cf8-a58b-99c0fbf6f5e4', 1));
     }
     // start backup
     promises.push(gateway.backup());
@@ -137,7 +116,6 @@ describe('gateway.backup', async function describe() {
           value: 1,
         }),
       );
-      promisesDevices.push(db.duckDbInsertState('ca91dfdf-55b2-4cf8-a58b-99c0fbf6f5e4', 1));
     }
     await Promise.all(promisesDevices);
     await Promise.all(promises);

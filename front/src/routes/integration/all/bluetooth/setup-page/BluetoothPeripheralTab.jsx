@@ -20,9 +20,9 @@ const BluetoothPeripheralTab = ({
   return (
     <div class="card">
       <div class="card-header">
-        <h1 class="card-title">
+        <h3 class="card-title">
           <Text id="integration.bluetooth.discover.title" />
-        </h1>
+        </h3>
         <div class="page-options d-flex">
           <button
             class={cx('btn', {

@@ -19,11 +19,7 @@ async function setValue(device, deviceFeature, value) {
     throw new NotFoundError(`Function device.setValue in service ${device.service.name} does not exist.`);
   }
   await service.device.setValue(device, deviceFeature, value);
-  // If device has feedback, the feedback will be sent and saved
-  // If value is a string, no need to save it
-  // @ts-ignore
-  const valueIsString = typeof value === 'string' || value instanceof String;
-  if (!deviceFeature.has_feedback && !valueIsString) {
+  if (!deviceFeature.has_feedback) {
     await this.saveState(deviceFeature, value);
   }
 }

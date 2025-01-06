@@ -8,6 +8,7 @@ const { JOB_TYPES } = require('../../utils/constants');
 async function onPurgeStatesEvent() {
   const purgeAllStates = this.job.wrapper(JOB_TYPES.DEVICE_STATES_PURGE, async () => {
     await this.purgeStates();
+    await this.purgeAggregateStates();
   });
   await purgeAllStates();
 }

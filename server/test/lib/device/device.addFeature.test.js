@@ -5,9 +5,6 @@ const StateManager = require('../../../lib/state');
 const Job = require('../../../lib/job');
 
 const event = new EventEmitter();
-const service = {
-  getService: () => {},
-};
 
 describe('Device.addFeature', () => {
   it('should add one feature', async () => {
@@ -33,7 +30,7 @@ describe('Device.addFeature', () => {
       params: [],
     });
     const job = new Job(event);
-    const device = new Device(event, {}, stateManager, service, {}, {}, job);
+    const device = new Device(event, {}, stateManager, {}, {}, {}, job);
     const newDevice = await device.addFeature('test-device', {
       name: 'On/Off',
       external_id: 'philips-hue:1:new',
@@ -76,7 +73,7 @@ describe('Device.addFeature', () => {
       params: [],
     });
     const job = new Job(event);
-    const device = new Device(event, {}, stateManager, service, {}, {}, job);
+    const device = new Device(event, {}, stateManager, {}, {}, {}, job);
     const newDevice = await device.addFeature('test-device', {
       name: 'NEW NAME, SHOULD NOT BE UPDATED',
       external_id: 'philips-hue:1:binary',

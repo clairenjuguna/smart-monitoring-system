@@ -18,7 +18,6 @@ LightState.prototype.rgb = fakes.rgb;
 LightState.prototype.brightness = fakes.brightness;
 
 const hueApi = {
-  syncWithBridge: fake.resolves(null),
   users: {
     createUser: fake.resolves({
       username: 'username',
@@ -29,7 +28,7 @@ const hueApi = {
     setLightState: fake.resolves(null),
     getLightState: fake.resolves({
       on: false,
-      bri: 56,
+      bri: 0,
       hue: 38191,
       sat: 94,
       effect: 'none',
@@ -65,41 +64,6 @@ const hueApi = {
       Promise.resolve({
         bridgeid: '1234',
       }),
-  },
-};
-
-const hueApiHsColorMode = {
-  lights: {
-    getLightState: fake.resolves({
-      on: false,
-      bri: 100,
-      hue: 35000,
-      sat: 94,
-      effect: 'none',
-      hs_color: [0.4, 0.1],
-      alert: 'select',
-      colormode: 'hs',
-      mode: 'homeautomation',
-      reachable: true,
-    }),
-  },
-};
-
-const hueApiCtColorMode = {
-  lights: {
-    getLightState: fake.resolves({
-      on: true,
-      bri: 90,
-      hue: 16203,
-      sat: 76,
-      effect: 'none',
-      xy: [0.4181, 0.3975],
-      ct: 305,
-      alert: 'select',
-      colormode: 'ct',
-      mode: 'homeautomation',
-      reachable: true,
-    }),
   },
 };
 
@@ -157,7 +121,4 @@ module.exports = {
   STATE_ON,
   STATE_OFF,
   fakes,
-  hueApi,
-  hueApiHsColorMode,
-  hueApiCtColorMode,
 };
