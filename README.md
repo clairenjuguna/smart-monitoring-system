@@ -14,6 +14,3 @@ cd front && yarn install && yarn start
 
 go to the provided ip address to login
 
-## Credentials
-email:brianchegegichuhi@gmail.com
-password: password
